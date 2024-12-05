@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback - IDeveloperHub</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* Feedback Form */
+      form {
+        margin-top: 2em;
+        background-color: white;
+        padding: 2.5em;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+        max-width: 600px;
+        margin: 2em auto; /* Center horizontally */
+        text-align: left; /* Align form content to the left */
+      }
+
+      form label {
+        display: block;
+        margin: 0.8em 0 0.4em;
+        font-weight: bold;
+        color: maroon; /* Accent color for labels */
+        font-size: 1.1em;
+      }
+
+      form input,
+      form textarea {
+        width: 100%; /* Full width */
+        padding: 1.2em;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 1em;
+        background-color: #f9f9f9; /* Light background for input fields */
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        font-family: serif; /* Change input and textarea font to serif */
+        margin-left: -10px; /* Push the boxes to the left */
+      }
+
+      form input:focus,
+      form textarea:focus {
+        border-color: maroon;
+        outline: none;
+        box-shadow: 0 0 10px rgba(128, 0, 0, 0.5); /* Glow effect on focus */
+      }
+
+      form textarea {
+        max-height: 300px; /* Limit textarea expansion */
+        resize: vertical; /* Allow vertical resizing only */
+      }
+
+      form button {
+        width: 100%;
+        padding: 1em;
+        background-color: maroon;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.3em;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease,
+          box-shadow 0.3s ease;
+        margin-left: -10px; /* Push the button to the left */
+      }
+
+      form button:hover {
+        background-color: black;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.webp" alt="IDeveloperHub Logo" />
+        </a>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+        &#9776;
+        <!-- Unicode for the hamburger menu icon -->
+      </div>
+      <ul class="nav-bar" id="navBar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="support.html">Support My Work</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>I'd Love Your Feedback!</h1>
+
+      <p class="intro">
+        If you have ideas for new tools, code snippets, apps, or anything that
+        can enhance the eLearning experience through code, I’d love to hear from
+        you! Your input can help shape the future of IDeveloperHub, making it
+        even more useful for instructional designers like us. Additionally, if
+        you notice any tools that need updates, have bugs, or could benefit from
+        added features, please don’t hesitate to reach out. I’m always working
+        to improve and expand this platform. Since this is a free resource, your
+        support means the world to me. Whether it’s sharing IDeveloperHub with
+        your network or contributing feedback, every bit helps. If you’d like to
+        go a step further, consider supporting my work through Patreon or a
+        similar platform—it allows me to keep creating and maintaining these
+        resources for the community.
+        <a href="support.html" target="_blank">Click here to support my work</a
+        >.
+      </p>
+    </header>
+
+    <main>
+      <form id="feedbackForm">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+
+        <label for="message">Your Feedback or Feature Request:</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Share your thoughts..."
+          required
+        ></textarea>
+
+        <button type="submit" class="copy-btn">Submit Feedback</button>
+      </form>
+    </main>
+
+    <footer>
+      © <span id="currentYear"></span> IDeveloperHub. Created by
+      <a
+        style="color: white"
+        href="https://www.linkedin.com/in/moayyadalazzam"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Visit my LinkedIn profile"
+        >Moayyad Alazzam</a
+      >.
+    </footer>
+
+    <script>
+      // Set the current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+
+    <script>
+      document
+        .getElementById("feedbackForm")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("Thank you for your feedback!");
+        });
+    </script>
+    <script>
+      // Select elements
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const navBar = document.getElementById("navBar");
+
+      // Toggle menu visibility
+      hamburgerMenu.addEventListener("click", () => {
+        navBar.classList.toggle("active");
+      });
+
+      // Close menu when clicking outside (optional)
+      window.addEventListener("click", (e) => {
+        if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+          navBar.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

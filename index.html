@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Custom tools for instructional designers to simplify eLearning workflows."
+    />
+    <title>IDeveloperHub</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    .hero-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 50px auto;
+      padding: 20px;
+      max-width: 1200px;
+    }
+
+    .hero-text {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    .hero-text p {
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .video-hero {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .phone-mockup {
+      width: 280px; /* Adjusted from 350px */
+      height: 560px; /* Adjusted from 700px */
+      background-color: #000;
+      border-radius: 30px;
+      padding: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .phone-mockup::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 4px;
+      background-color: #333;
+      border-radius: 8px;
+    }
+
+    .phone-mockup::after {
+      content: "";
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 4px;
+      background-color: #333;
+      border-radius: 8px;
+    }
+
+    .phone-mockup video {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      .hero-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .hero-text {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .hero-text p {
+        font-size: 1.2rem;
+      }
+
+      .phone-mockup {
+        width: 220px; /* Smaller width for tablets */
+        height: 440px; /* Adjusted proportionally */
+      }
+
+      .phone-mockup::before {
+        width: 40px;
+        height: 3px;
+      }
+
+      .phone-mockup::after {
+        width: 25px;
+        height: 3px;
+      }
+
+      .phone-mockup video {
+        border-radius: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-section {
+        padding: 10px;
+      }
+
+      .hero-text p {
+        font-size: 1rem;
+      }
+
+      .phone-mockup {
+        width: 180px; /* Smaller width for mobile */
+        height: 360px; /* Adjusted proportionally */
+      }
+
+      .phone-mockup::before {
+        width: 30px;
+        height: 2px;
+      }
+
+      .phone-mockup::after {
+        width: 20px;
+        height: 2px;
+      }
+
+      .phone-mockup video {
+        border-radius: 10px;
+      }
+    }
+  </style>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.webp" alt="IDeveloperHub Logo" />
+        </a>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+        &#9776;
+        <!-- Unicode for the hamburger menu icon -->
+      </div>
+      <ul class="nav-bar" id="navBar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="support.html">Support My Work</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <!-- Text Section -->
+        <div class="hero-text">
+          <h1>Welcome to IDeveloperHub</h1>
+
+          <p class="intro">
+            Welcome to IDeveloperHub! As a fellow instructional designer, I know
+            how frustrating it can be to work around the limitations of
+            eLearning tools. That’s why I created this platform—to give you FREE
+            custom code snippets that you can copy and paste right into tools
+            like Articulate Storyline, RISE, or Captivate. These snippets are
+            here to save you time, simplify your workflow, and add new
+            features—whether it’s automating tasks like creating PDF
+            certificates or adding dynamic progress bars. Just copy, paste, and
+            let the magic happen. If you find value in my work, share it with
+            others or consider supporting me on Patreon to keep the ideas
+            flowing.
+          </p>
+        </div>
+        <!-- Video Section -->
+        <div class="video-hero">
+          <div class="phone-mockup">
+            <video controls>
+              <source src="your-video-file.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Introductory Section -->
+      <section>
+        <h2>About the Project</h2>
+        <p class="intro">
+          I created IDeveloperHub with one goal in mind: to make life easier for
+          us, fellow instructional designers. This platform is all about
+          providing simple, time-saving tools that cut through the hassle of
+          complex workflows. Every code snippet here is something I’ve crafted
+          to solve the same challenges we all face—streamlining processes,
+          adding functionality, and helping you focus on designing great
+          learning experiences. Together, we can make our work more efficient
+          and impactful.
+          <a href="about.html" class="learn-more-link"
+            >Learn more about me and the platform.</a
+          >
+        </p>
+      </section>
+
+      <section class="difference-section">
+        <h2>How These Tools Make a Difference</h2>
+        <div class="difference-grid">
+          <div class="difference-card">
+            <div class="icon">
+              <i class="fas fa-tag"></i>
+            </div>
+            <h3>It's Free!</h3>
+            <p>
+              All tools I provide are completely free to use, making them
+              accessible for every instructional designer. Start enhancing your
+              projects at no cost.
+            </p>
+          </div>
+          <div class="difference-card">
+            <div class="icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Simplify Complex Tasks</h3>
+            <p>
+              I’ve created ready-to-use code snippets tailored to instructional
+              design challenges, helping you streamline workflows effortlessly.
+            </p>
+          </div>
+          <div class="difference-card">
+            <div class="icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Focus on Creativity</h3>
+            <p>
+              Spend less time troubleshooting and more time bringing your
+              creative ideas to life with tools that are easy to implement.
+            </p>
+          </div>
+          <div class="difference-card">
+            <div class="icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3>Enhance Engagement</h3>
+            <p>
+              Use my tools to make your eLearning courses more interactive and
+              engaging for your learners.
+            </p>
+          </div>
+          <div class="difference-card">
+            <div class="icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Save Time</h3>
+            <p>
+              Cut down on repetitive tasks and focus on what matters most by
+              using my efficient tools to speed up your work.
+            </p>
+          </div>
+          <div class="difference-card">
+            <div class="icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Join a Community</h3>
+            <p>
+              Be part of a growing community of instructional designers sharing
+              ideas and working together to create better learning experiences.
+            </p>
+          </div>
+          <div class="difference-card">
+            <div class="icon">
+              <i class="fas fa-sliders-h"></i>
+            </div>
+            <h3>Highly Customizable</h3>
+            <p>
+              Adjust my tools to fit your specific project needs, giving you the
+              flexibility to adapt them to any eLearning environment.
+            </p>
+          </div>
+          <div class="difference-card">
+            <div class="icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Regular Updates</h3>
+            <p>
+              I’ll be consistently adding new tools and code snippets to keep
+              things fresh and useful. Check back often for the latest solutions
+              to enhance your eLearning projects.
+            </p>
+          </div>
+        </div>
+        <p class="difference-footer">
+          Discover tools designed to enhance your instructional design process,
+          save time, and create impactful learning experiences. All for FREE!
+          <a href="tools.html" target="_blank">Visit the Tools</a> |
+          <a href="about.html" target="_blank"
+            >Learn About the Platform and the Designer</a
+          >
+          | <a href="feedback.html" target="_blank">Share Your Feedback</a> |
+          <a href="support.html" target="_blank">Support My Work</a>
+        </p>
+        <div class="tool-btn-container">
+          <a href="tools.html" class="tool-btn">Explore Tools</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="currentYear"></span> IDeveloperHub. Created by
+      <a
+        style="color: white"
+        href="https://www.linkedin.com/in/moayyadalazzam"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Visit my LinkedIn profile"
+        >Moayyad Alazzam</a
+      >.
+    </footer>
+
+    <script>
+      // Set the current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+    <script>
+      // Select elements
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const navBar = document.getElementById("navBar");
+
+      // Toggle menu visibility
+      hamburgerMenu.addEventListener("click", () => {
+        navBar.classList.toggle("active");
+      });
+
+      // Close menu when clicking outside (optional)
+      window.addEventListener("click", (e) => {
+        if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+          navBar.classList.remove("active");
+        }
+      });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - IDeveloperHub</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Modern Styling for the Paragraph */
+      .mission-paragraph {
+        font-size: 1.2em; /* Slightly larger font size for emphasis */
+        color: black; /* High contrast for readability */
+        line-height: 1.8; /* Balanced line spacing */
+        text-align: justify; /* Neat alignment for a professional look */
+        background-color: whitesmoke; /* Subtle background contrast */
+        padding: 1.5em; /* Comfortable padding for spacing */
+        border-left: 8px solid maroon; /* Accent border for emphasis */
+        border-radius: 10px; /* Rounded corners for a polished appearance */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        margin: 2em auto; /* Center the paragraph */
+        max-width: 800px; /* Constrain the width for readability */
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.webp" alt="IDeveloperHub Logo" />
+        </a>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+        &#9776;
+        <!-- Unicode for the hamburger menu icon -->
+      </div>
+      <ul class="nav-bar" id="navBar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="support.html">Support My Work</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>About This Platform</h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>The Developer</h2>
+        <section class="about">
+          <p class="mission-paragraph">
+            Hi, I’m Moayyad Alazzam, an instructional designer and web developer
+            dedicated to crafting impactful, learner-centered training
+            solutions. With expertise in instructional design theories,
+            cutting-edge technologies, and data-driven methodologies, I create
+            scalable tools and resources to empower instructional designers.
+            Explore my
+            <a
+              href="https://moayyadsaleh.github.io/personal-website/"
+              target="_blank"
+              >portfolio</a
+            >
+            to learn more about my work.
+          </p>
+        </section>
+      </section>
+
+      <section>
+        <h2>About IDeveloperHub</h2>
+        <p class="mission-paragraph">
+          IDeveloperHub is a free platform where you’ll find custom code
+          snippets designed to simplify complex tasks, enhance engagement, and
+          bring new functionality to your eLearning projects. From automating
+          repetitive processes to introducing creative features, these tools are
+          here to save you time and help you focus on what matters most—creating
+          impactful learning experiences.
+        </p>
+        <p class="mission-paragraph">
+          This platform is constantly evolving, with new code snippets and
+          resources being added regularly. My goal is to address the needs of
+          instructional designers and provide tools that make your work not only
+          easier but more enjoyable.
+        </p>
+        <p class="mission-paragraph">
+          I appreciate your support in helping this platform grow. Whether it’s
+          sharing IDeveloperHub with your network, offering feedback, or
+          supporting me on Patreon, every contribution helps me continue
+          creating and expanding this resource for the instructional design
+          community.
+          <a href="tools.html" target="_blank">Visit the Tools</a> |
+          <a href="about.html" target="_blank">Learn About the Platform</a> |
+          <a href="feedback.html" target="_blank">Share Feedback</a> |
+          <a href="support.html" target="_blank">Support My Work</a>
+        </p>
+      </section>
+    </main>
+    <script>
+      // Select elements
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const navBar = document.getElementById("navBar");
+
+      // Toggle menu visibility
+      hamburgerMenu.addEventListener("click", () => {
+        navBar.classList.toggle("active");
+      });
+
+      // Close menu when clicking outside (optional)
+      window.addEventListener("click", (e) => {
+        if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+          navBar.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

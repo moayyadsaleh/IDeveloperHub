@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tools - Instructional Design Tools</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .search-bar {
+        margin: 20px auto;
+        max-width: 600px;
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+
+      .search-bar input {
+        width: 100%;
+        padding: 12px 20px 12px 40px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        outline: none;
+      }
+
+      .search-bar input:focus {
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        border-color: maroon;
+      }
+
+      .search-bar i {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #888;
+        font-size: 20px;
+        pointer-events: none;
+      }
+
+      .search-bar input::placeholder {
+        color: #aaa;
+      }
+
+      .tool-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .tool-grid article {
+        display: none; /* Hidden by default, shown based on search */
+      }
+
+      .tool-grid article.visible {
+        display: block; /* Show matching tools */
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.webp" alt="IDeveloperHub Logo" />
+        </a>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+        &#9776;
+        <!-- Unicode for the hamburger menu icon -->
+      </div>
+      <ul class="nav-bar" id="navBar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="support.html">Support My Work</a></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>Explore Tools</h1>
+      <p class="intro">
+        Discover custom tools designed to simplify your eLearning workflows and
+        bring your ideas to life. Each tool comes with a detailed explanation
+        and step-by-step illustrations to guide you through the process. Find
+        the tool you like, copy the code snippet, and easily integrate it into
+        your eLearning course. Whether you’re using Articulate Storyline, RISE,
+        or another platform, these tools are here to help you create impactful
+        learning experiences with ease. If you like and enjoy my work and find
+        it impactful and helpful, consider supporting my efforts by visiting
+        this link:
+        <a href="support.html" target="_blank">Support My Work</a>.
+      </p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Search Tools</h2>
+        <div class="search-bar">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search tools by name or description..."
+          />
+        </div>
+        <h2>Available Tools</h2>
+        <div class="tool-grid">
+          <article
+            data-title="Certificate Generator"
+            data-description="Generate PDF certificates in Storyline"
+          >
+            <h3>Certificate Generator</h3>
+            <p>Generate PDF certificates in Storyline with a single click.</p>
+            <a href="tool1.html" class="tool-btn">View Tool</a>
+          </article>
+          <article
+            data-title="Drag-and-Drop Enhancer"
+            data-description="Add custom scoring and feedback"
+          >
+            <h3>Drag-and-Drop Enhancer</h3>
+            <p>Add custom scoring and feedback to drag-and-drop activities.</p>
+            <a href="tool2.html" class="tool-btn">View Tool</a>
+          </article>
+          <!-- Add more tools here -->
+        </div>
+      </section>
+    </main>
+    <footer>
+      © <span id="currentYear"></span> QuickIDTools. Created by
+      <a
+        style="color: white"
+        href="https://www.linkedin.com/in/moayyadalazzam"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Visit my LinkedIn profile"
+        >Moayyad Alazzam</a
+      >.
+    </footer>
+
+    <script>
+      // Set the current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+
+      // Search functionality
+      const searchInput = document.getElementById("searchInput");
+      const toolArticles = document.querySelectorAll(".tool-grid article");
+
+      searchInput.addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase();
+        toolArticles.forEach((article) => {
+          const title = article.dataset.title.toLowerCase();
+          const description = article.dataset.description.toLowerCase();
+          if (title.includes(query) || description.includes(query)) {
+            article.classList.add("visible");
+          } else {
+            article.classList.remove("visible");
+          }
+        });
+      });
+
+      // Show all tools initially
+      toolArticles.forEach((article) => article.classList.add("visible"));
+    </script>
+    <script>
+      // Select elements
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const navBar = document.getElementById("navBar");
+
+      // Toggle menu visibility
+      hamburgerMenu.addEventListener("click", () => {
+        navBar.classList.toggle("active");
+      });
+
+      // Close menu when clicking outside (optional)
+      window.addEventListener("click", (e) => {
+        if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+          navBar.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

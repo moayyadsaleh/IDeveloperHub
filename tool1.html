@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: serif, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+            /* Hero Section */
+            .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3em;
+        background-color: white; /* Changed to white */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 2em auto;
+        max-width: 1200px;
+        gap: 2em;
+      }
+
+      .hero-text {
+        max-width: 50%;
+      }
+
+      .hero-text p {
+        font-size: 1.3em;
+        line-height: 1.8;
+        margin-bottom: 1.5em;
+        text-align: justify;
+        color: #555;
+      }
+
+      .hero-image {
+        max-width: 45%;
+      }
+
+      .hero-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Support Options */
+      .support-options {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5em;
+        margin-top: 2em;
+      }
+
+      .support-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        background-color: maroon;
+        padding: 1em 2em;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-radius: 50px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        width: 80%;
+        max-width: 400px;
+        gap: 1em;
+      }
+
+      .support-btn:hover {
+        background-color: black;
+        transform: scale(1.05);
+      }
+
+      .support-btn i {
+        font-size: 1.5em;
+      }
+
+      .thank-you {
+        text-align: center;
+        font-size: 1.2em;
+        color: #555;
+        margin-top: 2em;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        background-color: maroon;
+        color: white;
+        padding: 1em 0;
+        margin-top: 2em;
+      }
+
+      /* Responsive Media Queries */
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          padding: 2em;
+        }
+
+        .hero-text {
+          max-width: 100%;
+          text-align: center;
+        }
+
+        .hero-image {
+          max-width: 80%;
+          margin-top: 1.5em;
+        }
+
+        .hero-text p {
+          font-size: 1.1em;
+        }
+
+        .support-btn {
+          width: 90%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-text p {
+          font-size: 1em;
+        }
+
+        header h1 {
+          font-size: 2em;
+        }
+
+        .support-btn {
+          font-size: 1em;
+          padding: 0.8em 1.5em;
+        }
+
+        .support-btn i {
+          font-size: 1.3em;
+        }
+      }
+      body {
+        font-family: serif, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      .hero-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px auto;
+        padding: 20px;
+        max-width: 1200px;
+      }
+
+      .hero-text {
+        flex: 1;
+        margin-right: 20px;
+      }
+
+      .hero-text p {
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .video-hero {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .phone-mockup {
+        width: 280px; /* Adjusted from 350px */
+        height: 560px; /* Adjusted from 700px */
+        background-color: #000;
+        border-radius: 30px;
+        padding: 8px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+
+      .phone-mockup::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 4px;
+        background-color: #333;
+        border-radius: 8px;
+      }
+
+      .phone-mockup::after {
+        content: "";
+        position: absolute;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 4px;
+        background-color: #333;
+        border-radius: 8px;
+      }
+
+      .phone-mockup video {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 768px) {
+        .hero-section {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .hero-text {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .hero-text p {
+          font-size: 1.2rem;
+        }
+
+        .phone-mockup {
+          width: 220px; /* Smaller width for tablets */
+          height: 440px; /* Adjusted proportionally */
+        }
+
+        .phone-mockup::before {
+          width: 40px;
+          height: 3px;
+        }
+
+        .phone-mockup::after {
+          width: 25px;
+          height: 3px;
+        }
+
+        .phone-mockup video {
+          border-radius: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-section {
+          padding: 10px;
+        }
+
+        .hero-text p {
+          font-size: 1rem;
+        }
+
+        .phone-mockup {
+          width: 180px; /* Smaller width for mobile */
+          height: 360px; /* Adjusted proportionally */
+        }
+
+        .phone-mockup::before {
+          width: 30px;
+          height: 2px;
+        }
+
+        .phone-mockup::after {
+          width: 20px;
+          height: 2px;
+        }
+
+        .phone-mockup video {
+          border-radius: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.webp" alt="IDeveloperHub Logo" />
+        </a>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+        &#9776;
+        <!-- Unicode for the hamburger menu icon -->
+      </div>
+      <ul class="nav-bar" id="navBar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="support.html">Support My Work</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="tool-header">
+        <h1>Certificate Generator Tool</h1>
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <!-- Text Section -->
+    <div class="hero-text">
+      <p>
+        Quickly generate printable PDF certificates with ease. Perfect for
+        eLearning courses using tools like Articulate Storyline!
+      </p>
+    </div>
+    <!-- Video Section -->
+    <div class="video-hero">
+      <div class="phone-mockup">
+        <video controls>
+          <source src="your-video-file.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Description Section -->
+      <section class="tool-section">
+        <h2>Description</h2>
+        <p>
+          This tool helps instructional designers create certificates using
+          JavaScript. Customize the learner's name, course title, and layout to
+          fit your needs.
+        </p>
+        <h3>How to Use:</h3>
+        <ol>
+          <li>Copy the code snippet below.</li>
+          <li>Paste it into your eLearning tool’s JavaScript section.</li>
+          <li>Customize it to suit your course requirements.</li>
+        </ol>
+      </section>
+
+      <!-- Code Section -->
+      <section class="tool-section">
+        <h2>Code Snippet</h2>
+        <pre><code id="codeSnippet">
+// JavaScript code snippet for generating certificates
+const learnerName = "John Doe";
+const courseTitle = "JavaScript Basics";
+console.log(`Certificate: ${learnerName} completed ${courseTitle}.`);
+        </code></pre>
+        <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+    style="
+      background-color: black; 
+      color: white; 
+      padding: 20px; 
+      text-align: center; 
+      font-size: 0.9rem;"
+  >
+    © <span id="currentYear"></span> IDeveloperHub. Created by
+    <a
+      href="https://www.linkedin.com/in/moayyadalazzam"
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Visit my LinkedIn profile"
+      style="color: white; text-decoration: none; font-weight: bold;"
+      >Moayyad Alazzam</a
+    >.
+  </footer>
+
+    <script>
+      // Set the current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+
+    
+<script src="script.js"></script>
+<script>
+  // Select elements
+  const hamburgerMenu = document.getElementById("hamburgerMenu");
+  const navBar = document.getElementById("navBar");
+
+  // Toggle menu visibility
+  hamburgerMenu.addEventListener("click", () => {
+    navBar.classList.toggle("active");
+  });
+
+  // Close menu when clicking outside (optional)
+  window.addEventListener("click", (e) => {
+    if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+      navBar.classList.remove("active");
+    }
+  });
+</script>
+  </body>
+</html>
