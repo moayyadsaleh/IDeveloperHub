@@ -717,3 +717,25 @@ article {
 .tool-btn:hover {
   background-color: black;
 }
+@media (max-width: 768px) {
+  section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  section img {
+    width: 80%; /* Adjust image size */
+    margin: 0 auto; /* Center the image */
+  }
+}
+@media (max-width: 768px) {
+  section div {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  section div img {
+    margin-bottom: 1em;
+    width: 80%;
+  }
+}

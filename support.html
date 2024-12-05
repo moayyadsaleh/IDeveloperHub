@@ -49,11 +49,14 @@
 
       /* Support Options */
       .support-options {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5em;
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(250px, 1fr)
+        ); /* Responsive grid layout */
+        gap: 1.5em; /* Space between grid items */
         margin-top: 2em;
+        justify-items: center; /* Center items in each grid cell */
       }
 
       .support-btn {
@@ -63,23 +66,41 @@
         text-decoration: none;
         color: white;
         background-color: maroon;
-        padding: 1em 2em;
+        padding: 1em 1.5em;
         font-size: 1.2em;
         font-weight: bold;
-        border-radius: 50px;
+        border-radius: 15px; /* Adjusted for a softer, modern look */
         transition: background-color 0.3s ease, transform 0.2s ease;
-        width: 80%;
-        max-width: 400px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
         gap: 1em;
+        text-align: center; /* Align text centrally */
+        width: 100%; /* Make buttons responsive within grid */
+        max-width: 300px; /* Prevent buttons from being too wide */
       }
 
       .support-btn:hover {
         background-color: black;
-        transform: scale(1.05);
+        transform: translateY(-3px); /* Subtle lift effect */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
       }
 
       .support-btn i {
         font-size: 1.5em;
+      }
+
+      @media (max-width: 768px) {
+        .support-options {
+          grid-template-columns: 1fr; /* Single-column layout on smaller screens */
+        }
+
+        .support-btn {
+          font-size: 1em;
+          padding: 0.8em 1.2em;
+        }
+
+        .support-btn i {
+          font-size: 1.3em;
+        }
       }
 
       .thank-you {
@@ -336,21 +357,24 @@
 
       <div class="support-options">
         <a href="https://www.patreon.com" target="_blank" class="support-btn">
-          <i class="fab fa-patreon"></i> Support on Patreon
+          <i class="fab fa-patreon"></i>
+          <span>Support on Patreon</span>
         </a>
         <a
           href="https://www.buymeacoffee.com"
           target="_blank"
           class="support-btn"
         >
-          <i class="fas fa-coffee"></i> Buy Me a Coffee
+          <i class="fas fa-coffee"></i>
+          <span>Buy Me a Coffee</span>
         </a>
         <a
           href="https://venmo.com/username"
           target="_blank"
           class="support-btn"
         >
-          <i class="fas fa-money-bill-wave"></i> Send via Venmo
+          <i class="fas fa-money-bill-wave"></i>
+          <span>Send via Venmo</span>
         </a>
       </div>
 
