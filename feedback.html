@@ -10,6 +10,300 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <style>
+      /* Hero Section */
+      /* Hero Section */
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3em;
+        background-color: white; /* Changed to white */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin: 2em auto;
+        max-width: 1200px;
+        gap: 2em;
+      }
+
+      .hero-text {
+        max-width: 50%;
+      }
+
+      .hero-text p {
+        line-height: 1.8;
+        margin-bottom: 1.5em;
+        text-align: justify;
+        color: #555;
+      }
+
+      .hero-image {
+        max-width: 45%;
+      }
+
+      .hero-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Support Options */
+      .support-options {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fit,
+          minmax(250px, 1fr)
+        ); /* Responsive grid layout */
+        gap: 1.5em; /* Space between grid items */
+        margin-top: 2em;
+        justify-items: center; /* Center items in each grid cell */
+      }
+
+      .support-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        background-color: maroon;
+        padding: 1em 1.5em;
+        font-size: 1.2em;
+        font-weight: bold;
+        border-radius: 15px; /* Adjusted for a softer, modern look */
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+        gap: 1em;
+        text-align: center; /* Align text centrally */
+        width: 100%; /* Make buttons responsive within grid */
+        max-width: 300px; /* Prevent buttons from being too wide */
+      }
+
+      .support-btn:hover {
+        background-color: black;
+        transform: translateY(-3px); /* Subtle lift effect */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+      }
+
+      .support-btn i {
+        font-size: 1.5em;
+      }
+
+      @media (max-width: 768px) {
+        .support-options {
+          grid-template-columns: 1fr; /* Single-column layout on smaller screens */
+        }
+
+        .support-btn {
+          font-size: 1em;
+          padding: 0.8em 1.2em;
+        }
+
+        .support-btn i {
+          font-size: 1.3em;
+        }
+      }
+
+      .thank-you {
+        text-align: center;
+        font-size: 1.2em;
+        color: #555;
+        margin-top: 2em;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        background-color: maroon;
+        color: white;
+        padding: 1em 0;
+        margin-top: 2em;
+      }
+
+      /* Responsive Media Queries */
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          padding: 2em;
+        }
+
+        .hero-text {
+          max-width: 100%;
+          text-align: center;
+        }
+
+        .hero-image {
+          max-width: 80%;
+          margin-top: 1.5em;
+        }
+
+        .hero-text p {
+          font-size: 1.1em;
+        }
+
+        .support-btn {
+          width: 90%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-text p {
+          font-size: 1em;
+        }
+
+        header h1 {
+          font-size: 2em;
+        }
+
+        .support-btn {
+          font-size: 1em;
+          padding: 0.8em 1.5em;
+        }
+
+        .support-btn i {
+          font-size: 1.3em;
+        }
+      }
+      body {
+        font-family: serif, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      .hero-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px auto;
+        padding: 20px;
+        max-width: 1200px;
+      }
+
+      .hero-text {
+        flex: 1;
+        margin-right: 20px;
+      }
+
+      .hero-text p {
+        line-height: 1.6;
+        margin: 0;
+      }
+
+      .video-hero {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .phone-mockup {
+        width: 280px; /* Adjusted from 350px */
+        height: 560px; /* Adjusted from 700px */
+        background-color: #000;
+        border-radius: 30px;
+        padding: 8px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        position: relative;
+      }
+
+      .phone-mockup::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 4px;
+        background-color: #333;
+        border-radius: 8px;
+      }
+
+      .phone-mockup::after {
+        content: "";
+        position: absolute;
+        bottom: 12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 4px;
+        background-color: #333;
+        border-radius: 8px;
+      }
+
+      .phone-mockup video {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 768px) {
+        .hero-section {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .hero-text {
+          margin-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .hero-text p {
+          font-size: 1.2rem;
+        }
+
+        .phone-mockup {
+          width: 220px; /* Smaller width for tablets */
+          height: 440px; /* Adjusted proportionally */
+        }
+
+        .phone-mockup::before {
+          width: 40px;
+          height: 3px;
+        }
+
+        .phone-mockup::after {
+          width: 25px;
+          height: 3px;
+        }
+
+        .phone-mockup video {
+          border-radius: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-section {
+          padding: 10px;
+        }
+
+        .hero-text p {
+          font-size: 1rem;
+        }
+
+        .phone-mockup {
+          width: 180px; /* Smaller width for mobile */
+          height: 360px; /* Adjusted proportionally */
+        }
+
+        .phone-mockup::before {
+          width: 30px;
+          height: 2px;
+        }
+
+        .phone-mockup::after {
+          width: 20px;
+          height: 2px;
+        }
+
+        .phone-mockup video {
+          border-radius: 10px;
+        }
+      }
+    </style>
+    <style>
       /* Feedback Form */
       form {
         margin-top: 2em;
@@ -114,47 +408,40 @@
       <section
         style="display: flex; align-items: center; gap: 20px; margin: 2em 0"
       >
-        <!-- Left Side: Text -->
-        <div style="flex: 2">
-          <p class="intro">
-            Have an idea for a tool, code snippet, or feature that could improve
-            the eLearning experience? Your suggestions are invaluable and can
-            help shape the future of
-            <span style="color: whitesmoke; background-color: maroon"
-              >IDeveloperHub</span
-            >. If you notice a tool that needs updates, has bugs, or could
-            benefit from new features, don’t hesitate to share your feedback.
-            Every improvement starts with your input. <br /><br />
-            As a free resource,
-            <span style="color: whitesmoke; background-color: maroon"
-              >IDeveloperHub</span
-            >
-            thrives on community support. Whether it’s spreading the word,
-            sharing feedback, or contributing, every bit makes a difference. To
-            go further, consider supporting the platform on Patreon or similar
-            channels to help keep these tools available and evolving for
-            instructional designers everywhere.
-            <a
-              href="support.html"
-              target="_blank"
-              style="
-                color: whitesmoke;
-                background-color: maroon;
-                padding: 0 4px;
-                text-decoration: none;
-              "
-              >Click here to support my work</a
-            >.
-          </p>
-        </div>
-
-        <!-- Right Side: Image -->
-        <div style="flex: 1">
-          <img
-            src="feedback.jpg"
-            alt="Support IDeveloperHub"
-            style="width: 100%; border-radius: 8px"
-          />
+        <!-- Hero Section -->
+        <div class="hero-section">
+          <!-- Text Section -->
+          <div class="hero-text">
+            <p class="intro">
+              Have an idea for a tool, code snippet, or feature that could
+              improve the eLearning experience? Your suggestions are invaluable
+              and can help shape the future of IDeveloperHub. If you notice a
+              tool that needs updates, has bugs, or could benefit from new
+              features, don’t hesitate to share your feedback. Every improvement
+              starts with your input.
+              <br /><br />
+              As a free resource, IDeveloperHub thrives on community support.
+              Whether it’s spreading the word, sharing feedback, or
+              contributing, every bit makes a difference. To go further,
+              consider supporting the platform on Patreon or similar channels to
+              help keep these tools available and evolving for instructional
+              designers everywhere.
+            </p>
+            <div class="share-section">
+              <button class="share-btn" onclick="sharePlatform()">
+                <i class="fas fa-share-alt"></i> Share IDeveloperHub
+              </button>
+            </div>
+          </div>
+          <!-- Video Section -->
+          <div class="video-hero">
+            <div class="phone-mockup">
+              <video controls>
+                <source src="Feedback video (1) (1).mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
         </div>
       </section>
     </header>
