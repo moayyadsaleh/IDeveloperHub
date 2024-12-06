@@ -739,3 +739,41 @@ article {
     width: 80%;
   }
 }
+.share-section {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.share-btn {
+  display: inline-flex;
+  font-family: serif;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  background-color: maroon;
+  color: whitesmoke;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.share-btn i {
+  margin-right: 8px;
+  font-size: 1.3rem;
+}
+
+.share-btn:hover {
+  background-color: black;
+  color: whitesmoke;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.share-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

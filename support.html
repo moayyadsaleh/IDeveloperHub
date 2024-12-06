@@ -321,6 +321,16 @@
         <li><a href="feedback.html">Feedback</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="support.html">Support My Work</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/moayyadalazzam" target="_blank"
+            >Contact Me</a
+          >
+        </li>
+        <li>
+          <a href="javascript:void(0);" onclick="sharePlatform()"
+            >Share IDeveloperHub</a
+          >
+        </li>
       </ul>
     </nav>
 
@@ -334,14 +344,18 @@
         <!-- Text Section -->
         <div class="hero-text">
           <p class="intro">
-            Hi there! I'm so grateful you’re here. Every tool and resource I
-            create is a labor of love, built to empower educators and learners
-            worldwide. But behind the scenes, it takes countless hours, energy,
-            and resources to bring these ideas to life. Your support means more
-            than just funding; it’s a vote of confidence in the work I do.
-            Whether it’s a small contribution or simply spreading the word,
-            you’re helping keep this platform alive and thriving.
+            Keeping this platform alive, providing top-notch free resources
+            takes time, effort, and resources. Your support, whether through a
+            contribution or sharing the platform with others, helps ensure these
+            tools remain free and accessible to everyone. Wth your
+            contributions, we can build impactful solutions for the
+            instructional design community.
           </p>
+          <div class="share-section">
+            <button class="share-btn" onclick="sharePlatform()">
+              <i class="fas fa-share-alt"></i> Share IDeveloperHub
+            </button>
+          </div>
         </div>
         <!-- Video Section -->
         <div class="video-hero">
@@ -357,7 +371,7 @@
       <div class="support-options">
         <a href="https://www.patreon.com" target="_blank" class="support-btn">
           <i class="fab fa-patreon"></i>
-          <span>Support on Patreon</span>
+          <span>SUPPORT ON PATREON</span>
         </a>
         <a
           href="https://www.buymeacoffee.com"
@@ -365,7 +379,7 @@
           class="support-btn"
         >
           <i class="fas fa-coffee"></i>
-          <span>Buy Me a Coffee</span>
+          <span>BUY ME A COFFEE</span>
         </a>
         <a
           href="https://venmo.com/username"
@@ -373,7 +387,7 @@
           class="support-btn"
         >
           <i class="fas fa-money-bill-wave"></i>
-          <span>Send via Venmo</span>
+          <span>SEND VIA VENMO</span>
         </a>
       </div>
 
@@ -430,4 +444,28 @@
     data-id="1352eae3-8256-487a-85f6-e08abaac5740"
     data-utcoffset="-6"
   ></script>
+  <script>
+    function sharePlatform() {
+      if (navigator.share) {
+        // Use the Web Share API if supported
+        navigator
+          .share({
+            title: "IDeveloperHub",
+            text: "Check out IDeveloperHub, a free resource for instructional designers to enhance eLearning!",
+            url: window.location.href,
+          })
+          .then(() => console.log("Platform shared successfully"))
+          .catch((error) => console.error("Error sharing platform:", error));
+      } else {
+        // Fallback for unsupported browsers
+        const shareUrl = window.location.href;
+        navigator.clipboard
+          .writeText(shareUrl)
+          .then(() => alert("Link copied to clipboard! Share it with others."))
+          .catch((error) =>
+            alert("Unable to copy the link. Please try again.")
+          );
+      }
+    }
+  </script>
 </html>

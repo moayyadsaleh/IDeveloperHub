@@ -44,6 +44,16 @@
         <li><a href="feedback.html">Feedback</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="support.html">Support My Work</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/moayyadalazzam" target="_blank"
+            >Contact Me</a
+          >
+        </li>
+        <li>
+          <a href="javascript:void(0);" onclick="sharePlatform()"
+            >Share IDeveloperHub</a
+          >
+        </li>
       </ul>
     </nav>
 
@@ -53,22 +63,16 @@
 
     <main>
       <section>
-        <h2>The Developer</h2>
+        <h2>THE DEVELOPER</h2>
         <section class="about" style="display: flex; align-items: center; gap: 20px; margin: 2em 0;">
-          <!-- Left Side: Text -->
-          <div style="flex: 2;">
-            <p class="mission-paragraph">
-              Hi, I’m Moayyad Alazzam, an instructional designer and web developer dedicated to crafting impactful,
-              learner-centered training solutions. With expertise in instructional design theories, cutting-edge
-              technologies, and data-driven methodologies, I create scalable tools and resources to empower
-              instructional designers. Explore my
-              <a
-                href="https://moayyadsaleh.github.io/personal-website/"
-                target="_blank"
-              >portfolio</a>
-              to learn more about my work.
-            </p>
-          </div>
+    <!-- Left Side: Text -->
+<div style="flex: 2;">
+  <p class="mission-paragraph">
+    Hi, I’m Moayyad Alazzam, an instructional designer focused on creating tools that make a difference. Combining instructional design principles with innovative technologies, I develop scalable solutions to help instructional designers deliver impactful, learner-centered training.  
+    Explore my <a href="https://moayyadsaleh.github.io/personal-website/" target="_blank" style="color: whitesmoke; background-color: maroon; padding: 0 4px; text-decoration: none;">portfolio</a> to see how my work supports instructional designers in achieving their goals.
+  </p>
+</div>
+
         
           <!-- Right Side: Image -->
           <div style="flex: 1;">
@@ -77,7 +81,7 @@
         </section>
         
 
-        <h2>About IDeveloperHub</h2>
+        <h2>ABOUT IDEVELOPERHUB</h2>
       
         <!-- Paragraph 1 -->
         <div style="display: flex; align-items: center; gap: 20px; margin: 1em 0;">
@@ -86,11 +90,9 @@
           </div>
           <div style="flex: 2;">
             <p class="mission-paragraph">
-              IDeveloperHub is a free platform where you’ll find custom code snippets designed to simplify
-              complex tasks, enhance engagement, and bring new functionality to your eLearning projects.
-              From automating repetitive processes to introducing creative features, these tools are here
-              to save you time and help you focus on what matters most—creating impactful learning experiences.
+              <span style="color: whitesmoke; background-color: maroon;">IDeveloperHub</span> is a free platform—and it will always be free. Here, you’ll find custom code snippets designed to simplify complex tasks, enhance engagement, and add new functionality to your eLearning projects. From automating repetitive processes to introducing innovative features, these tools save you time and let you focus on what matters most—creating impactful learning experiences.
             </p>
+            
           </div>
         </div>
       
@@ -118,11 +120,17 @@
               I appreciate your support in helping this platform grow. Whether it’s sharing IDeveloperHub with
               your network, offering feedback, or supporting me on Patreon, every contribution helps me continue
               creating and expanding this resource for the instructional design community.
-              <a href="tools.html" target="_blank">Visit the Tools</a> |
-              <a href="about.html" target="_blank">Learn About the Platform</a> |
-              <a href="feedback.html" target="_blank">Share Feedback</a> |
-              <a href="support.html" target="_blank">Support My Work</a>
+              <a href="tools.html" target="_blank">VISIT THE TOOLS</a> |
+              <a href="about.html" target="_blank">LEARN ABOUT THE PLATFORM</a> |
+              <a href="feedback.html" target="_blank">SHARE FEEDBACK</a> |
+              <a href="support.html" target="_blank">SUPPORT MY WORK.</a>
             </p>
+            <div class="share-section">
+              <button class="share-btn" onclick="sharePlatform()">
+                <i class="fas fa-share-alt"></i> Share IDeveloperHub
+              </button>
+            </div>
+            
           </div>
         </div>
       
@@ -148,5 +156,29 @@
       data-id="1352eae3-8256-487a-85f6-e08abaac5740"
       data-utcoffset="-6"
     ></script>
+    <script>
+      function sharePlatform() {
+        if (navigator.share) {
+          // Use the Web Share API if supported
+          navigator.share({
+            title: 'IDeveloperHub',
+            text: 'Check out IDeveloperHub, a free resource for instructional designers to enhance eLearning!',
+            url: window.location.href,
+          })
+            .then(() => console.log('Platform shared successfully'))
+            .catch((error) => console.error('Error sharing platform:', error));
+        } else {
+          // Fallback for unsupported browsers
+          const shareUrl = window.location.href;
+          navigator.clipboard
+            .writeText(shareUrl)
+            .then(() => alert('Link copied to clipboard! Share it with others.'))
+            .catch((error) =>
+              alert('Unable to copy the link. Please try again.')
+            );
+        }
+      }
+    </script>
+    
   </body>
 </html>

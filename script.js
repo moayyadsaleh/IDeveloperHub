@@ -32,10 +32,14 @@ const navBar = document.getElementById("navBar");
 hamburgerMenu.addEventListener("click", () => {
   navBar.classList.toggle("active");
 });
-
-// Close menu when clicking outside (optional)
-window.addEventListener("click", (e) => {
-  if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
-    navBar.classList.remove("active");
-  }
-});
+function copyCode() {
+  const codeSnippet = document.getElementById("codeSnippet").innerText; // Get the code text
+  navigator.clipboard
+    .writeText(codeSnippet)
+    .then(() => {
+      alert("Code copied to clipboard!"); // Feedback to the user
+    })
+    .catch((err) => {
+      console.error("Failed to copy: ", err); // Log errors if any
+    });
+}

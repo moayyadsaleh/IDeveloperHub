@@ -165,6 +165,16 @@
         <li><a href="feedback.html">Feedback</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="support.html">Support My Work</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/moayyadalazzam" target="_blank"
+            >Contact Me</a
+          >
+        </li>
+        <li>
+          <a href="javascript:void(0);" onclick="sharePlatform()"
+            >Share IDeveloperHub</a
+          >
+        </li>
       </ul>
     </nav>
 
@@ -181,17 +191,41 @@
           </h1>
 
           <p class="intro">
-            Welcome to IDeveloperHub! As a fellow instructional designer, I know
-            how frustrating it can be to work around the limitations of
-            eLearning tools. That’s why I created this platform—to give you FREE
-            custom code snippets that you can copy and paste right into tools
-            like Articulate Storyline, RISE, or Captivate. These snippets are
-            here to save you time, simplify your workflow, and add new
-            features—whether it’s automating tasks like creating PDF
-            certificates or adding dynamic progress bars. Just copy, paste, and
-            let the magic happen. If you find value in my work, share it with
-            others or consider supporting me on Patreon to keep the ideas
-            flowing.
+            Welcome to
+            <span style="color: whitesmoke; background-color: maroon"
+              >IDeveloperHub</span
+            >—a FREE resource for instructional designers—and it will always be
+            free. This platform offers ready-to-use code snippets to enhance
+            your e-learning courses, making them more impactful. These tools
+            work seamlessly with
+            <span style="color: whitesmoke; background-color: maroon"
+              >Articulate Storyline</span
+            >,
+            <span style="color: whitesmoke; background-color: maroon">RISE</span
+            >, and
+            <span style="color: whitesmoke; background-color: maroon"
+              >Captivate</span
+            >, designed to save you time, streamline workflows, and add
+            functionality. From automating
+            <span style="color: whitesmoke; background-color: maroon"
+              >PDF certificates</span
+            >
+            to creating
+            <span style="color: whitesmoke; background-color: maroon"
+              >dynamic progress bars</span
+            >, it’s as simple as copy, paste, and go. If you find these tools
+            helpful,
+            <a
+              href="support.html"
+              style="
+                color: whitesmoke;
+                background-color: maroon;
+                padding: 0 4px;
+                text-decoration: none;
+              "
+              >visit Support My Work page</a
+            >
+            to keep new ideas coming.
           </p>
         </div>
         <!-- Video Section -->
@@ -222,25 +256,38 @@
 
         <!-- Right Side: Text -->
         <div style="flex: 1">
-          <h2>About the Platform</h2>
+          <h2>ABOUT THE PLATFORM</h2>
           <p class="intro">
-            I created IDeveloperHub with one goal in mind: to make life easier
-            for us, fellow instructional designers. This platform is all about
-            providing simple, time-saving tools that cut through the hassle of
-            complex workflows. Every code snippet here is something I’ve crafted
-            to solve the same challenges we all face— streamlining processes,
-            adding functionality, and helping you focus on designing great
-            learning experiences. Together, we can make our work more efficient
-            and impactful.
-            <a href="about.html" class="learn-more-link"
-              >Learn more about me and the platform.</a
+            <span style="color: whitesmoke; background-color: maroon"
+              >IDeveloperHub</span
             >
+            was created to make life easier for instructional designers. The
+            platform provides FREE simple, time-saving tools designed to
+            streamline workflows, add functionality, and eliminate unnecessary
+            complexity. Each code snippet is carefully crafted to solve real
+            challenges, helping you focus on what matters—creating impactful
+            learning experiences.
+            <a
+              href="about.html"
+              style="
+                color: whitesmoke;
+                background-color: maroon;
+                padding: 0 4px;
+                text-decoration: none;
+              "
+              >Learn more about the platform</a
+            >.
           </p>
+          <div class="share-section">
+            <button class="share-btn" onclick="sharePlatform()">
+              <i class="fas fa-share-alt"></i> Share IDeveloperHub
+            </button>
+          </div>
         </div>
       </section>
 
       <section class="difference-section">
-        <h2>How These Tools Make a Difference</h2>
+        <h2>HOW THESE TOOLS MAKE A DIFFERENCE</h2>
         <div class="difference-grid">
           <div class="difference-card">
             <div class="icon">
@@ -248,9 +295,9 @@
             </div>
             <h3>It's Free!</h3>
             <p>
-              All tools I provide are completely free to use, making them
-              accessible for every instructional designer. Start enhancing your
-              projects at no cost.
+              All tools I provide are completely free to use—and will always be
+              free, making them accessible for every instructional designer.
+              Start enhancing your projects at no cost.
             </p>
           </div>
           <div class="difference-card">
@@ -327,16 +374,14 @@
         </div>
         <p class="difference-footer">
           Discover tools designed to enhance your instructional design process,
-          save time, and create impactful learning experiences. All for FREE!
-          <a href="tools.html" target="_blank">Visit the Tools</a> |
-          <a href="about.html" target="_blank"
-            >Learn About the Platform and the Designer</a
-          >
-          | <a href="feedback.html" target="_blank">Share Your Feedback</a> |
-          <a href="support.html" target="_blank">Support My Work</a>
+          save time, and create impactful learning experiences. ALL FOR FREE!
+          <a href="tools.html" target="_blank">VISIT THE TOOLS</a> |
+          <a href="about.html" target="_blank">LEARN MORE ABOUT THE PLATFORM</a>
+          | <a href="feedback.html" target="_blank">SHARE YOUR FEEDBACK</a> |
+          <a href="support.html" target="_blank">SUPPORT MY WORK</a>
         </p>
         <div class="tool-btn-container">
-          <a href="tools.html" class="tool-btn">Explore Tools</a>
+          <a href="tools.html" class="tool-btn">EXPLORE TOOLS</a>
         </div>
       </section>
     </main>
@@ -381,5 +426,31 @@
       data-id="1352eae3-8256-487a-85f6-e08abaac5740"
       data-utcoffset="-6"
     ></script>
+    <script>
+      function sharePlatform() {
+        if (navigator.share) {
+          // Use the Web Share API if supported
+          navigator
+            .share({
+              title: "IDeveloperHub",
+              text: "Check out IDeveloperHub, a free resource for instructional designers to enhance eLearning!",
+              url: window.location.href,
+            })
+            .then(() => console.log("Platform shared successfully"))
+            .catch((error) => console.error("Error sharing platform:", error));
+        } else {
+          // Fallback for unsupported browsers
+          const shareUrl = window.location.href;
+          navigator.clipboard
+            .writeText(shareUrl)
+            .then(() =>
+              alert("Link copied to clipboard! Share it with others.")
+            )
+            .catch((error) =>
+              alert("Unable to copy the link. Please try again.")
+            );
+        }
+      }
+    </script>
   </body>
 </html>
