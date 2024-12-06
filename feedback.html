@@ -516,18 +516,30 @@
       </form>
     </main>
 
-    <footer>
+    <footer
+      style="
+        background-color: black;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+      "
+    >
       © <span id="currentYear"></span> IDeveloperHub. Created by
       <a
-        style="color: white"
         href="https://www.linkedin.com/in/moayyadalazzam"
         target="_blank"
         rel="noopener noreferrer"
         title="Visit my LinkedIn profile"
+        style="color: white; text-decoration: none; font-weight: bold"
         >Moayyad Alazzam</a
       >.
     </footer>
-
+    <script
+      src="https://cdn.counter.dev/script.js"
+      data-id="1352eae3-8256-487a-85f6-e08abaac5740"
+      data-utcoffset="-6"
+    ></script>
     <script>
       // Set the current year dynamically
       document.getElementById("currentYear").textContent =
@@ -558,6 +570,32 @@
           navBar.classList.remove("active");
         }
       });
+    </script>
+    <script>
+      function sharePlatform() {
+        if (navigator.share) {
+          // Use the Web Share API if supported
+          navigator
+            .share({
+              title: "IDeveloperHub",
+              text: "Check out IDeveloperHub, a free resource for instructional designers to enhance eLearning!",
+              url: window.location.href,
+            })
+            .then(() => console.log("Platform shared successfully"))
+            .catch((error) => console.error("Error sharing platform:", error));
+        } else {
+          // Fallback for unsupported browsers
+          const shareUrl = window.location.href;
+          navigator.clipboard
+            .writeText(shareUrl)
+            .then(() =>
+              alert("Link copied to clipboard! Share it with others.")
+            )
+            .catch((error) =>
+              alert("Unable to copy the link. Please try again.")
+            );
+        }
+      }
     </script>
   </body>
 </html>
