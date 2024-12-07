@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Realistic Phone Timer</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background: transparent;
+        color: #ffffff;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .phone {
+        width: 150px;
+        height: 300px;
+        background: transparent;
+        border-radius: 20px;
+        border: 3px solid #111;
+        position: relative;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5),
+          inset 0 3px 6px rgba(255, 255, 255, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .phone::before {
+        content: "";
+        width: 50px;
+        height: 4px;
+        background: #555;
+        border-radius: 10px;
+        position: absolute;
+        top: 10px;
+      }
+
+      .front-camera {
+        width: 8px;
+        height: 8px;
+        background: #333;
+        border-radius: 50%;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .screen {
+        width: 90%;
+        height: 90%;
+        background: transparent;
+        border-radius: 20px;
+        box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .progress-bar {
+        width: 5px;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 3px;
+        overflow: hidden;
+      }
+
+      .progress-bar-fill {
+        width: 100%;
+        height: 100%;
+        background: #4caf50;
+        position: absolute;
+        bottom: 0;
+        transition: height 1s linear;
+      }
+
+      #timer {
+        font-size: 32px;
+        font-weight: bold;
+        color: #222;
+        margin-bottom: 10px;
+      }
+
+      .time-input {
+        margin-bottom: 10px;
+        display: flex;
+        gap: 5px;
+      }
+
+      .time-input input {
+        width: 40px;
+        padding: 5px;
+        font-size: 16px;
+        text-align: center;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .buttons {
+        position: absolute;
+        bottom: 20px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .button {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.2s;
+      }
+
+      .button-icon {
+        width: 18px;
+        height: 18px;
+        fill: #ffffff;
+      }
+
+      .button:hover {
+        transform: scale(1.05);
+      }
+
+      .button:active {
+        transform: scale(0.9);
+      }
+
+      .start-button {
+        background-color: #4caf50;
+      }
+
+      .stop-button {
+        background-color: #e74c3c;
+      }
+
+      .reset-button {
+        background-color: #3498db;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="phone">
+      <div class="front-camera"></div>
+      <div class="screen">
+        <div class="progress-bar">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+        <div id="timer">05:00</div>
+        <div class="time-input">
+          <input
+            type="number"
+            id="minutes-input"
+            placeholder="Min"
+            min="0"
+            value="5"
+            aria-label="Set minutes"
+          />
+          <input
+            type="number"
+            id="seconds-input"
+            placeholder="Sec"
+            min="0"
+            max="59"
+            value="0"
+            aria-label="Set seconds"
+          />
+        </div>
+        <div class="buttons">
+          <div
+            class="button start-button"
+            onclick="startTimer()"
+            aria-label="Start Timer"
+          >
+            <svg class="button-icon" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+          <div
+            class="button stop-button"
+            onclick="stopTimer()"
+            aria-label="Stop Timer"
+          >
+            <svg class="button-icon" viewBox="0 0 24 24">
+              <path d="M6 6h12v12H6z" />
+            </svg>
+          </div>
+          <div
+            class="button reset-button"
+            onclick="resetTimer()"
+            aria-label="Reset Timer"
+          >
+            <svg class="button-icon" viewBox="0 0 24 24">
+              <path d="M12 5v7h7v-2h-5V5h-2z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <audio id="alarm-sound" src="timer.mp3"></audio>
+
+    <script>
+      let timerDuration = 300;
+      let timeLeft = timerDuration;
+      let timerInterval;
+      let isRunning = false;
+      const timerDisplay = document.getElementById("timer");
+      const alarmSound = document.getElementById("alarm-sound");
+      const minutesInput = document.getElementById("minutes-input");
+      const secondsInput = document.getElementById("seconds-input");
+      const progressBarFill = document.getElementById("progress-bar-fill");
+
+      function validateInputs() {
+        if (minutesInput.value < 0) minutesInput.value = 0;
+        if (secondsInput.value < 0) secondsInput.value = 0;
+        if (secondsInput.value > 59) secondsInput.value = 59;
+      }
+
+      minutesInput.addEventListener("change", validateInputs);
+      secondsInput.addEventListener("change", validateInputs);
+
+      function startTimer() {
+        if (isRunning) return;
+        isRunning = true;
+
+        timerDuration =
+          parseInt(minutesInput.value) * 60 + parseInt(secondsInput.value);
+        timeLeft = timerDuration;
+        updateDisplay();
+        updateProgressBar();
+
+        timerInterval = setInterval(updateTimer, 1000);
+      }
+
+      function stopTimer() {
+        clearInterval(timerInterval);
+        isRunning = false;
+      }
+
+      function resetTimer() {
+        stopTimer();
+        timeLeft = timerDuration;
+        updateDisplay();
+        updateProgressBar();
+        timerDisplay.style.color = "#222";
+      }
+
+      function updateTimer() {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        timerDisplay.textContent = `${minutes}:${
+          seconds < 10 ? "0" : ""
+        }${seconds}`;
+        updateProgressBar();
+
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          isRunning = false;
+          alarmSound.play();
+          timerDisplay.style.color = "red";
+          alert("Time's up!");
+        } else {
+          timeLeft--;
+        }
+      }
+
+      function updateProgressBar() {
+        const percentage = (timeLeft / timerDuration) * 100;
+        progressBarFill.style.height = `${percentage}%`;
+      }
+
+      function updateDisplay() {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        timerDisplay.textContent = `${minutes}:${
+          seconds < 10 ? "0" : ""
+        }${seconds}`;
+      }
+    </script>
+  </body>
+</html>
