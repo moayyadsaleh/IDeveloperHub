@@ -258,7 +258,7 @@
     <!-- Image Section -->
     <div class="image-hero">
       <div class="phone-mockup">
-        <img src="notifications.png" alt="Modern Notifications Demo" />
+        <img src="notificationoicture.png" alt="Modern Notifications Demo" />
       </div>
     </div>
   </div>
@@ -276,7 +276,7 @@
         <h2>SEE IT WORKING IN A COURSE</h2>
         <p>
             Want to see these notifications in action? Check out this 
-            <a href="https://360.articulate.com/review/content/4e3880cc-3731-48ed-8ecb-a01258a98d69/review" target="_blank" style="font-weight: bold; color: maroon; text-decoration: underline;">
+            <a href="https://360.articulate.com/review/content/3a361902-7076-467d-9cff-c00d5e267fe0/review" target="_blank" style="font-weight: bold; color: maroon; text-decoration: underline;">
               <strong>LIVE DEMO</strong>
             </a> 
             I created in an Articulate Storyline course. You'll see how these modern, animated notifications add a touch of style and keep learners motivated. Go ahead, give it a look!
@@ -344,56 +344,1768 @@
               <div class="notification-container">
           
                 <h3>Success Notifications</h3>
-                <button class="copy-btn success-btn" onclick="showCode('success1')">Add Notification: "Awesome work! You've nailed this module."</button>
-                <pre id="success1" class="code-block">showNotification("Awesome work! You've nailed this module.", "success");</pre>
-          
-                <button class="copy-btn success-btn" onclick="showCode('success2')">Add Notification: "Congrats! You just unlocked a new badge!"</button>
-                <pre id="success2" class="code-block">showNotification("Congrats! You just unlocked a new badge!", "success");</pre>
-          
-                <button class="copy-btn success-btn" onclick="showCode('success3')">Add Notification: "Great job! You've hit a major milestone!"</button>
-                <pre id="success3" class="code-block">showNotification("Great job! You've hit a major milestone!", "success");</pre>
-          
-                <button class="copy-btn success-btn" onclick="showCode('success4')">Add Notification: "You’re on fire! You just reached another milestone."</button>
-                <pre id="success4" class="code-block">showNotification("You’re on fire! You just reached another milestone.", "success");</pre>
-          
-                <button class="copy-btn success-btn" onclick="showCode('success5')">Add Notification: "100% correct! You’re crushing it!"</button>
-                <pre id="success5" class="code-block">showNotification("100% correct! You’re crushing it!", "success");</pre>
-          
-                <button class="copy-btn success-btn" onclick="showCode('success6')">Add Notification: "Wow! You’ve completed 3 tasks in a row!"</button>
-                <pre id="success6" class="code-block">showNotification("Wow! You’ve completed 3 tasks in a row!", "success");</pre>
+
+                <button class="copy-btn success-btn" onclick="showCode('success1')">Add Notification: "You did it! This module is a wrap!"</button>
+                <pre id="success1" class="code-block">
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("You did it! This module is a wrap!", "success");</pre>
+                
+                <button class="copy-btn success-btn" onclick="showCode('success2')">Add Notification: "Nice work! That badge is all yours!"</button>
+                <pre id="success2" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Nice work! That badge is all yours!", "success");
+                  
+                  
+                  </pre>
+                
+                <button class="copy-btn success-btn" onclick="showCode('success3')">Add Notification: "High five! You crushed another milestone!"</button>
+                <pre id="success3" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("High five! You crushed another milestone!", "success");
+                  
+                  
+                  
+                  </pre>
+                
+                <button class="copy-btn success-btn" onclick="showCode('success4')">Add Notification: "You’re unstoppable! Another win in the books!"</button>
+                <pre id="success4" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("You’re unstoppable! Another win in the books!", "success");
+                  
+                  
+                  
+                  
+                  </pre>
+                
+                <button class="copy-btn success-btn" onclick="showCode('success5')">Add Notification: "Perfect score! You’re on a roll!"</button>
+                <pre id="success5" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Perfect score! You’re on a roll!", "success");
+                  
+                  </pre>
+                
+                <button class="copy-btn success-btn" onclick="showCode('success6')">Add Notification: "Three in a row! You’re on fire!"</button>
+                <pre id="success6" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Three in a row! You’re on fire!", "success");
+                  
+                  
+                  </pre>
+                
+                <button class="copy-btn success-btn" onclick="showCode('success7')">Add Notification: "Great hustle! Keep the momentum going!"</button>
+                <pre id="success7" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Great hustle! Keep the momentum going!", "success");
+                  
+                  
+                  
+                  </pre>
+                
+                <button class="copy-btn success-btn" onclick="showCode('success8')">Add Notification: "Boom! That was flawless!"</button>
+                <pre id="success8" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Boom! That was flawless!", "success");
+                  
+                  
+                  
+                  
+                  </pre>
+                
+                <button class="copy-btn success-btn" onclick="showCode('success9')">Add Notification: "Nailed it! You’re leveling up!"</button>
+                <pre id="success9" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Nailed it! You’re leveling up!", "success");
+                  
+                  
+                  
+                  
+                  </pre>
+                
+                <button class="copy-btn success-btn" onclick="showCode('success10')">Add Notification: "Fantastic job! You're making it look easy!"</button>
+                <pre id="success10" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Fantastic job! You're making it look easy!", "success");
+                  
+                  </pre>
+                
           
                 <h3>Error Notifications</h3>
                 <button class="copy-btn error-btn" onclick="showCode('error1')">Add Notification: "Uh-oh! Something went wrong. Try refreshing the page."</button>
-                <pre id="error1" class="code-block">showNotification("Uh-oh! Something went wrong. Try refreshing the page.", "error");</pre>
+                <pre id="error1" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Uh-oh! Something went wrong. Try refreshing the page.", "error");
+                  
+                  </pre>
           
                 <button class="copy-btn error-btn" onclick="showCode('error2')">Add Notification: "Yikes! Your session is about to expire. Save your work now!"</button>
-                <pre id="error2" class="code-block">showNotification("Yikes! Your session is about to expire. Save your work now!", "error");</pre>
+                <pre id="error2" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Yikes! Your session is about to expire. Save your work now!", "error")
+                  
+                  ;</pre>
           
                 <button class="copy-btn error-btn" onclick="showCode('error3')">Add Notification: "Oops! Looks like you missed a step. Let's go back and fix that."</button>
-                <pre id="error3" class="code-block">showNotification("Oops! Looks like you missed a step. Let's go back and fix that.", "error");</pre>
+                <pre id="error3" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Oops! Looks like you missed a step. Let's go back and fix that.", "error");
+                  
+                  </pre>
           
                 <button class="copy-btn error-btn" onclick="showCode('error4')">Add Notification: "Oops! Something went wrong. Please try again."</button>
-                <pre id="error4" class="code-block">showNotification("Oops! Something went wrong. Please try again.", "error");</pre>
+                <pre id="error4" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Oops! Something went wrong. Please try again.", "error");
+                  
+                  </pre>
           
                 <h3>Warning Notifications</h3>
                 <button class="copy-btn warning-btn" onclick="showCode('warning1')">Add Notification: "Heads up! You need to finish this section before moving on."</button>
-                <pre id="warning1" class="code-block">showNotification("Heads up! You need to finish this section before moving on.", "warning");</pre>
+                <pre id="warning1" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Heads up! You need to finish this section before moving on.", "warning");
+                  
+                  </pre>
           
                 <button class="copy-btn warning-btn" onclick="showCode('warning2')">Add Notification: "Quick reminder: Your assignment is due tomorrow!"</button>
-                <pre id="warning2" class="code-block">showNotification("Quick reminder: Your assignment is due tomorrow!", "warning");</pre>
+                <pre id="warning2" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Quick reminder: Your assignment is due tomorrow!", "warning");
+                  
+                  </pre>
           
                 <button class="copy-btn warning-btn" onclick="showCode('warning3')">Add Notification: "You're running out of time. Keep an eye on the clock!"</button>
-                <pre id="warning3" class="code-block">showNotification("You're running out of time. Keep an eye on the clock!", "warning");</pre>
+                <pre id="warning3" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("You're running out of time. Keep an eye on the clock!", "warning");
+                  
+                  </pre>
           
                 <h3>Info Notifications</h3>
                 <button class="copy-btn info-btn" onclick="showCode('info1')">Add Notification: "Welcome! Let's dive in and get started."</button>
-                <pre id="info1" class="code-block">showNotification("Welcome! Let's dive in and get started.", "info");</pre>
+                <pre id="info1" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Welcome! Let's dive in and get started.", "info");
+                  
+                  </pre>
           
                 <button class="copy-btn info-btn" onclick="showCode('info2')">Add Notification: "Need a break? Stretch your legs and come back refreshed!"</button>
-                <pre id="info2" class="code-block">showNotification("Need a break? Stretch your legs and come back refreshed!", "info");</pre>
+                <pre id="info2" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("Need a break? Stretch your legs and come back refreshed!", "info");
+                  
+                  </pre>
           
                 <button class="copy-btn info-btn" onclick="showCode('info3')">Add Notification: "You're halfway there! Keep up the great work."</button>
-                <pre id="info3" class="code-block">showNotification("You're halfway there! Keep up the great work.", "info");</pre>
+                <pre id="info3" class="code-block">function showNotification(message, type = "info") {
+                    // Create the notification container
+                    const notification = document.createElement("div");
+                    notification.style.cssText = `
+                      position: fixed;
+                      bottom: 30px;
+                      right: 30px;
+                      background: ${getNotificationColor(type)};
+                      color: #fff;
+                      padding: 20px 25px;
+                      border-radius: 12px;
+                      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      font-size: 16px;
+                      display: flex;
+                      align-items: center;
+                      gap: 12px;
+                      opacity: 0;
+                      transform: translateY(30px);
+                      transition: opacity 0.5s ease, transform 0.5s ease;
+                      z-index: 9999;
+                      max-width: 350px;
+                    `;
+                  
+                    // Add an icon based on the notification type
+                    const icon = document.createElement("span");
+                    icon.innerHTML = getNotificationIcon(type);
+                    icon.style.cssText = `
+                      font-size: 24px;
+                      display: inline-block;
+                    `;
+                  
+                    // Add the message text
+                    const text = document.createElement("div");
+                    text.innerText = message;
+                  
+                    // Append the icon and text to the notification
+                    notification.appendChild(icon);
+                    notification.appendChild(text);
+                    document.body.appendChild(notification);
+                  
+                    // Slide in the notification
+                    setTimeout(() => {
+                      notification.style.opacity = "1";
+                      notification.style.transform = "translateY(0)";
+                    }, 100);
+                  
+                    // Remove the notification after 5 seconds
+                    setTimeout(() => {
+                      notification.style.opacity = "0";
+                      notification.style.transform = "translateY(30px)";
+                      setTimeout(() => notification.remove(), 500);
+                    }, 5000);
+                  }
+                  
+                  // Helper function to get the background color based on the notification type
+                  function getNotificationColor(type) {
+                    switch (type) {
+                      case "success":
+                        return "linear-gradient(135deg, #28a745, #5dc860)";
+                      case "error":
+                        return "linear-gradient(135deg, #dc3545, #f77c87)";
+                      case "warning":
+                        return "linear-gradient(135deg, #ffc107, #ffd85c)";
+                      default:
+                        return "linear-gradient(135deg, #007bff, #5a9fff)";
+                    }
+                  }
+                  
+                  // Helper function to get the icon based on the notification type
+                  function getNotificationIcon(type) {
+                    switch (type) {
+                      case "success":
+                        return "✅";
+                      case "error":
+                        return "❌";
+                      case "warning":
+                        return "⚠️";
+                      default:
+                        return "ℹ️";
+                    }
+                  }
+                  
+                  // === Success Notifications ===
+                  showNotification("You're halfway there! Keep up the great work.", "info");
+                  
+                  </pre>
           
               </div>
             </li>
@@ -480,9 +2192,7 @@
       
       <section class="tool-section">
         <h2>CONSIDER SUPPORTING MY WORK</h2>
-        <p>
-          Creating custom, modern solutions tailored for the instructional design community takes a lot of time, effort, and love. From developing sleek tools to optimizing them for your projects, it’s all about making your eLearning life easier. If you’ve found these tools helpful, a little support goes a long way! It helps me keep building, improving, and sharing resources to help you shine. Your support truly means the world. Thank you for being awesome!
-        </p>        <div class="share-section">
+        <p> Creating modern, custom tools for instructional designers takes time, energy, and a whole lot of passion. If these tools have made your life easier, consider showing a little support – it truly helps me keep creating, improving, and sharing new resources to help you shine. Your support means everything, and I can’t thank you enough for being amazing! </p>   <div class="share-section">
           <button
             class="share-btn"
             onclick="window.location.href='support.html'"
