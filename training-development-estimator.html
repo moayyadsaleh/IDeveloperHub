@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Training Development Project Time Estimator</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: serif, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        background-color: maroon;
+        color: white;
+        padding: 1em 0;
+        margin-top: 2em;
+      }
+
+      /* Hero Section Container */
+      .hero-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 40px 20px;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        max-width: 1200px;
+        margin: 20px auto;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h3 {
+        font-size: 2.5em; /* Slightly smaller than h1 */
+        font-weight: bold;
+        color: maroon;
+        text-align: left; /* Left alignment for better flow in sections */
+        margin-bottom: 0.5em;
+        border-bottom: 3px solid black; /* Adds a visual separator */
+        padding-bottom: 0.2em; /* Space below the text and border */
+      }
+
+      ol {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      ol li {
+        margin-bottom: 20px;
+        padding-left: 10px;
+        position: relative;
+      }
+
+      ol li strong {
+        color: #2c3e50;
+        font-size: 1.1em;
+      }
+
+      ol li::marker {
+        color: maroon;
+        font-weight: bold;
+      }
+
+      code {
+        background-color: #ecf0f1;
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+      }
+
+      em {
+        font-style: normal;
+        color: #e74c3c;
+      }
+
+      .note {
+        background-color: #f9f9f9;
+        border-left: 4px solid #f39c12;
+        padding: 10px;
+        margin-top: 20px;
+        font-style: italic;
+        color: #555;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      /* Text Section Styling */
+      .hero-text {
+        max-width: 50%;
+      }
+
+      .hero-text .intro {
+        font-size: 1.2em;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Image Section Styling */
+      .image-hero {
+        max-width: 40%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .phone-mockup img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-section {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .hero-text,
+        .image-hero {
+          max-width: 100%;
+        }
+
+        .hero-text {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.webp" alt="IDeveloperHub Logo" />
+        </a>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+        &#9776;
+        <!-- Unicode for the hamburger menu icon -->
+      </div>
+      <ul class="nav-bar" id="navBar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="support.html">Support My Work</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/moayyadalazzam" target="_blank"
+            >Contact Me</a
+          >
+        </li>
+        <li>
+          <a href="javascript:void(0);" onclick="sharePlatform()"
+            >Share IDeveloperHub</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="tool-header">
+        <h1>ID Training Time Estimator</h1>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <!-- Text Section -->
+      <div class="hero-text">
+        <p class="intro">
+          Estimate how long your instructional design projects will take with
+          ease! Perfect for tasks like content analysis, storyboarding, slide
+          development, or video production. This tool uses proven industry
+          benchmarks to help you plan, manage, and deliver your projects on
+          time.
+        </p>
+      </div>
+
+      <!-- Image Section -->
+      <div class="image-hero">
+        <div class="phone-mockup">
+          <img
+            src="ID Training Development Project Time Estimation - Google Chrome 12_7_2024 7_10_00 PM.png"
+            alt="Training Development Estimator Demo"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Description Section -->
+      <section class="tool-section">
+        <h2>DESCRIPTION</h2>
+        <p>
+          Need to figure out how long your instructional design tasks will take?
+          This tool’s got you covered! Whether you’re whipping up slides for a
+          self-paced course, creating videos for microlearning, sketching out
+          storyboards for an instructor-led session, or building interactive
+          eLearning content, planning just got a whole lot easier. It helps you
+          estimate timelines for tasks like content analysis, scriptwriting,
+          video production, and quality assurance. Just pick your tasks, enter
+          the details (like how many slides, pages, or minutes), choose the
+          complexity, and boom — you get a reliable time estimate in minutes!
+        </p>
+
+        <h2>SEE IT IN ACTION</h2>
+        <p>
+          Curious how it works? Check out this
+          <a
+            href="https://moayyadsaleh.github.io/ID-Project-Time-Estimator/"
+            target="_blank"
+            style="font-weight: bold; color: maroon; text-decoration: underline"
+          >
+            <strong>LIVE DEMO</strong>
+          </a>
+          to see the estimator in action. It’s a quick way to experience how
+          this tool can help you plan and manage your instructional design
+          projects more efficiently.
+        </p>
+
+        <h2>HOW TO USE</h2>
+        <ol>
+          <li>
+            <strong>Access the Estimator Tool:</strong>
+            Click the link to go directly to the app:
+            <a
+              href="https://moayyadsaleh.github.io/ID-Project-Time-Estimator/"
+              target="_blank"
+              style="
+                font-weight: bold;
+                color: maroon;
+                text-decoration: underline;
+              "
+              >Launch the Estimator</a
+            >.
+          </li>
+
+          <li>
+            <strong>Add Your Tasks:</strong>
+            - Select the task type (e.g., content analysis, slide development,
+            video production). - Enter the number of units (slides, pages, or
+            minutes). - Choose the complexity level (Simple, Moderate, or
+            Complex).
+          </li>
+
+          <li>
+            <strong>Calculate the Total Time:</strong>
+            - Click the <strong>"Calculate Total Time"</strong> button to see
+            the estimated hours for your project.
+          </li>
+
+          <li>
+            <strong>Add Contingency Time (Optional):</strong>
+            - Select a contingency percentage to account for unexpected delays.
+          </li>
+
+          <li>
+            <strong>Export Your Plan:</strong>
+            - Download your project plan as a PDF. - View a clear visual pie
+            chart breakdown of your tasks.
+          </li>
+          <li>
+            <strong>Bookmark the Link for Future Use:</strong>
+            - To use the estimator again, keep a copy of the link or bookmark it
+            in your browser:
+            <a
+              href="https://moayyadsaleh.github.io/ID-Project-Time-Estimator/"
+              target="_blank"
+              style="
+                font-weight: bold;
+                color: maroon;
+                text-decoration: underline;
+              "
+            >
+              https://moayyadsaleh.github.io/ID-Project-Time-Estimator/ </a
+            >.
+          </li>
+        </ol>
+      </section>
+
+      <section class="tool-section">
+        <h2>CONSIDER SUPPORTING MY WORK</h2>
+        <p>
+          Building tools like the Training Development Project Time Estimator
+          takes time, effort, and a lot of passion. If this tool has helped you
+          plan your projects better, consider showing your support! Your
+          contributions help me create more helpful resources for the
+          instructional design community. Thank you for being amazing!
+        </p>
+        <div class="share-section">
+          <button
+            class="share-btn"
+            onclick="window.location.href='support.html'"
+          >
+            <i class="fas fa-heart"></i> Support My Work
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background-color: black;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+      "
+    >
+      © <span id="currentYear"></span> IDeveloperHub. Created by
+      <a
+        href="https://www.linkedin.com/in/moayyadalazzam"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Visit my LinkedIn profile"
+        style="color: white; text-decoration: none; font-weight: bold"
+        >Moayyad Alazzam</a
+      >.
+    </footer>
+
+    <script>
+      // Set the current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+
+    <script src="script.js"></script>
+    <script>
+      // Select elements
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const navBar = document.getElementById("navBar");
+
+      // Toggle menu visibility
+      hamburgerMenu.addEventListener("click", () => {
+        navBar.classList.toggle("active");
+      });
+
+      // Close menu when clicking outside (optional)
+      window.addEventListener("click", (e) => {
+        if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+          navBar.classList.remove("active");
+        }
+      });
+    </script>
+    <script></script>
+    <script
+      src="https://cdn.counter.dev/script.js"
+      data-id="1352eae3-8256-487a-85f6-e08abaac5740"
+      data-utcoffset="-6"
+    ></script>
+  </body>
+</html>
