@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Notification Pack for Stunning E-Learning Courses</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: serif, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+      notification-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .copy-btn {
+    padding: 12px 20px;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transition: background-color 0.3s, transform 0.1s;
+    margin-bottom: 15px;
+  }
+
+  .copy-btn:hover {
+    filter: brightness(0.9);
+  }
+
+  .copy-btn:active {
+    transform: scale(0.98);
+  }
+
+  .success-btn {
+    background-color: #28a745;
+  }
+
+  .error-btn {
+    background-color: #dc3545;
+  }
+
+  .warning-btn {
+    background-color: #ffc107;
+    color: #000;
+  }
+
+  .info-btn {
+    background-color: #007bff;
+  }
+
+  .code-block {
+    display: none;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-left: 4px solid #444;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    color: #000;
+    max-width: 100%;
+    overflow-x: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .copy-btn {
+      font-size: 14px;
+      padding: 10px 15px;
+      margin-bottom: 20px;
+    }
+
+    .notification-container h3 {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  }
+      /* Footer */
+      footer {
+        text-align: center;
+        background-color: maroon;
+        color: white;
+        padding: 1em 0;
+        margin-top: 2em;
+      }
+
+      /* Hero Section Container */
+      .hero-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 40px 20px;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        max-width: 1200px;
+        margin: 20px auto;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h3 {
+        font-size: 2.5em; /* Slightly smaller than h1 */
+  font-weight: bold;
+  color: maroon;
+  text-align: left; /* Left alignment for better flow in sections */
+  margin-bottom: 0.5em;
+  border-bottom: 3px solid black; /* Adds a visual separator */
+  padding-bottom: 0.2em; /* Space below the text and border */
+    }
+
+    ol {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    ol li {
+      margin-bottom: 20px;
+      padding-left: 10px;
+      position: relative;
+    }
+
+    ol li strong {
+      color: #2c3e50;
+      font-size: 1.1em;
+    }
+
+    ol li::marker {
+      color: maroon;
+      font-weight: bold;
+    }
+
+    code {
+      background-color: #ecf0f1;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+
+    em {
+      font-style: normal;
+      color: #e74c3c;
+    }
+
+    .note {
+      background-color: #f9f9f9;
+      border-left: 4px solid #f39c12;
+      padding: 10px;
+      margin-top: 20px;
+      font-style: italic;
+      color: #555;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+      /* Text Section Styling */
+      .hero-text {
+        max-width: 50%;
+      }
+
+      .hero-text .intro {
+        font-size: 1.2em;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Image Section Styling */
+      .image-hero {
+        max-width: 40%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .phone-mockup img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-section {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .hero-text,
+        .image-hero {
+          max-width: 100%;
+        }
+
+        .hero-text {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.webp" alt="IDeveloperHub Logo" />
+        </a>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+        &#9776; <!-- Unicode for the hamburger menu icon -->
+      </div>
+      <ul class="nav-bar" id="navBar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="support.html">Support My Work</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/moayyadalazzam" target="_blank">Contact Me</a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" onclick="sharePlatform()">Share IDeveloperHub</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="tool-header">
+        <h1>Modern Notification Pack for E-Learning Courses</h1>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+<div class="hero-section">
+    <!-- Text Section -->
+    <div class="hero-text">
+      <p class="intro">
+        Instantly boost your e-learning projects with sleek, modern notifications! Perfect for giving learners real-time feedback, gentle reminders, or celebrating achievements in tools like Articulate Storyline, Adobe Captivate, or Lectora. These stylish notifications are ready-to-go, fully customizable, and designed to keep your learners engaged and motivated.
+      </p>
+    </div>
+  
+    <!-- Image Section -->
+    <div class="image-hero">
+      <div class="phone-mockup">
+        <img src="notifications.png" alt="Modern Notifications Demo" />
+      </div>
+    </div>
+  </div>
+  
+
+    <!-- Main Content -->
+    <main>
+      <!-- Description Section -->
+      <section class="tool-section">
+        <h2>DESCRIPTION</h2>
+        <p>
+            This Modern Notification Pack helps instructional designers add sleek, customizable notifications to their e-learning courses. Whether you’re giving feedback, sending reminders, or celebrating achievements, these notifications keep your learners engaged and on track. Just pick the message, drop in the code, and you're ready to roll!
+        </p>
+              <!-- Description Section -->
+        <h2>SEE IT WORKING IN A COURSE</h2>
+        <p>
+            Want to see these notifications in action? Check out this 
+            <a href="https://360.articulate.com/review/content/4e3880cc-3731-48ed-8ecb-a01258a98d69/review" target="_blank" style="font-weight: bold; color: maroon; text-decoration: underline;">
+              <strong>LIVE DEMO</strong>
+            </a> 
+            I created in an Articulate Storyline course. You'll see how these modern, animated notifications add a touch of style and keep learners motivated. Go ahead, give it a look!
+        </p>
+        <h2>HOW TO USE</h2>
+
+        <ol style="color: #000;">
+            <li>
+                <strong>Step 1: Add Notifications to Your E-Learning Course</strong><br>
+                Follow these steps to integrate notifications into your e-learning project:
+              
+                <br><br>
+              
+                <ol>
+                  <li>
+                    <strong>Select Your Desired Notification:</strong><br>
+                    - Below, you’ll find buttons categorized by Success, Error, Warning, and Info notifications.  
+                    - Each button describes the notification message. Click the button to reveal the JavaScript code snippet.
+                  </li>
+              
+                  <br>
+              
+                  <li>
+                    <strong>Copy the Code:</strong><br>
+                    - After clicking the button, the JavaScript code will appear.  
+                    - Highlight the code and copy it by right-clicking and selecting "Copy" or pressing <code>Ctrl + C</code> (Windows) or <code>Cmd + C</code> (Mac).
+                  </li>
+              
+                  <br>
+              
+                  <li>
+                    <strong>Open Your Authoring Tool:</strong><br>
+                    - Open your e-learning project in an authoring tool like Articulate Storyline, Adobe Captivate, or any tool that supports JavaScript.  
+                    - Navigate to the slide where you want the notification to appear.
+                  </li>
+              
+                  <br>
+              
+                  <li>
+                    <strong>Create a JavaScript Trigger:</strong><br>
+                    - In your chosen slide, create a trigger to execute JavaScript:  
+                      - In Articulate Storyline:  
+                        - Go to the Triggers Panel, click "New Trigger," and set the following options:  
+                          - Action: Execute JavaScript  
+                          - When: Choose the event (for example, timeline starts, button click, quiz submission)  
+                          - Script: Paste the copied JavaScript code  
+                      - In Adobe Captivate:  
+                        - Select the button or slide where you want the notification to appear.  
+                        - Open the Properties Panel, go to the Actions Tab, and choose "Execute JavaScript."  
+                        - Paste the JavaScript code in the editor.
+                  </li>
+              
+                  <br>
+              
+                  <li>
+                    <strong>Decide When the Notification Should Appear:</strong><br>
+                    - Choose the appropriate event for triggering the notification. Some common options are:  
+                      - When the slide timeline starts: The notification appears automatically when the slide loads.  
+                      - When a button is clicked: The notification appears when a learner clicks a specific button.  
+                      - When a quiz is submitted: The notification provides feedback after a quiz submission.  
+                      - When an activity is completed: The notification acknowledges the completion of a task or module.
+                  </li>
+              
+                  <br>
+              <div class="notification-container">
+          
+                <h3>Success Notifications</h3>
+                <button class="copy-btn success-btn" onclick="showCode('success1')">Add Notification: "Awesome work! You've nailed this module."</button>
+                <pre id="success1" class="code-block">showNotification("Awesome work! You've nailed this module.", "success");</pre>
+          
+                <button class="copy-btn success-btn" onclick="showCode('success2')">Add Notification: "Congrats! You just unlocked a new badge!"</button>
+                <pre id="success2" class="code-block">showNotification("Congrats! You just unlocked a new badge!", "success");</pre>
+          
+                <button class="copy-btn success-btn" onclick="showCode('success3')">Add Notification: "Great job! You've hit a major milestone!"</button>
+                <pre id="success3" class="code-block">showNotification("Great job! You've hit a major milestone!", "success");</pre>
+          
+                <button class="copy-btn success-btn" onclick="showCode('success4')">Add Notification: "You’re on fire! You just reached another milestone."</button>
+                <pre id="success4" class="code-block">showNotification("You’re on fire! You just reached another milestone.", "success");</pre>
+          
+                <button class="copy-btn success-btn" onclick="showCode('success5')">Add Notification: "100% correct! You’re crushing it!"</button>
+                <pre id="success5" class="code-block">showNotification("100% correct! You’re crushing it!", "success");</pre>
+          
+                <button class="copy-btn success-btn" onclick="showCode('success6')">Add Notification: "Wow! You’ve completed 3 tasks in a row!"</button>
+                <pre id="success6" class="code-block">showNotification("Wow! You’ve completed 3 tasks in a row!", "success");</pre>
+          
+                <h3>Error Notifications</h3>
+                <button class="copy-btn error-btn" onclick="showCode('error1')">Add Notification: "Uh-oh! Something went wrong. Try refreshing the page."</button>
+                <pre id="error1" class="code-block">showNotification("Uh-oh! Something went wrong. Try refreshing the page.", "error");</pre>
+          
+                <button class="copy-btn error-btn" onclick="showCode('error2')">Add Notification: "Yikes! Your session is about to expire. Save your work now!"</button>
+                <pre id="error2" class="code-block">showNotification("Yikes! Your session is about to expire. Save your work now!", "error");</pre>
+          
+                <button class="copy-btn error-btn" onclick="showCode('error3')">Add Notification: "Oops! Looks like you missed a step. Let's go back and fix that."</button>
+                <pre id="error3" class="code-block">showNotification("Oops! Looks like you missed a step. Let's go back and fix that.", "error");</pre>
+          
+                <button class="copy-btn error-btn" onclick="showCode('error4')">Add Notification: "Oops! Something went wrong. Please try again."</button>
+                <pre id="error4" class="code-block">showNotification("Oops! Something went wrong. Please try again.", "error");</pre>
+          
+                <h3>Warning Notifications</h3>
+                <button class="copy-btn warning-btn" onclick="showCode('warning1')">Add Notification: "Heads up! You need to finish this section before moving on."</button>
+                <pre id="warning1" class="code-block">showNotification("Heads up! You need to finish this section before moving on.", "warning");</pre>
+          
+                <button class="copy-btn warning-btn" onclick="showCode('warning2')">Add Notification: "Quick reminder: Your assignment is due tomorrow!"</button>
+                <pre id="warning2" class="code-block">showNotification("Quick reminder: Your assignment is due tomorrow!", "warning");</pre>
+          
+                <button class="copy-btn warning-btn" onclick="showCode('warning3')">Add Notification: "You're running out of time. Keep an eye on the clock!"</button>
+                <pre id="warning3" class="code-block">showNotification("You're running out of time. Keep an eye on the clock!", "warning");</pre>
+          
+                <h3>Info Notifications</h3>
+                <button class="copy-btn info-btn" onclick="showCode('info1')">Add Notification: "Welcome! Let's dive in and get started."</button>
+                <pre id="info1" class="code-block">showNotification("Welcome! Let's dive in and get started.", "info");</pre>
+          
+                <button class="copy-btn info-btn" onclick="showCode('info2')">Add Notification: "Need a break? Stretch your legs and come back refreshed!"</button>
+                <pre id="info2" class="code-block">showNotification("Need a break? Stretch your legs and come back refreshed!", "info");</pre>
+          
+                <button class="copy-btn info-btn" onclick="showCode('info3')">Add Notification: "You're halfway there! Keep up the great work."</button>
+                <pre id="info3" class="code-block">showNotification("You're halfway there! Keep up the great work.", "info");</pre>
+          
+              </div>
+            </li>
+          
+          
+        
+         
+            <li> 
+                <strong>Step 2: Preview, Test, and Modify Notifications</strong><br>
+                - Preview your project and check that the notification appears as expected.  
+                - Make sure it triggers at the right time and displays the correct message.  
+              
+                <br><br>
+              
+                - If you want to modify the notification text, type, or language, follow these steps carefully:
+              
+                  <ol>
+                    <li>
+                      <strong>Locate the Code:</strong><br>
+                      Find the line of code that calls the <code>showNotification</code> function. It looks like this:  
+                      <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #444; font-family: 'Courier New', monospace; white-space: pre-wrap; color: #000;">
+              showNotification("Welcome! Let's dive in and get started.", "info");
+                      </pre>
+                    </li>
+              
+                    <br>
+              
+                    <li>
+                      <strong>Change the Notification Message:</strong><br>
+                      - Edit the text inside the double quotation marks to customize the message.  
+                      - Keep the double quotation marks (" ") intact – they are required for the code to work.  
+                      - Example:  
+                      <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #28a745; font-family: 'Courier New', monospace; white-space: pre-wrap; color: #000;">
+              showNotification("Great job! You've completed this task!", "success");
+                      </pre>
+                    </li>
+              
+                    <br>
+              
+                    <li>
+                      <strong>Change the Notification Type:</strong><br>
+                      - The second argument defines the notification type and must be one of the following:  
+                        - <code>"success"</code> for success messages (green)  
+                        - <code>"error"</code> for error messages (red)  
+                        - <code>"warning"</code> for warning messages (yellow)  
+                        - <code>"info"</code> for informational messages (blue)  
+                      - Do not change the capitalization – these types are case-sensitive and must be in lowercase.  
+                      - Example:  
+                      <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #ffc107; font-family: 'Courier New', monospace; white-space: pre-wrap; color: #000;">
+              showNotification("Quick reminder: Your assignment is due tomorrow!", "warning");
+                      </pre>
+                    </li>
+              
+                    <br>
+              
+                    <li>
+                      <strong>Translate the Message (Optional):</strong><br>
+                      - To display notifications in another language, modify the text inside the double quotation marks.  
+                      - Example (Spanish):  
+                      <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007bff; font-family: 'Courier New', monospace; white-space: pre-wrap; color: #000;">
+              showNotification("¡Buen trabajo! Has completado esta tarea.", "success");
+                      </pre>
+                    </li>
+              
+                    <br>
+              
+                    <li>
+                      <strong>Keep the Double Quotation Marks Intact:</strong><br>
+                      - Always use double quotation marks (" ") for both the message and the notification type.  
+                      - Example of correct usage:  
+                      <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #dc3545; font-family: 'Courier New', monospace; white-space: pre-wrap; color: #000;">
+              showNotification("Uh-oh! Something went wrong. Try refreshing the page.", "error");
+                      </pre>
+                    </li>
+                  </ol>
+              </li>
+              
+          
+        </ol>
+        
+        
+      </section>
+
+      
+      <section class="tool-section">
+        <h2>CONSIDER SUPPORTING MY WORK</h2>
+        <p>
+          Creating custom, modern solutions tailored for the instructional design community takes a lot of time, effort, and love. From developing sleek tools to optimizing them for your projects, it’s all about making your eLearning life easier. If you’ve found these tools helpful, a little support goes a long way! It helps me keep building, improving, and sharing resources to help you shine. Your support truly means the world. Thank you for being awesome!
+        </p>        <div class="share-section">
+          <button
+            class="share-btn"
+            onclick="window.location.href='support.html'"
+          >
+            <i class="fas fa-heart"></i> Support My Work
+          </button>
+          
+        </div>
+        </a>
+      </section>
+    </main>
+</body>
+
+    </main>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background-color: black;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+      "
+    >
+      © <span id="currentYear"></span> IDeveloperHub. Created by
+      <a
+        href="https://www.linkedin.com/in/moayyadalazzam"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Visit my LinkedIn profile"
+        style="color: white; text-decoration: none; font-weight: bold"
+        >Moayyad Alazzam</a
+      >.
+    </footer>
+
+    <script>
+      // Set the current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+
+    <script src="script.js"></script>
+    <script>
+      // Select elements
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const navBar = document.getElementById("navBar");
+
+      // Toggle menu visibility
+      hamburgerMenu.addEventListener("click", () => {
+        navBar.classList.toggle("active");
+      });
+
+      // Close menu when clicking outside (optional)
+      window.addEventListener("click", (e) => {
+        if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+          navBar.classList.remove("active");
+        }
+      });
+    </script>
+    <script>
+        function showCode(id) {
+          const codeBlock = document.getElementById(id);
+          if (codeBlock.style.display === "none" || codeBlock.style.display === "") {
+            codeBlock.style.display = "block";
+            codeBlock.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            codeBlock.style.display = "none";
+          }
+        }
+        </script>
+        
+    <script></script>
+    <script
+      src="https://cdn.counter.dev/script.js"
+      data-id="1352eae3-8256-487a-85f6-e08abaac5740"
+      data-utcoffset="-6"
+    ></script>
+    
+  </body>
+</html>
