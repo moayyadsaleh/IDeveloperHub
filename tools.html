@@ -82,11 +82,23 @@
       }
 
       .tool-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-      }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Ensures 3 items per line */
+  gap: 20px;
+}
+/* For tablets and smaller screens: 2 items per line */
+@media (max-width: 768px) {
+  .tool-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+/* For mobile devices: 1 item per line */
+@media (max-width: 480px) {
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+}
       .tool-grid article {
         display: none; /* Hidden by default, shown based on search */
       }
@@ -98,6 +110,7 @@
         color: #aaa;
         font-family: serif; /* Set the font to a serif font */
       }
+
     </style>
   </head>
   <body>
@@ -181,61 +194,119 @@
           />
         </div>
 
-        <h2>AVAILABLE TOOLS</h2>
-        <div class="tool-grid">
-          <article
-            data-title="Certificate Generator"
-            data-description="Generate PDF certificates in Storyline"
-          >
-            <h3>TRAININGDEV ESTIMATOR</h3>
-            <p>
-              Accurately estimate the time needed for instructional design tasks
-              with industry-backed benchmarks and proven methodologies. Plan
-              your projects confidently, meet deadlines effectively, and stay
-              organized with features like downloadable project plans and a
-              clear visual pie chart breakdown.
-            </p>
+<h2>AVAILABLE TOOLS</h2>
+<div class="tool-grid">
+  
+  <article
+    data-title="Certificate Generator"
+    data-description="Generate PDF certificates in Storyline"
+  >
+    <h3>TRAININGDEV ESTIMATOR</h3>
+    <p>
+      Accurately estimate the time needed for instructional design tasks
+      with industry-backed benchmarks and proven methodologies. Plan
+      your projects confidently, meet deadlines effectively, and stay
+      organized with features like downloadable project plans and a
+      clear visual pie chart breakdown.
+    </p>
+    <a href="training-development-estimator.html" class="tool-btn">EXPLORE AND USE</a>
+  </article>
 
-            <a href="training-development-estimator.html" class="tool-btn"
-              >EXPLORE AND USE</a
-            >
-          </article>
+  <article
+    data-title="Sleek Modern Progress Tracker"
+    data-description="Track progress with visuals, sound, and confetti"
+  >
+    <h3>SLEEK MODERN PROGRESS TRACKER</h3>
+    <p>
+      This tracker helps learners take control of their progress by
+      providing satisfying visuals, fun sounds, and celebratory confetti
+      to mark their achievements. Designed to be easily embedded in
+      e-learning courses, it allows learners to manually log their
+      progress after each module, task, or milestone. Perfect for
+      self-paced learning, and helps keep learners motivated and excited.
+    </p>
+    <a href="progress-tracker.html" class="tool-btn">EXPLORE AND USE</a>
+  </article>
 
-          <article
-            data-title="Sleek Modern Progress Tracker"
-            data-description="Track progress with visuals, sound, and confetti"
-          >
-            <h3>SLEEK MODERN PROGRESS TRACKER</h3>
-            <p>
-              This tracker helps learners take control of their progress by
-              providing satisfying visuals, fun sounds, and celebratory confetti
-              to mark their achievements. Designed to be easily embedded in
-              e-learning courses, it allows learners to manually log their
-              progress after each module, task, or milestone. Perfect for
-              self-paced learning, and helps keep learners motivated and
-              excited.
-            </p>
-            <a href="progress-tracker.html" class="tool-btn">EXPLORE AND USE</a>
-          </article>
+  <article
+    data-title="Timer Tool"
+    data-description="Customizable timer for managing activities"
+  >
+    <h3>SLEEK COUNTDOWN TIMER</h3>
+    <p>
+      This modern, sleek phone-like timer is perfect for managing
+      learning activities and time-boxing tasks. It features a
+      transparent background that blends seamlessly with any project
+      design. You can easily set the time, pause, stop, and reset the
+      timer. When the countdown finishes, a sound alert notifies you
+      that time is up. Ideal for quizzes, timed activities, and task
+      pacing.
+    </p>
+    <a href="timer-tool.html" class="tool-btn">EXPLORE AND USE</a>
+  </article>
 
-          <article
-            data-title="Timer Tool"
-            data-description="Customizable timer for managing activities"
-          >
-            <h3>SLEEK COUNTDOWN TIMER</h3>
-            <p>
-              This modern, sleek phone-like timer is perfect for managing
-              learning activities and time-boxing tasks. It features a
-              transparent background that blends seamlessly with any project
-              design. You can easily set the time, pause, stop, and reset the
-              timer. When the countdown finishes, a sound alert notifies you
-              that time is up. Ideal for quizzes, timed activities, and task
-              pacing.
-            </p>
-            <a href="timer-tool.html" class="tool-btn">EXPLORE AND USE</a>
-          </article>
-        </div>
-      </section>
+  <article
+    data-title="Print Function Tool"
+    data-description="One-click print feature for e-learning content"
+  >
+    <h3>ONE-CLICK PRINT FUNCTION</h3>
+    <p>
+      Add a seamless print feature to your e-learning projects, letting
+      learners easily print slides, certificates, or notes with a single
+      click. This tool integrates smoothly with authoring tools like
+      Articulate Storyline and Adobe Captivate, even if they lack a
+      native print option. Perfect for giving learners tangible takeaways
+      or compliance documentation.
+    </p>
+    <a href="print-slide.html" class="tool-btn">EXPLORE AND USE</a>
+  </article>
+
+  <article
+    data-title="Interactive Scenario Builder"
+    data-description="Create branching scenarios with ease"
+  >
+    <h3>INTERACTIVE SCENARIO BUILDER</h3>
+    <p>
+      Quickly build complex branching scenarios to engage learners with
+      real-world decision-making exercises. This tool helps you create
+      dynamic story paths and outcomes, enhancing soft skills training,
+      conflict resolution exercises, and role-based simulations. Export
+      easily to your favorite authoring tool.
+    </p>
+    <a href="scenario-builder.html" class="tool-btn">EXPLORE AND USE</a>
+  </article>
+
+  <article
+    data-title="Assessment Generator"
+    data-description="Create adaptive assessments with ease"
+  >
+    <h3>ASSESSMENT GENERATOR</h3>
+    <p>
+      Design adaptive assessments effortlessly with this tool. Import
+      questions, set difficulty levels, and provide personalized feedback
+      based on learner responses. Perfect for creating dynamic quizzes
+      that adjust to the learner’s performance, helping you measure
+      understanding more effectively.
+    </p>
+    <a href="assessment-generator.html" class="tool-btn">EXPLORE AND USE</a>
+  </article>
+
+  <article
+    data-title="Gamification Toolkit"
+    data-description="Add points, badges, and leaderboards to courses"
+  >
+    <h3>GAMIFICATION TOOLKIT</h3>
+    <p>
+      Boost learner engagement with points, badges, and leaderboards.
+      This toolkit helps you add gamification elements to your courses,
+      making learning more fun and motivating. Customize rewards and
+      track learner achievements to encourage participation and progress.
+    </p>
+    <a href="gamification-toolkit.html" class="tool-btn">EXPLORE AND USE</a>
+  </article>
+
+</div>
+
     </main>
     <footer
       style="

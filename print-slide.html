@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print Slide/Page in E-learning Courses
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: serif, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        background-color: maroon;
+        color: white;
+        padding: 1em 0;
+        margin-top: 2em;
+      }
+
+      /* Hero Section Container */
+      .hero-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 40px 20px;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        max-width: 1200px;
+        margin: 20px auto;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h3 {
+        font-size: 2.5em; /* Slightly smaller than h1 */
+  font-weight: bold;
+  color: maroon;
+  text-align: left; /* Left alignment for better flow in sections */
+  margin-bottom: 0.5em;
+  border-bottom: 3px solid black; /* Adds a visual separator */
+  padding-bottom: 0.2em; /* Space below the text and border */
+    }
+
+    ol {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    ol li {
+      margin-bottom: 20px;
+      padding-left: 10px;
+      position: relative;
+    }
+
+    ol li strong {
+      color: #2c3e50;
+      font-size: 1.1em;
+    }
+
+    ol li::marker {
+      color: maroon;
+      font-weight: bold;
+    }
+
+    code {
+      background-color: #ecf0f1;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+
+    em {
+      font-style: normal;
+      color: #e74c3c;
+    }
+
+    .note {
+      background-color: #f9f9f9;
+      border-left: 4px solid #f39c12;
+      padding: 10px;
+      margin-top: 20px;
+      font-style: italic;
+      color: #555;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+      /* Text Section Styling */
+      .hero-text {
+        max-width: 50%;
+      }
+
+      .hero-text .intro {
+        font-size: 1.2em;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Image Section Styling */
+      .image-hero {
+        max-width: 40%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .phone-mockup img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-section {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .hero-text,
+        .image-hero {
+          max-width: 100%;
+        }
+
+        .hero-text {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.webp" alt="IDeveloperHub Logo" />
+        </a>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+        &#9776; <!-- Unicode for the hamburger menu icon -->
+      </div>
+      <ul class="nav-bar" id="navBar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="support.html">Support My Work</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/moayyadalazzam" target="_blank">Contact Me</a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" onclick="sharePlatform()">Share IDeveloperHub</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="tool-header">
+        <h1>Print Slide/Page E-learning In One Click</h1>
+      </div>
+    </header>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <!-- Text Section -->
+    <div class="hero-text">
+      <p class="intro">
+        Ever wish your learners could just hit “print” and walk away with exactly what they need? Now they can! Whether it’s printing slides for note-taking, grabbing key takeaways, or saving certificates, this one-click print feature makes it effortless. No more screenshots, no more copy-pasting. It works perfectly with Articulate Storyline, Adobe Captivate, or Lectora – even if those tools don’t have a built-in print option. One click, and boom – your learners have what they need, on paper and ready to go!
+      </p>
+    </div>
+  
+    <!-- Image Section -->
+    <div class="image-hero">
+      <div class="phone-mockup">
+        <img src="Print.png" alt="One-Click Print Feature Demo" />
+      </div>
+    </div>
+  </div>
+  
+
+   <!-- Main Content -->
+<main>
+    <!-- Description Section -->
+    <section class="tool-section">
+      <h2>DESCRIPTION</h2>
+      <p>
+        This print feature helps instructional designers give learners the option to easily print slides, notes, certificates, or key takeaways in eLearning courses. No more tedious screenshots or copying text! Just add the print button, and your learners can save or print what they need with a single click.
+      </p>
+  
+      <!-- Description Section -->
+      <h2>SEE IT WORKING IN A COURSE</h2>
+      <p>
+        Want to see the print feature in action? Check out this 
+        <a href="https://360.articulate.com/review/content/8b27df49-241c-4609-848d-fee4d578d5bf/review" target="_blank" style="font-weight: bold; color: maroon; text-decoration: underline;">
+          <strong>LIVE DEMO</strong>
+        </a> 
+        I created in an Articulate Storyline course. It shows how learners can print certificates, slides, or notes effortlessly. Go ahead, give it a try and see how it can make your courses more practical and user-friendly!
+      </p>
+  
+      <h2>HOW TO USE</h2>
+
+      <ol>
+        <li>
+          <strong>Copy the Print Code:</strong>  
+          Here’s the JavaScript code you need to add a print function with automatic scaling:  
+          <div style="background-color: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; border-left: 5px solid #66d9ef; font-family: 'Courier New', monospace; white-space: pre-wrap; line-height: 1.5; font-size: 14px;">
+            <span style="color: #f92672;">var</span> style = <span style="color: #66d9ef;">document</span>.createElement(<span style="color: #e6db74;">'style'</span>);<br>
+            style.innerHTML = `<br>
+            &nbsp;&nbsp;<span style="color: #f92672;">@media</span> print {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #66d9ef;">body</span> {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a6e22e;">transform</span>: scale(0.8);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a6e22e;">transform-origin</span>: top left;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a6e22e;">width</span>: 100%;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            }<br>
+            `;<br>
+            <span style="color: #66d9ef;">document</span>.head.appendChild(style);<br>
+            window.print();
+          </div>
+        </li>
+      
+        <li>
+          <strong>Go to Your Authoring Tool:</strong>  
+          Open your preferred authoring tool like <strong>Articulate Storyline</strong>, <strong>Adobe Captivate</strong>, or any other tool that supports JavaScript.
+        </li>
+      
+        <li>
+          <strong>Add a Button or Print Icon:</strong>  
+          - Insert a button labeled <em>“Print This Page”</em>.<br>
+          - For a modern look, use a sleek <em>printer icon</em> instead of text.<br>
+          - In <strong>Storyline</strong>: Go to <strong>Insert</strong> &gt; <strong>Icons</strong> and search for a printer icon.<br>
+          - In <strong>Captivate</strong>: Insert an image of a printer icon.
+        </li>
+      
+        <li>
+          <strong>Add a Trigger to the Button:</strong>  
+          - <strong>In Articulate Storyline:</strong><br>
+            1. Select the button or icon.<br>
+            2. Open the <strong>Triggers Panel</strong>.<br>
+            3. Click <strong>“Create a New Trigger”</strong>.<br>
+            4. Set the options:<br>
+               - <strong>Action:</strong> Execute JavaScript<br>
+               - <strong>When:</strong> User clicks the button<br>
+      
+          - <strong>In Adobe Captivate:</strong><br>
+            1. Select the button or icon.<br>
+            2. Go to the <strong>Properties Panel</strong>.<br>
+            3. Under the <strong>Actions</strong> tab, set <strong>On Success</strong> to <strong>“Execute JavaScript”</strong>.
+        </li>
+      
+        <li>
+          <strong>Paste the JavaScript Code:</strong>  
+          In the JavaScript editor, paste the code you copied earlier:  
+          <div style="background-color: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; border-left: 5px solid #66d9ef; font-family: 'Courier New', monospace; white-space: pre-wrap; line-height: 1.5; font-size: 14px;">
+            <span style="color: #f92672;">var</span> style = <span style="color: #66d9ef;">document</span>.createElement(<span style="color: #e6db74;">'style'</span>);<br>
+            style.innerHTML = `<br>
+            &nbsp;&nbsp;<span style="color: #f92672;">@media</span> print {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #66d9ef;">body</span> {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a6e22e;">transform</span>: scale(0.8);<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a6e22e;">transform-origin</span>: top left;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a6e22e;">width</span>: 100%;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+            }<br>
+            `;<br>
+            <span style="color: #66d9ef;">document</span>.head.appendChild(style);<br>
+            window.print();
+          </div>
+        </li>
+      
+        <li>
+          <strong>Publish and Test:</strong>  
+          - <strong>Publish Your Project:</strong><br>
+            - In Storyline: Go to <strong>Publish</strong> &gt; <strong>Web</strong> or your preferred format.<br>
+            - In Captivate: Go to <strong>Publish</strong> &gt; <strong>Publish to HTML5</strong>.<br><br>
+          - <strong>Test the Print Function:</strong><br>
+            1. Open the published project in a web browser (Chrome, Firefox, or Edge).<br>
+            2. Click the print button or icon.<br>
+            3. The print dialog should pop up, and the content should scale to fit the page perfectly.
+        </li>
+      </ol>
+      
+      
+    </section>
+  
+    <section class="tool-section">
+      <h2>DOWNLOAD PRINT FEATURE SOURCE CODE</h2>
+      <p>Click the button below to download the print feature source code and use it in your projects!</p>
+      <a href="print-feature-code.zip" download>
+        <button class="copy-btn" class="fas fa-download">Download Print Code Folder</button>
+      </a>
+    </section>
+  
+    <section class="tool-section">
+      <h2>CONSIDER SUPPORTING MY WORK</h2>
+      <p> Creating custom solutions for the instructional design community is no small task. It takes countless hours of planning, developing, and fine-tuning—plus a steady stream of coffee! Every tool and feature is designed to make your courses more engaging and your workflow more efficient. If these resources have made your life easier, your support helps sustain the time and effort needed to create even more valuable tools. Thank you for appreciating the work and being part of this journey! </p>       
+      <div class="share-section">
+        <button
+          class="share-btn"
+          onclick="window.location.href='support.html'"
+        >
+          <i class="fas fa-heart"></i> Support My Work
+        </button>
+      </div>
+    </section>
+  </main>
+  
+</body>
+
+    </main>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background-color: black;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+      "
+    >
+      © <span id="currentYear"></span> IDeveloperHub. Created by
+      <a
+        href="https://www.linkedin.com/in/moayyadalazzam"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Visit my LinkedIn profile"
+        style="color: white; text-decoration: none; font-weight: bold"
+        >Moayyad Alazzam</a
+      >.
+    </footer>
+
+    <script>
+      // Set the current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+
+    <script src="script.js"></script>
+    <script>
+      // Select elements
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const navBar = document.getElementById("navBar");
+
+      // Toggle menu visibility
+      hamburgerMenu.addEventListener("click", () => {
+        navBar.classList.toggle("active");
+      });
+
+      // Close menu when clicking outside (optional)
+      window.addEventListener("click", (e) => {
+        if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+          navBar.classList.remove("active");
+        }
+      });
+    </script>
+    <script></script>
+    <script
+      src="https://cdn.counter.dev/script.js"
+      data-id="1352eae3-8256-487a-85f6-e08abaac5740"
+      data-utcoffset="-6"
+    ></script>
+    
+  </body>
+</html>
