@@ -346,11 +346,23 @@
       <div class="hero-section">
         <!-- Text Section -->
         <div class="hero-text">
-          <p class="intro">
+          <p class="intro" style="margin-bottom: 1em">
             Keeping this platform running and offering high-quality, free
-            resources takes time, effort, and dedication. Your support—whether
-            by making a contribution or simply sharing it with others—goes a
-            long way in keeping these tools free and accessible for everyone.
+            resources takes time, effort, and dedication. If you’d like to
+            support my work, you can contribute financially or simply share the
+            platform with others. Every bit of support helps keep these tools
+            free and accessible for the instructional design community.
+            <br />
+            Scroll down to see how you can help!
+          </p>
+
+          <p class="intro">
+            I’m also actively looking for new instructional design and
+            development opportunities. If you know of any openings in your
+            company or network where my skills could make an impact, I’d truly
+            appreciate being connected. Fellow instructional designers are often
+            the best source of leads, and your referral or recommendation would
+            mean a lot.
           </p>
 
           <div class="share-section">
@@ -395,6 +407,14 @@
           <i class="fas fa-money-bill-wave"></i>
           <span>SEND VIA VENMO</span>
         </a>
+        <button
+          class="support-btn"
+          onclick="shareReferral()"
+          style="font-family: serif"
+        >
+          <i class="fas fa-briefcase"></i>
+          <span>RECOMMEND ME TO YOUR TEAM</span>
+        </button>
       </div>
 
       <p class="thank-you">
@@ -471,6 +491,27 @@
           .catch((error) =>
             alert("Unable to copy the link. Please try again.")
           );
+      }
+    }
+  </script>
+
+  <script>
+    function shareReferral() {
+      const portfolioLink = "https://moayyadsaleh.github.io/personal-website/";
+      const message = `I’d like to recommend Moayyad Alazzam, an experienced instructional designer and developer. Check out his portfolio here: ${portfolioLink}`;
+
+      if (navigator.share) {
+        navigator
+          .share({
+            title: "Recommendation for Moayyad Alazzam",
+            text: message,
+            url: portfolioLink,
+          })
+          .catch((error) => console.log("Error sharing:", error));
+      } else {
+        window.location.href = `mailto:?subject=Recommendation for Moayyad Alazzam&body=${encodeURIComponent(
+          message
+        )}`;
       }
     }
   </script>
