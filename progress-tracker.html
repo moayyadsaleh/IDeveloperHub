@@ -173,6 +173,7 @@
             >Share IDeveloperHub</a
           >
         </li>
+        <li><a href="latest.html">Latest in Learning & Tech</a></li>
       </ul>
     </nav>
 
@@ -414,5 +415,22 @@
       data-id="1352eae3-8256-487a-85f6-e08abaac5740"
       data-utcoffset="-6"
     ></script>
+    <script>
+      // Select elements
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const navBar = document.getElementById("navBar");
+
+      // Toggle menu visibility
+      hamburgerMenu.addEventListener("click", () => {
+        navBar.classList.toggle("active");
+      });
+
+      // Close menu when clicking outside (optional)
+      window.addEventListener("click", (e) => {
+        if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+          navBar.classList.remove("active");
+        }
+      });
+    </script>
   </body>
 </html>
