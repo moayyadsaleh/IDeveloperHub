@@ -278,13 +278,12 @@
     data-title="Assessment Generator"
     data-description="Create adaptive assessments with ease"
   >
-    <h3>ASSESSMENT GENERATOR</h3>
+    <h3>INTERACTIVE CHECKLIST</h3>
     <p>
-      Design adaptive assessments effortlessly with this tool. Import
-      questions, set difficulty levels, and provide personalized feedback
-      based on learner responses. Perfect for creating dynamic quizzes
-      that adjust to the learner’s performance, helping you measure
-      understanding more effectively.
+      This interactive course checklist 
+      is a powerful tool to help your students take ownership of their learning. 
+      By embedding this checklist into your courses, you provide learners with a 
+      clear, organized way to track their progress, complete tasks, and stay on course.
     </p>
     <a href="assessment-generator.html" class="tool-btn">EXPLORE AND USE</a>
   </article>
@@ -293,15 +292,11 @@
     data-title="Gamification Toolkit"
     data-description="Add points, badges, and leaderboards to courses"
   >
-    <h3>GAMIFICATION TOOLKIT</h3>
-    <p>
-      Boost learner engagement with points, badges, and leaderboards.
-      This toolkit helps you add gamification elements to your courses,
-      making learning more fun and motivating. Customize rewards and
-      track learner achievements to encourage participation and progress.
-    </p>
-    <a href="gamification-toolkit.html" class="tool-btn">EXPLORE AND USE</a>
-  </article>
+  <h3>MODERN CUSTOM POP-UP TOOL</h3>
+  <p>
+    Engage your learners with sleek, customizable pop-ups! this tool makes it easy to add stylish pop-ups to your courses. No coding expertise needed – just copy, paste, and customize. Perfect for Articulate Storyline, Adobe Captivate, and more!
+  </p>
+  <a href="apple-inspired-custom-popup.html" class="tool-btn">EXPLORE AND USE</a>
 
 </div>
 
@@ -351,31 +346,54 @@
         }
       }
     </script>
-    <script>
-      // Set the current year dynamically
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
+<script>
+  // Set the current year dynamically
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-      // Search functionality
-      const searchInput = document.getElementById("searchInput");
-      const toolArticles = document.querySelectorAll(".tool-grid article");
+  // Search functionality
+  const searchInput = document.getElementById("searchInput");
+  const toolArticles = document.querySelectorAll(".tool-grid article");
 
-      searchInput.addEventListener("input", (e) => {
-        const query = e.target.value.toLowerCase();
-        toolArticles.forEach((article) => {
-          const title = article.dataset.title.toLowerCase();
-          const description = article.dataset.description.toLowerCase();
-          if (title.includes(query) || description.includes(query)) {
-            article.classList.add("visible");
-          } else {
-            article.classList.remove("visible");
-          }
-        });
-      });
+  searchInput.addEventListener("input", (e) => {
+    const query = e.target.value.toLowerCase().trim();
 
-      // Show all tools initially
-      toolArticles.forEach((article) => article.classList.add("visible"));
-    </script>
+    toolArticles.forEach((article) => {
+      const title = article.getAttribute("data-title")?.toLowerCase().trim() || "";
+      const description = article.getAttribute("data-description")?.toLowerCase().trim() || "";
+
+      if (title.includes(query) || description.includes(query)) {
+        article.classList.add("visible");
+        article.classList.remove("hidden");
+      } else {
+        article.classList.remove("visible");
+        article.classList.add("hidden");
+      }
+    });
+  });
+  let debounceTimer;
+searchInput.addEventListener("input", (e) => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => {
+    const query = e.target.value.toLowerCase().trim();
+
+    toolArticles.forEach((article) => {
+      const title = article.getAttribute("data-title")?.toLowerCase().trim() || "";
+      const description = article.getAttribute("data-description")?.toLowerCase().trim() || "";
+
+      if (title.includes(query) || description.includes(query)) {
+        article.classList.add("visible");
+        article.classList.remove("hidden");
+      } else {
+        article.classList.remove("visible");
+        article.classList.add("hidden");
+      }
+    });
+  }, 300); // Delay of 300ms
+});
+  // Show all tools initially
+  toolArticles.forEach((article) => article.classList.add("visible"));
+</script>
+
     <script>
       // Select elements
       const hamburgerMenu = document.getElementById("hamburgerMenu");

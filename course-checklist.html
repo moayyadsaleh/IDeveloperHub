@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Course Checklist</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: serif, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        background-color: maroon;
+        color: white;
+        padding: 1em 0;
+        margin-top: 2em;
+      }
+
+      /* Hero Section Container */
+      .hero-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 40px 20px;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        max-width: 1200px;
+        margin: 20px auto;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h3 {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: maroon;
+        text-align: left;
+        margin-bottom: 0.5em;
+        border-bottom: 3px solid black;
+        padding-bottom: 0.2em;
+      }
+
+      ol {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      ol li {
+        margin-bottom: 20px;
+        padding-left: 10px;
+        position: relative;
+      }
+
+      ol li strong {
+        color: #2c3e50;
+        font-size: 1.1em;
+      }
+
+      ol li::marker {
+        color: maroon;
+        font-weight: bold;
+      }
+
+      code {
+        background-color: #ecf0f1;
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+      }
+
+      em {
+        font-style: normal;
+        color: #e74c3c;
+      }
+
+      .note {
+        background-color: #f9f9f9;
+        border-left: 4px solid #f39c12;
+        padding: 10px;
+        margin-top: 20px;
+        font-style: italic;
+        color: #555;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Text Section Styling */
+      .hero-text {
+        max-width: 50%;
+      }
+
+      .hero-text .intro {
+        font-size: 1.2em;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Image Section Styling */
+      .image-hero {
+        max-width: 40%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .phone-mockup img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-section {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .hero-text,
+        .image-hero {
+          max-width: 100%;
+        }
+
+        .hero-text {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.webp" alt="IDeveloperHub Logo" />
+        </a>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+        &#9776;
+        <!-- Unicode for the hamburger menu icon -->
+      </div>
+      <ul class="nav-bar" id="navBar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">Tools</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="support.html">Support My Work</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/moayyadalazzam" target="_blank"
+            >Contact Me</a
+          >
+        </li>
+        <li>
+          <a href="javascript:void(0);" onclick="sharePlatform()"
+            >Share IDeveloperHub</a
+          >
+        </li>
+        <li><a href="latest.html">Latest in Learning & Tech</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="tool-header">
+        <h1>Modern Course Checklist</h1>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <!-- Text Section -->
+      <div class="hero-text">
+        <p class="intro">
+          This modern, interactive checklist is perfect for embedding directly
+          into your e-learning courses. It’s a great way to keep your learners
+          on track in self-paced courses! This tool lets students stay in
+          control by tracking their progress through each module, task, or
+          milestone.
+        </p>
+      </div>
+
+      <!-- Image Section -->
+      <div class="image-hero">
+        <div class="phone-mockup">
+          <img
+            src="Untitled6 _ Review 360 - Google Chrome 12_9_2024 9_23_47 AM.png"
+            alt="Progress Tracker Demo"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Description Section -->
+      <section class="tool-section">
+        <h2>DESCRIPTION</h2>
+        <p>
+          Instructional designers can easily embed the
+          <strong>Interactive Checklist</strong> in their e-learning courses,
+          such as Articulate Storyline, to help learners keep track of their
+          progress in real time. The checklist updates dynamically as tasks are
+          completed, providing a satisfying, interactive experience. With the
+          smooth UI design, learners can check and uncheck items with ease,
+          giving them full control of their learning journey.
+        </p>
+
+        <p>
+          The <strong>Interactive Checklist</strong> is designed to be flexible
+          and easily customizable. It comes with a transparent background, so it
+          seamlessly integrates with any course design. Place it on top of a
+          shape or background element, and it will blend beautifully with the
+          course's color scheme. One of the best features of this checklist is
+          that it automatically saves progress. Once embedded, learners' data is
+          saved across pages, ensuring that their progress is always up to date,
+          no matter where they are in the course. This means no more worrying
+          about lost progress when switching between tasks or returning after a
+          break.
+        </p>
+
+        <!-- Description Section -->
+        <h2>SEE IT WORKING IN A COURSE</h2>
+        <p>
+          Want to see the interactive checklist in action? Check out this
+          <a
+            href="https://360.articulate.com/review/content/34251ecc-d179-4fba-86f9-c0ca51ea7f84/review"
+            target="_blank"
+            style="font-weight: bold; color: maroon; text-decoration: underline"
+          >
+            <strong>LIVE DEMO</strong>
+          </a>
+          I created in an Articulate Storyline course. It gives you a quick feel
+          for how it works and how sleek it looks in a real project. Go ahead,
+          take it for a spin!
+        </p>
+        <h2>HOW TO USE</h2>
+        <ol>
+          <li>
+            <strong>Download the Zip File:</strong>
+            Click the download button below to get the Interactive Checklist zip
+            file. This file contains all the necessary code and assets for the
+            checklist.
+          </li>
+
+          <li>
+            <strong>Unzip the File:</strong>
+            - <strong>On Windows:</strong> Right-click the downloaded
+            <code>.zip</code> file and select <em>"Extract All..."</em>. -
+            <strong>On macOS:</strong> Double-click the <code>.zip</code> file
+            to automatically unzip it. After unzipping, you'll get a folder
+            named <strong>interactive-checklist</strong>.
+          </li>
+
+          <li>
+            <strong>Open Your E-Learning Authoring Tool:</strong>
+            Open your e-learning project in tools like
+            <strong>Articulate Storyline</strong>,
+            <strong>Adobe Captivate</strong>, or any other tool that supports
+            web objects.
+          </li>
+
+          <li>
+            <strong>Insert a Web Object:</strong>
+            - In <strong>Articulate Storyline</strong>: - Go to the
+            <strong>Insert</strong> tab and select <strong>Web Object</strong>.
+            - In the Web Object dialog, click <strong>Browse</strong>. - Select
+            the <strong>unzipped Interactive Checklist folder</strong> (make
+            sure to select the whole folder, not individual files). - Click
+            <strong>OK</strong> to insert the web object into your slide. - In
+            <strong>Adobe Captivate</strong>: - Go to the
+            <strong>Media</strong> menu and select <strong>Web Object</strong>.
+            - Enter the path to the
+            <strong>unzipped Interactive Checklist folder</strong> or browse to
+            it. - Click <strong>OK</strong> to insert the web object.
+          </li>
+
+          <li>
+            <strong>Position the Checklist:</strong>
+            Move and resize the web object on your slide to fit your design. You
+            can place it at the end of modules, tasks, lessons, or anywhere you
+            want learners to track their progress.
+          </li>
+
+          <li>
+            <strong>Progress is Automatically Saved:</strong>
+            Don’t worry about losing data – the checklist automatically saves
+            progress! In a self-paced course where you want learners to take
+            charge of tracking their own progress, just create one checklist
+            page, embed the tracker as shown above, and copy that same page
+            wherever you need it in your course. Learners will be able to see
+            and update their progress no matter where they are in the course.
+          </li>
+
+          <li>
+            <strong>Preview and Test:</strong>
+            - Preview your course to make sure the Interactive Checklist works
+            correctly. - Learners will be able to check off tasks as they
+            complete them.
+          </li>
+
+         
+      </section>
+
+      <section class="tool-section">
+        <h2>DOWNLOAD INTERACTIVE CHECKLIST SOURCE CODE</h2>
+        <p>
+            Click the button below to download the checklist source code and
+          start using it in your E-learning courses!
+        </p>
+        <a href="Interactive Checklist.zip" download>
+          <button class="copy-btn">
+            <i class="fas fa-download"></i> Download checklist Folder
+          </button>
+        </a>
+      </section>
+
+      <section class="tool-section">
+        <h2>CONSIDER SUPPORTING MY WORK</h2>
+        <p>
+          Love <strong>Interactive Checklist</strong>? Your support helps me keep
+          creating awesome tools and resources for the community. A little goes
+          a long way – and I truly appreciate it! Whether it's a shout-out, a
+          coffee, or a small donation, your support keeps the creativity flowing
+          and helps me develop more tools to make your e-learning projects
+          shine.
+        </p>
+
+        <p>
+          If this interactive checklist has made your workflow smoother or added value to
+          your courses, consider showing your support. It means the world to me
+          and motivates me to keep building and sharing even more helpful
+          resources. Thank you for being part of this journey.
+        </p>
+
+        <div class="share-section">
+          <button
+            class="share-btn"
+            onclick="window.location.href='support.html'"
+          >
+            <i class="fas fa-heart"></i> Support My Work
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background-color: black;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+      "
+    >
+      © <span id="currentYear"></span> IDeveloperHub. Created by
+      <a
+        href="https://www.linkedin.com/in/moayyadalazzam"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Visit my LinkedIn profile"
+        style="color: white; text-decoration: none; font-weight: bold"
+        >Moayyad Alazzam</a
+      >.
+    </footer>
+
+    <script>
+      // Set the current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+    <script
+      src="https://cdn.counter.dev/script.js"
+      data-id="1352eae3-8256-487a-85f6-e08abaac5740"
+      data-utcoffset="-6"
+    ></script>
+    <script>
+      // Select elements
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const navBar = document.getElementById("navBar");
+
+      // Toggle menu visibility
+      hamburgerMenu.addEventListener("click", () => {
+        navBar.classList.toggle("active");
+      });
+
+      // Close menu when clicking outside (optional)
+      window.addEventListener("click", (e) => {
+        if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+          navBar.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -6,6 +6,41 @@ body {
   padding: 0;
   color: black;
   background-color: white;
+  animation: fadeIn 1s ease-in-out; /* Page fade-in effect */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Styling for h1 */
@@ -19,6 +54,7 @@ h1 {
   letter-spacing: 2px; /* Improves readability and adds polish */
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   padding-left: 1em; /* Push text slightly to the right */
+  animation: slideIn 1s ease-in-out; /* Slide-in animation */
 }
 
 /* Styling for h2 */
@@ -30,8 +66,15 @@ h2 {
   margin-bottom: 0.5em;
   border-bottom: 3px solid black; /* Adds a visual separator */
   padding-bottom: 0.2em; /* Space below the text and border */
+  animation: fadeIn 1.2s ease-in-out; /* Fade-in animation */
 }
 
+/* Button Animations */
+.hero-btn,
+.tool-btn,
+.share-btn {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
 /* Styling for h3 */
 h3 {
   font-size: 2em; /* Smaller than h2 */
@@ -82,6 +125,7 @@ nav {
   align-items: center;
   margin: 0;
   padding: 0;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-bar li {
@@ -99,6 +143,7 @@ nav {
 
 .nav-bar a:hover {
   background-color: #555; /* Slightly lighter shade for hover */
+  transform: translateY(-3px); /* Slight lift effect */
 }
 
 /* Logo Container */
@@ -179,6 +224,7 @@ nav {
   border-radius: 12px; /* Rounded corners for a softer look */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   gap: 2em; /* Spacing between hero content and image */
+  animation: fadeIn 1s ease-out;
 }
 
 /* Hero Content */

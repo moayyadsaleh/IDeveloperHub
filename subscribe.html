@@ -1,0 +1,53 @@
+<style>
+  #subscribe {
+    background-color: #f9f9f9;
+    padding: 2em;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 2em auto;
+    max-width: 500px;
+  }
+
+  #subscribe input[type="email"] {
+    padding: 0.5em;
+    width: 60%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 0.5em;
+  }
+
+  #subscribe button {
+    padding: 0.5em 1em;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #subscribe button:hover {
+    background-color: #0056b3;
+  }
+
+  #subscriptionMessage {
+    margin-top: 1em;
+    color: green;
+  }
+</style>
+
+<section id="subscribe">
+  <h2>Subscribe for Updates</h2>
+  <p>Get notified when we add new tools and resources!</p>
+  <form id="subscriptionForm">
+    <input
+      type="email"
+      id="emailInput"
+      placeholder="Enter your email"
+      required
+    />
+    <button type="submit">Subscribe</button>
+  </form>
+  <p id="subscriptionMessage"></p>
+</section>
