@@ -219,11 +219,11 @@
           self-paced course, creating videos for microlearning, sketching out
           storyboards for an instructor-led session, or building interactive
           eLearning content, planning just got a whole lot easier. This tools
-          helps you estimate timelines for common ID tasks scriptwriting, video
-          production, and quality assurance, etc... Add all your tasks, enter
-          the details (like how many slides, pages, or minutes), choose the
-          complexity, and boom! you get a training development estimating for
-          the projects you are working on in seconds!
+          helps you estimate timelines for common ID tasks, such as:
+          scriptwriting, video production, and quality assurance, etc... Add all
+          your tasks, enter the details (like how many slides, pages, or
+          minutes), choose the complexity, and boom! you get a training
+          development estimating for the projects you are working on in seconds!
         </p>
 
         <h2>SEE IT IN ACTION</h2>
@@ -348,7 +348,37 @@
         new Date().getFullYear();
     </script>
 
-    <script src="script.js"></script>
+    <script
+      src="https://cdn.counter.dev/script.js"
+      data-id="1352eae3-8256-487a-85f6-e08abaac5740"
+      data-utcoffset="-6"
+    ></script>
+    <script>
+      function sharePlatform() {
+        if (navigator.share) {
+          // Use the Web Share API if supported
+          navigator
+            .share({
+              title: "IDeveloperHub",
+              text: "Check out IDeveloperHub, a free resource for instructional designers to enhance eLearning!",
+              url: window.location.href,
+            })
+            .then(() => console.log("Platform shared successfully"))
+            .catch((error) => console.error("Error sharing platform:", error));
+        } else {
+          // Fallback for unsupported browsers
+          const shareUrl = window.location.href;
+          navigator.clipboard
+            .writeText(shareUrl)
+            .then(() =>
+              alert("Link copied to clipboard! Share it with others.")
+            )
+            .catch((error) =>
+              alert("Unable to copy the link. Please try again.")
+            );
+        }
+      }
+    </script>
     <script>
       // Select elements
       const hamburgerMenu = document.getElementById("hamburgerMenu");
@@ -366,11 +396,5 @@
         }
       });
     </script>
-    <script></script>
-    <script
-      src="https://cdn.counter.dev/script.js"
-      data-id="1352eae3-8256-487a-85f6-e08abaac5740"
-      data-utcoffset="-6"
-    ></script>
   </body>
 </html>

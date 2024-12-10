@@ -1619,14 +1619,38 @@ showNotification("You're halfway there! Keep up the great work.", "info");
         >Moayyad Alazzam</a
       >.
     </footer>
-
+    <script>
+      function sharePlatform() {
+        if (navigator.share) {
+          // Use the Web Share API if supported
+          navigator
+            .share({
+              title: "IDeveloperHub",
+              text: "Check out IDeveloperHub, a free resource for instructional designers to enhance eLearning!",
+              url: window.location.href,
+            })
+            .then(() => console.log("Platform shared successfully"))
+            .catch((error) => console.error("Error sharing platform:", error));
+        } else {
+          // Fallback for unsupported browsers
+          const shareUrl = window.location.href;
+          navigator.clipboard
+            .writeText(shareUrl)
+            .then(() =>
+              alert("Link copied to clipboard! Share it with others.")
+            )
+            .catch((error) =>
+              alert("Unable to copy the link. Please try again.")
+            );
+        }
+      }
+    </script>
     <script>
       // Set the current year dynamically
       document.getElementById("currentYear").textContent =
         new Date().getFullYear();
     </script>
 
-    <script src="script.js"></script>
     <script>
       // Select elements
       const hamburgerMenu = document.getElementById("hamburgerMenu");

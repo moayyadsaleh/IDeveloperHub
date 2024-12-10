@@ -89,9 +89,10 @@
       <div id="mc_embed_signup">
         <h2>SUBSCRIBE</h2>
         <p style="color: #555">
-          I'm not a business, I just thought it’d be cool if you got an
-          automated email whenever I post a new tool. Thank you!
+          I’m not running a business. I just thought it’d be nice if you got an
+          automatic email whenever I drop a new tool. Thanks for being here!
         </p>
+
         <form
           action="https://github.us15.list-manage.com/subscribe/post?u=dd95d74d7d306506b3f82319d&amp;id=5e9031d9e9&amp;f_id=00f39fe1f0"
           method="post"
@@ -200,6 +201,32 @@
             );
           }
         });
+    </script>
+    <script>
+      function sharePlatform() {
+        if (navigator.share) {
+          // Use the Web Share API if supported
+          navigator
+            .share({
+              title: "IDeveloperHub",
+              text: "Check out IDeveloperHub, a free resource for instructional designers to enhance eLearning!",
+              url: window.location.href,
+            })
+            .then(() => console.log("Platform shared successfully"))
+            .catch((error) => console.error("Error sharing platform:", error));
+        } else {
+          // Fallback for unsupported browsers
+          const shareUrl = window.location.href;
+          navigator.clipboard
+            .writeText(shareUrl)
+            .then(() =>
+              alert("Link copied to clipboard! Share it with others.")
+            )
+            .catch((error) =>
+              alert("Unable to copy the link. Please try again.")
+            );
+        }
+      }
     </script>
   </body>
 </html>

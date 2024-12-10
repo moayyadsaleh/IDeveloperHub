@@ -200,9 +200,9 @@
           I created this interactive tool for my fellow instructional designers
           to embed in e-learning courses. It’s perfect for self-paced learning
           to help learners take charge by manually tracking their progress after
-          each module or task. Inspired by the look and feel of Fitbit, this
-          tracker uses fun visuals, sounds, and confetti to keep learners
-          excited and show them how far they’ve come.
+          each module or task. It's inspired by the look and feel of Fitbit and
+          uses fun visuals, sounds, and confetti to keep learners excited and
+          show them how far they’ve come.
         </p>
       </div>
 
@@ -230,12 +230,12 @@
         </p>
 
         <p>
-          <strong>ProgressTracker</strong> has a transparent background that
-          fits perfectly into any design. Place it over a shape or background
+          <strong>ProgressTracker</strong> has a transparent background so that
+          it fits perfectly into any design. Place it over a shape or background
           element to match your course’s color scheme. Progress is saved
           automatically, so once you embed it on a progress page, you can copy
           and paste it anywhere in your course. Learners’ progress stays
-          up-to-date across pages — no worries about losing data!
+          up-to-date across pages. No worries about losing data!
         </p>
 
         <!-- Description Section -->
@@ -373,7 +373,7 @@
           If <strong>ProgressTracker</strong> has made your workflow smoother or
           added value to your courses, consider showing your support. It means
           the world to me and motivates me to keep building and sharing even
-          more helpful resources. Thank you for being part of this journey!
+          more helpful resources.
         </p>
 
         <div class="share-section">
@@ -434,6 +434,32 @@
           navBar.classList.remove("active");
         }
       });
+    </script>
+    <script>
+      function sharePlatform() {
+        if (navigator.share) {
+          // Use the Web Share API if supported
+          navigator
+            .share({
+              title: "IDeveloperHub",
+              text: "Check out IDeveloperHub, a free resource for instructional designers to enhance eLearning!",
+              url: window.location.href,
+            })
+            .then(() => console.log("Platform shared successfully"))
+            .catch((error) => console.error("Error sharing platform:", error));
+        } else {
+          // Fallback for unsupported browsers
+          const shareUrl = window.location.href;
+          navigator.clipboard
+            .writeText(shareUrl)
+            .then(() =>
+              alert("Link copied to clipboard! Share it with others.")
+            )
+            .catch((error) =>
+              alert("Unable to copy the link. Please try again.")
+            );
+        }
+      }
     </script>
   </body>
 </html>
