@@ -32,7 +32,8 @@ h1 {
 
 /* Add Button */
 .add-button {
-  background: linear-gradient(135deg, #007bff, #0056b3);
+  background: linear-gradient(135deg, #800000, #a52a2a); /* Maroon Gradient */
+  font-family: serif, "Helvetica Neue", Helvetica, sans-serif;
   color: white;
   font-size: 2.5em;
   width: 60px;
@@ -41,13 +42,17 @@ h1 {
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(128, 0, 0, 0.2); /* Maroon-tinted Shadow */
 }
 
 .add-button:hover {
-  background: linear-gradient(135deg, #0056b3, #004099);
+  background: linear-gradient(
+    135deg,
+    #660000,
+    #8b1a1a
+  ); /* Dark Maroon Gradient */
   transform: rotate(90deg) scale(1.1);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(128, 0, 0, 0.3); /* Maroon-tinted Shadow */
 }
 
 /* Hidden Form */
@@ -75,49 +80,58 @@ form.hidden {
   display: none;
 }
 
+/* Form Inputs and Textarea */
 form input,
 form textarea {
+  width: 100%;
+  font-family: serif;
   padding: 15px;
   border: none;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.4);
   color: #333;
   font-size: 1em;
+  box-sizing: border-box; /* Include padding and border in the element's width */
   transition: background 0.3s, box-shadow 0.3s;
   outline: none;
 }
-
 form input::placeholder,
 form textarea::placeholder {
   color: #777;
   opacity: 0.8;
   transition: opacity 0.3s;
 }
+/* Input Focus Effect */
 form input:focus,
 form textarea:focus {
   background: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 0 10px rgba(128, 0, 0, 0.3); /* Maroon-tinted shadow */
 }
+
 /* Submit Button */
 form button {
   padding: 15px;
   font-size: 1.2em;
   font-weight: bold;
   color: white;
-  background: linear-gradient(135deg, #4a90e2, #007bff);
+  background: linear-gradient(135deg, #800000, #a52a2a); /* Maroon Gradient */
   border: none;
   border-radius: 12px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(128, 0, 0, 0.3); /* Maroon-tinted shadow */
 }
 
 form button:hover {
-  background: linear-gradient(135deg, #357ab7, #0056b3);
+  background: linear-gradient(
+    135deg,
+    #660000,
+    #8b1a1a
+  ); /* Darker Maroon Gradient on Hover */
   transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 12px 30px rgba(128, 0, 0, 0.4); /* Enhanced Maroon Shadow on Hover */
 }
 
 /* Submit Button Active State */
@@ -248,7 +262,8 @@ form {
 }
 /* Show Tips Button */
 .show-tips-button {
-  background: linear-gradient(135deg, #4a90e2, #007bff);
+  background: linear-gradient(135deg, #800000, #a52a2a); /* Maroon Gradient */
+  font-family: serif, "Helvetica Neue", Helvetica, sans-serif;
   color: white;
   font-size: 1.2em;
   padding: 12px 20px;
@@ -257,7 +272,17 @@ form {
   cursor: pointer;
   margin-top: 20px;
   transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 6px 15px rgba(128, 0, 0, 0.3); /* Shadow with maroon tint */
+}
+
+.show-tips-button:hover {
+  background: linear-gradient(
+    135deg,
+    #660000,
+    #8b1a1a
+  ); /* Darker maroon gradient on hover */
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(128, 0, 0, 0.4); /* Enhanced shadow on hover */
 }
 /* Timestamp Style */
 .timestamp {
