@@ -177,11 +177,24 @@
         <li><a href="support.html">Support My Work</a></li>
 
         <!-- Contact and Sharing -->
-        <li>
-          <a href="https://www.linkedin.com/in/moayyadalazzam" target="_blank"
-            >Contact Me</a
+        <li class="contact-menu">
+          <a href="javascript:void(0);" onclick="toggleContactInfo()"
+            >Connect with the Designer</a
           >
+          <div id="contactInfo" class="contact-info">
+            <span class="close-btn" onclick="closeContactInfo()">&#10005;</span>
+            <p>Email: <span>moayyadalazzam@gmail.com</span></p>
+            <p>
+              LinkedIn:
+              <a
+                href="https://www.linkedin.com/in/moayyadalazzam"
+                target="_blank"
+                >Moayyad Alazzam</a
+              >
+            </p>
+          </div>
         </li>
+
         <li>
           <a href="javascript:void(0);" onclick="sharePlatform()"
             >Share IDeveloperHub</a
@@ -192,6 +205,7 @@
         <li><a href="subscribe.html">Subscribe</a></li>
       </ul>
     </nav>
+    
 
     <header>
       <h1>Instructional Design & Tech Content</h1>
@@ -298,4 +312,27 @@
       </footer>
     </main>
   </body>
+</script>
+<script>
+  function toggleContactInfo() {
+    const contactInfo = document.getElementById("contactInfo");
+    contactInfo.style.display =
+      contactInfo.style.display === "none" ||
+      contactInfo.style.display === ""
+        ? "block"
+        : "none";
+  }
+
+  function closeContactInfo() {
+    document.getElementById("contactInfo").style.display = "none";
+  }
+
+  // Close the contact info dropdown when clicking outside of it
+  document.addEventListener("click", function (event) {
+    const contactMenu = document.querySelector(".contact-menu");
+    if (!contactMenu.contains(event.target)) {
+      document.getElementById("contactInfo").style.display = "none";
+    }
+  });
+</script>
 </html>

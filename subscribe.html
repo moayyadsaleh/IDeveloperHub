@@ -44,44 +44,58 @@
       }
     </style>
   </head>
-  <nav>
-    <div class="logo">
-      <a href="index.html">
-        <img src="logo.webp" alt="IDeveloperHub Logo" />
-      </a>
-    </div>
-    <div class="hamburger-menu" id="hamburgerMenu">
-      &#9776;
-      <!-- Unicode for the hamburger menu icon -->
-    </div>
-    <ul class="nav-bar" id="navBar">
-      <!-- Main Site Links -->
-      <li><a href="index.html">Home</a></li>
-      <li><a href="tools.html">ID Tools</a></li>
-      <li><a href="latest.html">Latest in Learning & Tech</a></li>
-      <li><a href="IDtipsHub.html">IDtipsHub</a></li>
-      <li><a href="feedback.html">Give Feedback</a></li>
+ <!-- Navigation Bar -->
+ <nav>
+  <div class="logo">
+    <a href="index.html">
+      <img src="logo.webp" alt="IDeveloperHub Logo" />
+    </a>
+  </div>
+  <div class="hamburger-menu" id="hamburgerMenu">
+    &#9776;
+    <!-- Unicode for the hamburger menu icon -->
+  </div>
+  <ul class="nav-bar" id="navBar">
+    <!-- Main Site Links -->
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tools.html">ID Tools</a></li>
+    <li><a href="latest.html">Latest in Learning & Tech</a></li>
+    <li><a href="IDtipsHub.html">IDtipsHub</a></li>
+    <li><a href="feedback.html">Give Feedback</a></li>
 
-      <!-- About and Support -->
-      <li><a href="about.html">About</a></li>
-      <li><a href="support.html">Support My Work</a></li>
+    <!-- About and Support -->
+    <li><a href="about.html">About</a></li>
+    <li><a href="support.html">Support My Work</a></li>
 
-      <!-- Contact and Sharing -->
-      <li>
-        <a href="https://www.linkedin.com/in/moayyadalazzam" target="_blank"
-          >Contact Me</a
-        >
-      </li>
-      <li>
-        <a href="javascript:void(0);" onclick="sharePlatform()"
-          >Share IDeveloperHub</a
-        >
-      </li>
+    <!-- Contact and Sharing -->
+    <li class="contact-menu">
+      <a href="javascript:void(0);" onclick="toggleContactInfo()"
+        >Connect with the Designer</a
+      >
+      <div id="contactInfo" class="contact-info">
+        <span class="close-btn" onclick="closeContactInfo()">&#10005;</span>
+        <p>Email: <span>moayyadalazzam@gmail.com</span></p>
+        <p>
+          LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/moayyadalazzam"
+            target="_blank"
+            >Moayyad Alazzam</a
+          >
+        </p>
+      </div>
+    </li>
 
-      <!-- Subscription Link -->
-      <li><a href="subscribe.html">Subscribe</a></li>
-    </ul>
-  </nav>
+    <li>
+      <a href="javascript:void(0);" onclick="sharePlatform()"
+        >Share IDeveloperHub</a
+      >
+    </li>
+
+    <!-- Subscription Link -->
+    <li><a href="subscribe.html">Subscribe</a></li>
+  </ul>
+</nav>
 
   <body>
     <!-- Mailchimp Signup Form -->
@@ -228,5 +242,28 @@
         }
       }
     </script>
+     </script>
+     <script>
+       function toggleContactInfo() {
+         const contactInfo = document.getElementById("contactInfo");
+         contactInfo.style.display =
+           contactInfo.style.display === "none" ||
+           contactInfo.style.display === ""
+             ? "block"
+             : "none";
+       }
+ 
+       function closeContactInfo() {
+         document.getElementById("contactInfo").style.display = "none";
+       }
+ 
+       // Close the contact info dropdown when clicking outside of it
+       document.addEventListener("click", function (event) {
+         const contactMenu = document.querySelector(".contact-menu");
+         if (!contactMenu.contains(event.target)) {
+           document.getElementById("contactInfo").style.display = "none";
+         }
+       });
+     </script>
   </body>
 </html>

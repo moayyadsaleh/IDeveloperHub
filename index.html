@@ -175,11 +175,24 @@
         <li><a href="support.html">Support My Work</a></li>
 
         <!-- Contact and Sharing -->
-        <li>
-          <a href="https://www.linkedin.com/in/moayyadalazzam" target="_blank"
-            >Contact Me</a
+        <li class="contact-menu">
+          <a href="javascript:void(0);" onclick="toggleContactInfo()"
+            >Connect with the Designer</a
           >
+          <div id="contactInfo" class="contact-info">
+            <span class="close-btn" onclick="closeContactInfo()">&#10005;</span>
+            <p>Email: <span>moayyadalazzam@gmail.com</span></p>
+            <p>
+              LinkedIn:
+              <a
+                href="https://www.linkedin.com/in/moayyadalazzam"
+                target="_blank"
+                >Moayyad Alazzam</a
+              >
+            </p>
+          </div>
         </li>
+
         <li>
           <a href="javascript:void(0);" onclick="sharePlatform()"
             >Share IDeveloperHub</a
@@ -198,10 +211,10 @@
         <div class="hero-text">
           <h1>Welcome to <span>ID</span>eveloper<span>HUB</span></h1>
           <p class="intro">
-            I created <span>IDeveloperHub</span> for my fellow instructional
-            designers. It's a place where you can find ready-to-use code
-            snippets that help you get things done faster and make your
-            e-learning courses more engaging. If you’re working with
+            <span>IDeveloperHub</span> is created by an instructional designer
+            to fellow instructional designers. It's a place where you can find
+            ready-to-use code snippets that help you get things done faster and
+            make your e-learning courses more engaging. If you’re working with
             <span>Articulate Storyline</span>, <span>RISE</span>, or
             <span>Captivate</span>, these tools are here to make your life
             easier. This space is built around the real challenges we run into
@@ -519,6 +532,28 @@
             );
         }
       }
+    </script>
+    <script>
+      function toggleContactInfo() {
+        const contactInfo = document.getElementById("contactInfo");
+        contactInfo.style.display =
+          contactInfo.style.display === "none" ||
+          contactInfo.style.display === ""
+            ? "block"
+            : "none";
+      }
+
+      function closeContactInfo() {
+        document.getElementById("contactInfo").style.display = "none";
+      }
+
+      // Close the contact info dropdown when clicking outside of it
+      document.addEventListener("click", function (event) {
+        const contactMenu = document.querySelector(".contact-menu");
+        if (!contactMenu.contains(event.target)) {
+          document.getElementById("contactInfo").style.display = "none";
+        }
+      });
     </script>
   </body>
 </html>
