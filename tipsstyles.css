@@ -259,3 +259,11 @@ form {
   transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
   box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
 }
+/* Timestamp Style */
+.timestamp {
+  display: block;
+  margin-top: 10px;
+  color: #777;
+  font-size: 0.85em;
+  font-style: italic;
+}

@@ -76,13 +76,27 @@ tipForm.addEventListener("submit", async (e) => {
 onSnapshot(collection(db, "tips"), (snapshot) => {
   tipsContainer.innerHTML = "";
   snapshot.forEach((doc) => {
-    const { name, title, tip } = doc.data();
+    const { name, title, tip, timestamp } = doc.data();
+
+    // Format the timestamp
+    let formattedDate = "";
+    if (timestamp) {
+      const date = timestamp.toDate();
+      formattedDate = date.toLocaleDateString("en-US", {
+        month: "long",
+        year: "numeric",
+      });
+    } else {
+      formattedDate = "Unknown Date";
+    }
+
     const tipCard = document.createElement("div");
     tipCard.className = "tip-card";
-    tipCard.innerHTML = `<h3>${name} - ${title}</h3><p>${tip.slice(
-      0,
-      50
-    )}...</p>`;
+    tipCard.innerHTML = `
+          <h3>${name} - ${title}</h3>
+          <p>${tip.slice(0, 50)}...</p>
+          <small class="timestamp">${formattedDate}</small>
+      `;
 
     tipCard.addEventListener("click", () => {
       modalTitle.textContent = `${name} - ${title}`;
