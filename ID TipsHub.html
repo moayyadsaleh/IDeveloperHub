@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ID TipHub</title>
+    <link rel="stylesheet" href="tipsstyles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>ID TipHub</h1>
+      <p class="intro-text">
+        Hey Instructional Designer! Share your tip because your experience
+        matters.
+      </p>
+
+      <button id="addTipButton" class="add-button">+</button>
+
+      <form id="tipForm" class="hidden">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="text" id="title" placeholder="Your Title" required />
+        <textarea
+          id="tip"
+          placeholder="Your Instructional Design Tip"
+          required
+        ></textarea>
+        <button type="submit">Post Tip</button>
+      </form>
+
+      <button id="showTipsButton" class="show-tips-button">Show Tips</button>
+
+      <div id="tipsContainer" class="masonry-grid hidden"></div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <span id="closeModal" class="close-button">&times;</span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalTip"></p>
+      </div>
+    </div>
+
+    <script type="module" src="scripts.js"></script>
+  </body>
+</html>
