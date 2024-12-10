@@ -121,25 +121,33 @@
         </a>
       </div>
       <div class="hamburger-menu" id="hamburgerMenu">
-        &#9776; <!-- Unicode for the hamburger menu icon -->
+        &#9776;
+        <!-- Unicode for the hamburger menu icon -->
       </div>
       <ul class="nav-bar" id="navBar">
+        <!-- Main Site Links -->
         <li><a href="index.html">Home</a></li>
-        <li><a href="tools.html">Tools</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="tools.html">ID Tools</a></li>
+        <li><a href="latest.html">Latest in Learning & Tech</a></li>
+        <li><a href="IDtipsHub.html">IDtipsHub</a></li>
+        <li><a href="feedback.html">Give Feedback</a></li>
+    
+        <!-- About and Support -->
         <li><a href="about.html">About</a></li>
         <li><a href="support.html">Support My Work</a></li>
+    
+        <!-- Contact and Sharing -->
         <li>
           <a href="https://www.linkedin.com/in/moayyadalazzam" target="_blank">Contact Me</a>
         </li>
         <li>
           <a href="javascript:void(0);" onclick="sharePlatform()">Share IDeveloperHub</a>
         </li>
-        <li><a href="latest.html">Latest in Learning & Tech</a></li>
-        <li><a href="subscribe.html">Subscribe</a></li> <!-- Added Subscribe link -->
+    
+        <!-- Subscription Link -->
+        <li><a href="subscribe.html">Subscribe</a></li>
       </ul>
     </nav>
-    
 
     <header>
       <h1>Explore Tools</h1>
@@ -331,23 +339,24 @@ searchInput.addEventListener("input", (e) => {
   toolArticles.forEach((article) => article.classList.add("visible"));
 </script>
 
-    <script>
-      // Select elements
-      const hamburgerMenu = document.getElementById("hamburgerMenu");
-      const navBar = document.getElementById("navBar");
+<script>
+  // Select elements
+  const hamburgerMenu = document.getElementById("hamburgerMenu");
+  const navBar = document.getElementById("navBar");
 
-      // Toggle menu visibility
-      hamburgerMenu.addEventListener("click", () => {
-        navBar.classList.toggle("active");
-      });
+  // Toggle menu visibility
+  hamburgerMenu.addEventListener("click", () => {
+    navBar.classList.toggle("active");
+  });
 
-      // Close menu when clicking outside (optional)
-      window.addEventListener("click", (e) => {
-        if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
-          navBar.classList.remove("active");
-        }
-      });
-    </script>
+  // Close menu when clicking outside (optional)
+  window.addEventListener("click", (e) => {
+    if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+      navBar.classList.remove("active");
+    }
+  });
+</script>
+
     <script
       src="https://cdn.counter.dev/script.js"
       data-id="1352eae3-8256-487a-85f6-e08abaac5740"

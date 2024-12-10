@@ -99,117 +99,105 @@ p {
   margin: 0 0 1em;
 }
 /* Hamburger Menu Hidden by Default */
-.hamburger-menu {
-  display: none; /* Hide hamburger menu by default */
-}
+
 /* General Nav Bar Styles */
 nav {
-  background-color: black; /* Dark background color */
-  padding: 10px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex; /* Flexbox for layout */
-  justify-content: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  position: relative; /* For logo alignment */
+  background-color: black;
+  padding: 5px 15px; /* Thin padding for a sleek look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center; /* Center all items horizontally */
+  align-items: center;
+  position: relative;
+  height: 50px; /* Fixed height for consistency */
 }
 
+/* Logo Styles */
 .logo {
   position: absolute;
-  left: 20px; /* Position logo to the left */
+  top: 0; /* Align to the top edge */
+  left: 0; /* Align to the far left edge */
 }
 
+.logo img {
+  max-width: 60px; /* Keep the sleek logo size */
+  height: auto;
+}
+/* Nav Bar Links */
 .nav-bar {
   list-style: none;
   display: flex;
-  gap: 20px; /* Adds space between items */
+  gap: 20px; /* Space between items */
   align-items: center;
   margin: 0;
   padding: 0;
-  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-bar li {
-  margin: 0;
-}
-
+/* Nav Bar Links */
 .nav-bar a {
   text-decoration: none;
-  color: #fff; /* White text */
-  font-size: 1rem;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  color: #fff;
+  font-size: 1rem; /* Increased font size for better readability */
+  padding: 6px 10px; /* Slightly increased padding for balance */
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .nav-bar a:hover {
-  background-color: #555; /* Slightly lighter shade for hover */
-  transform: translateY(-3px); /* Slight lift effect */
+  background-color: #444;
+  transform: translateY(-2px);
 }
 
-/* Logo Container */
-.logo {
-  max-width: 50%; /* Ensures the logo doesn’t exceed its container */
-  height: auto; /* Maintains aspect ratio */
-  display: flex;
-  align-items: center;
-}
-
-/* Logo Image */
-.logo img {
-  max-width: 68%; /* Scales the image down within its container */
-  height: auto; /* Maintain aspect ratio */
-  max-height: 50px; /* Limit max height on larger screens */
-}
-
-@media (max-width: 768px) {
-  .logo img {
-    max-height: 40px; /* Slightly smaller logo for mobile screens */
-  }
-}
-.logo a {
-  display: block;
+/* Hamburger Menu Styles */
+.hamburger-menu {
+  display: none;
+  font-size: 1.8rem;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  right: 15px; /* Align hamburger to the right */
 }
 
 /* Mobile View Styles */
 @media (max-width: 768px) {
   nav {
-    justify-content: space-between; /* Space between logo and hamburger */
+    padding: 5px 15px;
+    height: 50px;
   }
 
   .hamburger-menu {
     display: block;
-    font-size: 1.5rem;
-    color: #fff;
-    cursor: pointer;
-    position: absolute;
-    right: 20px; /* Position hamburger to the right */
   }
 
   .nav-bar {
-    display: none; /* Initially hide the menu */
+    display: none;
     flex-direction: column;
     width: 100%;
     background-color: black;
     position: absolute;
-    top: 70px; /* Position below the header */
+    top: 100%;
     left: 0;
     z-index: 1000;
+    border-top: 1px solid #444;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 
   .nav-bar.active {
-    display: flex; /* Show the menu when active */
+    display: flex;
+    animation: slideDown 0.3s ease;
   }
 
   .nav-bar li {
-    margin: 10px 0;
     width: 100%;
     text-align: center;
+    margin: 5px 0;
   }
 
   .nav-bar a {
-    font-size: 1.2rem; /* Larger text for better touch targets */
-    padding: 10px 15px;
+    font-size: 1rem;
+    padding: 12px;
     display: block;
+    width: 100%;
   }
 }
 

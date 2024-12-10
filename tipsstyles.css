@@ -292,3 +292,61 @@ form {
   font-size: 0.85em;
   font-style: italic;
 }
+/* Reply Form */
+#replyForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#replyForm input,
+#replyForm textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+#replyForm button {
+  background: linear-gradient(135deg, #800000, #a52a2a);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#replyForm button:hover {
+  background: linear-gradient(135deg, #660000, #8b1a1a);
+}
+
+/* Replies Container */
+#repliesContainer {
+  margin-top: 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.reply {
+  background: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.reply h4 {
+  margin: 0 0 5px;
+  font-size: 1em;
+  color: #007bff;
+}
+
+.reply p {
+  margin: 0;
+  font-size: 0.95em;
+  color: #555;
+}

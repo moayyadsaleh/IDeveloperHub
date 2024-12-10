@@ -31,7 +31,10 @@ const modal = document.getElementById("modal");
 const modalTitle = document.getElementById("modalTitle");
 const modalTip = document.getElementById("modalTip");
 const closeModal = document.getElementById("closeModal");
-
+const replyForm = document.getElementById("replyForm");
+const replyName = document.getElementById("replyName");
+const replyText = document.getElementById("replyText");
+const repliesContainer = document.getElementById("repliesContainer");
 // Toggle Form Visibility
 addTipButton.addEventListener("click", () => {
   tipForm.classList.toggle("hidden");
@@ -49,7 +52,7 @@ showTipsButton.addEventListener("click", () => {
     showTipsButton.textContent = "Show Tips";
   }
 });
-
+let currentTipId = null;
 // Submit Tip
 tipForm.addEventListener("submit", async (e) => {
   e.preventDefault();
