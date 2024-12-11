@@ -875,7 +875,7 @@ article {
 }
 
 .share-btn {
-  font-family: serif;
+  font-family: serif; /* Keep serif font for button text */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -892,11 +892,11 @@ article {
 }
 
 .share-btn i {
-  font-family: serif;
+  font-family: "Font Awesome 5 Free"; /* Use the correct icon library font-family */
+  font-weight: 900; /* Ensure the icon weight is correct (Font Awesome solid) */
   margin-right: 8px;
   font-size: 1.3rem;
 }
-
 .share-btn:hover {
   background-color: black;
   color: whitesmoke;
