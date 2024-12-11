@@ -933,7 +933,10 @@ article {
   white-space: nowrap;
   min-width: 240px;
 }
-
+.contact-info a[href*="linkedin.com"] {
+  color: maroon;
+  text-decoration: underline;
+}
 /* Close button styling */
 .close-btn {
   font-family: serif;
