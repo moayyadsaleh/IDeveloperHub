@@ -240,31 +240,38 @@
         async function fetchNews() {
           const newsContainer = document.getElementById("rss-container");
           const apiKey = "941da836a1754ce0879b12ed3f8a678a"; // Replace with your NewsAPI key
-          const url = `https://newsapi.org/v2/everything?q=instructional+design&apiKey=${apiKey}`;
-
+          const url = `https://cors-anywhere.herokuapp.com/https://newsapi.org/v2/everything?q=instructional+design&apiKey=${apiKey}`;
+      
           try {
             const response = await fetch(url);
+      
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+      
             const data = await response.json();
-
+            console.log("API Response:", data);
+      
             newsContainer.innerHTML = "";
-
+      
             if (data.articles && data.articles.length > 0) {
               data.articles.slice(0, 5).forEach((article) => {
                 newsContainer.innerHTML += `
-          <div>
-            <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
-            <p>${article.description}</p>
-          </div>
-        `;
+                  <div>
+                    <h3><a href="${article.url}" target="_blank">${article.title}</a></h3>
+                    <p>${article.description}</p>
+                  </div>
+                `;
               });
             } else {
               newsContainer.innerHTML = "No articles found.";
             }
           } catch (error) {
-            newsContainer.innerHTML = "Failed to load news articles.";
+            console.error("Error fetching news:", error);
+            newsContainer.innerHTML = "Failed to load news articles. Please try again later.";
           }
         }
-
+      
         fetchNews();
       </script>
       <script
