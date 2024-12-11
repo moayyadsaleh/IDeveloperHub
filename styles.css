@@ -11,6 +11,7 @@ body {
 
 /* Styling for h1 */
 h1 {
+  font-family: serif;
   font-size: 3em; /* Larger font for prominence */
   font-weight: bold;
   color: maroon; /* Accent color */
@@ -25,6 +26,7 @@ h1 {
 
 /* Styling for h2 */
 h2 {
+  font-family: serif;
   font-size: 2.5em; /* Slightly smaller than h1 */
   font-weight: bold;
   color: maroon;
@@ -41,8 +43,10 @@ h2 {
 .share-btn {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
+
 /* Styling for h3 */
 h3 {
+  font-family: serif;
   font-size: 2em; /* Smaller than h2 */
   font-weight: bold;
   color: black; /* Neutral color for subheadings */
@@ -53,6 +57,7 @@ h3 {
 }
 
 a {
+  font-family: serif;
   color: maroon;
   text-decoration: none;
 }
@@ -62,9 +67,9 @@ a:hover {
 }
 
 p {
+  font-family: serif;
   margin: 0 0 1em;
 }
-/* Hamburger Menu Hidden by Default */
 
 /* General Nav Bar Styles */
 nav {
@@ -89,6 +94,7 @@ nav {
   max-width: 60px; /* Keep the sleek logo size */
   height: auto;
 }
+
 /* Nav Bar Links */
 .nav-bar {
   list-style: none;
@@ -99,8 +105,8 @@ nav {
   padding: 0;
 }
 
-/* Nav Bar Links */
 .nav-bar a {
+  font-family: serif;
   text-decoration: none;
   color: #fff;
   font-size: 1rem; /* Increased font size for better readability */
@@ -211,8 +217,55 @@ nav {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between text and image */
+  background-color: whitesmoke; /* Neutral background */
+  padding: 3em 10%; /* Increased padding for spacing */
+  margin-bottom: 2em;
+  border-radius: 12px; /* Rounded corners for a softer look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  gap: 2em; /* Spacing between hero content and image */
+  animation: fadeIn 1s ease-out;
+}
+
+/* Hero Content */
+.hero-content {
+  max-width: 50%;
+  text-align: left; /* Align content with the header */
+}
+
+/* Hero Header */
+.hero h1 {
+  font-family: serif;
+  font-size: 3em; /* Larger, more prominent font */
+  color: maroon; /* Accent color */
+  margin-bottom: 0.8em; /* Increased spacing below */
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Spaced-out letters for readability */
+  line-height: 1.2; /* Adjust line height for header readability */
+}
+
+/* Hero Description */
+.hero p {
+  font-family: serif;
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+  color: black;
+  line-height: 1.8; /* Comfortable line spacing */
+  text-align: justify;
+  background-color: white; /* Clean background for contrast */
+  padding: 1.5em; /* Increased padding for emphasis */
+  border-left: 8px solid maroon; /* Accent border */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
 /* Hero Button */
 .hero-btn {
+  font-family: serif;
   display: inline-block;
   padding: 1em 2em; /* Larger button for prominence */
   background-color: maroon;
@@ -241,6 +294,7 @@ nav {
 
 /* Section Styles */
 section {
+  font-family: serif;
   padding: 2em 5%;
   margin-bottom: 2em;
   background-color: white;
@@ -249,12 +303,14 @@ section {
 }
 
 section h2 {
+  font-family: serif;
   color: maroon;
   margin-bottom: 1em;
   font-size: 2em;
 }
 
 section p {
+  font-family: serif;
   font-size: 1.2em;
   color: black;
   line-height: 1.8;
@@ -267,6 +323,7 @@ section p {
 
 /* Tools Section */
 article {
+  font-family: serif;
   margin-bottom: 2em;
   background-color: white; /* Bright background for contrast */
   padding: 2em; /* Increased padding for better spacing */
@@ -282,6 +339,7 @@ article:hover {
 }
 
 article h3 {
+  font-family: serif;
   color: maroon; /* Accent color */
   font-size: 1.5em; /* Larger font size for emphasis */
   margin-bottom: 0.8em; /* Increased margin below header */
@@ -289,6 +347,7 @@ article h3 {
 }
 
 article p {
+  font-family: serif;
   font-size: 1.2em; /* Slightly larger font for readability */
   color: #555; /* Neutral text color */
   line-height: 1.8; /* Balanced line spacing */
@@ -300,6 +359,7 @@ article p {
 }
 
 .tool-btn {
+  font-family: serif;
   display: inline-block;
   margin-top: 1em;
   padding: 0.8em 1.5em;
@@ -317,6 +377,7 @@ article p {
 
 /* Feedback Form */
 form {
+  font-family: serif;
   margin-top: 1.5em;
   background-color: white;
   padding: 2em;
@@ -329,6 +390,7 @@ form {
 
 /* Form Labels */
 form label {
+  font-family: serif;
   display: block;
   margin: 0.8em 0 0.4em;
   font-weight: bold;
@@ -339,6 +401,7 @@ form label {
 /* Input and Textarea Styling */
 form input,
 form textarea {
+  font-family: serif;
   width: 100%;
   padding: 1em; /* Add more padding for comfort */
   border: 1px solid #ccc; /* Subtle border */
@@ -358,6 +421,7 @@ form textarea:focus {
 
 /* Submit Button */
 form button {
+  font-family: serif;
   width: 100%;
   padding: 1em;
   background-color: maroon;
@@ -386,6 +450,7 @@ form textarea:not(:last-child) {
 
 /* Footer */
 footer {
+  font-family: serif;
   background-color: black;
   color: white;
   text-align: center;
@@ -395,6 +460,7 @@ footer {
 
 /* Pre Code Block */
 pre {
+  font-family: serif;
   background-color: black;
   color: white;
   padding: 1em;
@@ -406,8 +472,8 @@ pre {
 }
 
 .copy-btn {
-  display: inline-block;
   font-family: serif;
+  display: inline-block;
   padding: 0.8em 1.5em;
   background-color: maroon;
   color: white;
@@ -424,6 +490,7 @@ pre {
 }
 
 p {
+  font-family: serif;
   font-size: 1.2em; /* Slightly larger for readability */
   color: black; /* Neutral and high contrast */
   line-height: 1.8; /* Enhances readability */
@@ -433,8 +500,10 @@ p {
   border-radius: 8px; /* Softens the edges */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds subtle depth */
 }
+
 /* Grid Layout for Cards */
 .difference-grid {
+  font-family: serif;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2em; /* Space between cards */
@@ -443,6 +512,7 @@ p {
 
 /* Individual Card Styling */
 .difference-card {
+  font-family: serif;
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -459,6 +529,7 @@ p {
 
 /* Icon Styling */
 .icon {
+  font-family: serif;
   font-size: 3em; /* Large icon */
   color: maroon;
   margin-bottom: 0.3em; /* Reduced margin for closer spacing */
@@ -466,6 +537,7 @@ p {
 
 /* Card Title */
 .difference-card h3 {
+  font-family: serif;
   font-size: 1.5em;
   color: maroon;
   margin-bottom: 0.8em; /* Spacing below title */
@@ -474,6 +546,7 @@ p {
 
 /* Card Content */
 .difference-card p {
+  font-family: serif;
   font-size: 1.1em;
   color: black;
   line-height: 1.6;
@@ -484,12 +557,14 @@ p {
 /* Responsive Behavior for Smaller Screens */
 @media (max-width: 768px) {
   .difference-grid {
+    font-family: serif;
     gap: 1.5em; /* Slightly smaller gap for smaller screens */
   }
 }
 
 /* Styling for .difference-footer */
 .difference-footer {
+  font-family: serif;
   font-size: 1.2em; /* Slightly larger text for emphasis */
   color: black; /* High contrast for readability */
   line-height: 1.8; /* Improves readability */
@@ -502,12 +577,15 @@ p {
   font-style: italic; /* Subtle emphasis with italic text */
   border: 2px solid maroon; /* Border to tie in with the color palette */
 }
+
 #custom-p {
+  font-family: serif;
   border: 2px solid maroon; /* Border to tie in with the color palette */
 }
 
 /* Styling for Introductory Paragraph with Reduced Width */
 p.intro {
+  font-family: serif;
   font-size: 1.2em; /* Slightly larger font for emphasis */
   color: black; /* Neutral text color for readability */
   line-height: 1.8; /* Improve readability with balanced spacing */
@@ -522,12 +600,14 @@ p.intro {
 }
 
 .about-list {
+  font-family: serif;
   list-style: none;
   padding: 0;
   margin: 2em 0;
 }
 
 .about-list li {
+  font-family: serif;
   display: flex;
   align-items: start;
   margin-bottom: 1em;
@@ -536,6 +616,7 @@ p.intro {
 }
 
 .about-list i {
+  font-family: serif;
   font-size: 1.5em;
   margin-right: 0.5em;
   color: maroon;
@@ -544,21 +625,25 @@ p.intro {
 /* General Styles */
 @media (max-width: 1024px) {
   h1 {
+    font-family: serif;
     font-size: 2.5em; /* Scale down font size for tablets */
     padding-left: 0.5em; /* Adjust padding for smaller screens */
   }
 
   h2 {
+    font-family: serif;
     font-size: 2em;
   }
 
   .hero {
+    font-family: serif;
     flex-direction: column; /* Stack content vertically */
     text-align: center; /* Center-align text for better layout */
     padding: 2em 5%; /* Reduce padding for smaller screens */
   }
 
   .hero-content {
+    font-family: serif;
     max-width: 100%; /* Allow full width for better readability */
   }
 
@@ -568,15 +653,18 @@ p.intro {
   }
 
   .nav-bar {
+    font-family: serif;
     flex-wrap: wrap; /* Wrap navigation items to fit smaller screens */
     gap: 1em; /* Add spacing between items */
   }
 
   .nav-bar li a {
+    font-family: serif;
     font-size: 1em; /* Adjust font size for readability */
   }
 
   .difference-grid {
+    font-family: serif;
     grid-template-columns: repeat(
       auto-fit,
       minmax(200px, 1fr)
@@ -584,25 +672,30 @@ p.intro {
   }
 
   form {
+    font-family: serif;
     padding: 1.5em; /* Reduce padding for smaller screens */
   }
 
   form button {
+    font-family: serif;
     font-size: 1em; /* Scale down button text size */
   }
 }
 
 @media (max-width: 768px) {
   h1 {
+    font-family: serif;
     font-size: 2em; /* Further reduce font size for mobile devices */
     padding-left: 0.3em; /* Minimize padding */
   }
 
   h2 {
+    font-family: serif;
     font-size: 1.8em; /* Adjust font size for smaller screens */
   }
 
   .hero {
+    font-family: serif;
     padding: 2em 3%; /* Reduce padding for tighter layouts */
   }
 
@@ -611,49 +704,58 @@ p.intro {
   }
 
   .nav-bar {
+    font-family: serif;
     flex-direction: column; /* Stack navigation items */
     align-items: center; /* Center navigation items */
     gap: 0.5em; /* Smaller spacing */
   }
 
   .difference-card {
+    font-family: serif;
     padding: 1em; /* Reduce padding for cards */
   }
 
   .difference-card h3 {
+    font-family: serif;
     font-size: 1.3em; /* Scale down title font */
   }
 
   .difference-card p {
+    font-family: serif;
     font-size: 1em; /* Adjust paragraph font size */
   }
 
   form {
+    font-family: serif;
     max-width: 90%; /* Allow form to use most of the screen width */
   }
 
   p.call-to-action,
   p.intro {
+    font-family: serif;
     font-size: 1em; /* Scale down paragraph font */
     padding: 1em; /* Adjust padding */
     max-width: 90%; /* Constrain width for smaller screens */
   }
 }
-
 @media (max-width: 480px) {
   h1 {
+    font-family: serif;
     font-size: 1.8em; /* Smallest font for small devices */
   }
 
   h2 {
+    font-family: serif;
     font-size: 1.5em;
   }
 
   .hero {
+    font-family: serif;
     padding: 1.5em 2%; /* Compact padding for mobile screens */
   }
 
   .hero-btn {
+    font-family: serif;
     font-size: 1em; /* Smaller button text */
     padding: 0.8em 1.2em; /* Adjust button padding */
   }
@@ -663,34 +765,42 @@ p.intro {
   }
 
   .nav-bar li {
+    font-family: serif;
     margin: 0.5em 0; /* Add spacing between stacked items */
   }
 
   .difference-grid {
+    font-family: serif;
     grid-template-columns: 1fr; /* Single column layout for cards */
   }
 
   .difference-card {
+    font-family: serif;
     padding: 1em; /* Compact padding */
   }
 
   form {
+    font-family: serif;
     padding: 1em; /* Reduce padding for forms */
   }
 
   form button {
+    font-family: serif;
     font-size: 0.9em; /* Adjust button font size */
     padding: 0.8em; /* Compact button padding */
   }
 
   p.call-to-action,
   p.intro {
+    font-family: serif;
     font-size: 0.9em; /* Smaller font for mobile */
     padding: 0.8em; /* Reduce padding */
     max-width: 95%; /* Use nearly full screen width */
   }
 }
+
 .tool-grid {
+  font-family: serif;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
@@ -698,6 +808,7 @@ p.intro {
 }
 
 article {
+  font-family: serif;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -706,6 +817,7 @@ article {
 }
 
 .tool-btn {
+  font-family: serif;
   display: inline-block;
   margin-top: 10px;
   padding: 10px 15px;
@@ -714,9 +826,11 @@ article {
   text-decoration: none;
   border-radius: 4px;
 }
+
 .tool-btn:hover {
   background-color: black;
 }
+
 @media (max-width: 768px) {
   section {
     flex-direction: column;
@@ -729,7 +843,21 @@ article {
   }
 }
 @media (max-width: 768px) {
+  section {
+    font-family: serif;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  section img {
+    width: 80%; /* Adjust image size */
+    margin: 0 auto; /* Center the image */
+  }
+}
+
+@media (max-width: 768px) {
   section div {
+    font-family: serif;
     flex-direction: column;
     text-align: center;
   }
@@ -739,14 +867,16 @@ article {
     width: 80%;
   }
 }
+
 .share-section {
+  font-family: serif;
   text-align: left;
   margin-top: 20px;
 }
 
 .share-btn {
-  display: inline-flex;
   font-family: serif;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 12px 20px;
@@ -762,6 +892,7 @@ article {
 }
 
 .share-btn i {
+  font-family: serif;
   margin-right: 8px;
   font-size: 1.3rem;
 }
@@ -777,12 +908,15 @@ article {
   transform: translateY(1px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
+
 .contact-menu {
+  font-family: serif;
   position: relative;
   display: inline-block;
 }
 
 .contact-info {
+  font-family: serif;
   display: none;
   position: absolute;
   top: 100%; /* Aligns the dropdown just below the "Contact Me" link */
@@ -802,6 +936,7 @@ article {
 
 /* Close button styling */
 .close-btn {
+  font-family: serif;
   position: absolute;
   top: 5px;
   right: 5px;
@@ -815,11 +950,13 @@ article {
 }
 
 .contact-info p {
+  font-family: serif;
   margin: 10px 0;
   font-size: 0.9rem;
 }
 
-.contact-info a {
+contact-info a {
+  font-family: serif;
   color: #0077b5;
   text-decoration: none;
 }
