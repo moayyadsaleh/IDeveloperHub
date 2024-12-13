@@ -258,79 +258,74 @@
               Show Code
             </button>
             <div id="codeContainer" style="display: none; background-color: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; border-left: 5px solid #66d9ef; font-family: 'Courier New', monospace; white-space: pre-wrap; line-height: 1.5; font-size: 14px;">
-              // Create a background overlay with blur effect
-              const overlay = document.createElement('div');
-              
-              overlay.style.position = 'fixed';
-              overlay.style.top = '0';
-              overlay.style.left = '0';
-              overlay.style.width = '100%';
-              overlay.style.height = '100%';
-              overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.25)';
-              overlay.style.backdropFilter = 'blur(10px)';
-              overlay.style.zIndex = '9999';
-              overlay.style.display = 'flex';
-              overlay.style.justifyContent = 'center';
-              overlay.style.alignItems = 'center';
-              overlay.style.margin = '0';
-              overlay.style.padding = '0';
-              
-              // Create the popup container
-              const popup = document.createElement('div');
-              
-              popup.style.backgroundColor = '#f8f8f8';
-              popup.style.padding = '28px';
-              popup.style.borderRadius = '20px';
-              popup.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.15)';
-              popup.style.width = '400px';
-              popup.style.maxWidth = '90%';
-              popup.style.textAlign = 'center';
-              popup.style.fontFamily = 'Helvetica, Arial, sans-serif';
-              popup.style.position = 'relative';
-              
-              // Add a heading to the popup
-              const heading = document.createElement('h2');
-              heading.textContent = 'Welcome!';
-              popup.appendChild(heading);
-              
-              // Add a message to the popup
-              const message = document.createElement('p');
-              message.textContent = 'Check out how I’d look in your course! Grab my source code and give me a try! I’m pretty awesome pop-up!';
-              popup.appendChild(message); // Append the message to the popup
-              
-              // Create an "X" button to close the popup
-              const closeButton = document.createElement('button');
-              closeButton.textContent = '✕';
-              closeButton.style.position = 'absolute';
-              closeButton.style.top = '10px';
-              closeButton.style.right = '10px';
-              closeButton.style.background = 'none';
-              closeButton.style.border = 'none';
-              closeButton.style.fontSize = '20px';
-              closeButton.style.cursor = 'pointer';
-              closeButton.style.color = '#666';
-              
-              // Close the popup when the "X" button is clicked
-              closeButton.addEventListener('click', () => {
-                overlay.remove();
-              });
-              
-              // Append the close button to the popup
-              popup.appendChild(closeButton);
-              
-              // Append the popup to the overlay
-              overlay.appendChild(popup);
-              
-              // Append the overlay to the body
-              document.body.appendChild(overlay);
-              
-              // Add functionality to close the overlay when clicking outside the popup
-              overlay.addEventListener('click', (e) => {
-                if (!popup.contains(e.target)) {
-                  overlay.remove();
-                }
-              });
-              
+ // Popup Creation Code
+const overlay = document.createElement('div');
+overlay.style.position = 'fixed';
+overlay.style.top = '0';
+overlay.style.left = '0';
+overlay.style.width = '100%';
+overlay.style.height = '100%';
+overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.25)';
+overlay.style.backdropFilter = 'blur(10px)';
+overlay.style.zIndex = '9999';
+overlay.style.display = 'flex';
+overlay.style.justifyContent = 'center';
+overlay.style.alignItems = 'center';
+overlay.style.margin = '0';
+overlay.style.padding = '0';
+
+// Create the popup container with a class to avoid conflicts
+const popup = document.createElement('div');
+popup.classList.add('custom-popup');
+popup.style.backgroundColor = '#f8f8f8';
+popup.style.padding = '28px';
+popup.style.borderRadius = '20px';
+popup.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.15)';
+popup.style.width = '400px';
+popup.style.maxWidth = '90%';
+popup.style.textAlign = 'center';
+popup.style.fontFamily = 'Helvetica, Arial, sans-serif';
+popup.style.position = 'relative';
+
+// Add a heading to the popup
+const heading = document.createElement('h2');
+heading.textContent = 'Welcome!';
+heading.style.color = '#333'; // Explicit dark gray text
+popup.appendChild(heading);
+
+// Add a message to the popup
+const message = document.createElement('p');
+message.textContent = 'Tap the Toggle Theme button in the top-right corner to give it a try!';
+message.style.color = '#333'; // Explicit dark gray text
+popup.appendChild(message);
+
+// Create an "X" button to close the popup
+const closeButton = document.createElement('button');
+closeButton.textContent = '✕';
+closeButton.style.position = 'absolute';
+closeButton.style.top = '10px';
+closeButton.style.right = '10px';
+closeButton.style.background = 'none';
+closeButton.style.border = 'none';
+closeButton.style.fontSize = '20px';
+closeButton.style.cursor = 'pointer';
+closeButton.style.color = '#666';
+
+// Close the popup when the "X" button is clicked
+closeButton.addEventListener('click', () => {
+  overlay.remove();
+});
+
+popup.appendChild(closeButton);
+overlay.appendChild(popup);
+document.body.appendChild(overlay);
+
+// Close the popup when clicking outside of it
+overlay.addEventListener('click', (e) => {
+  if (!popup.contains(e.target)) {
+    overlay.remove();
+  }
+});     
             </div>
           </li>
       
