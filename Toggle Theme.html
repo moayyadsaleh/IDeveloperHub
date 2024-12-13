@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark/Light Mode</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: serif, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        background-color: maroon;
+        color: white;
+        padding: 1em 0;
+        margin-top: 2em;
+      }
+
+      /* Hero Section Container */
+      .hero-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 40px 20px;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        max-width: 1200px;
+        margin: 20px auto;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h3 {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: maroon;
+        text-align: left;
+        margin-bottom: 0.5em;
+        border-bottom: 3px solid black;
+        padding-bottom: 0.2em;
+      }
+
+      ol {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      ol li {
+        margin-bottom: 20px;
+        padding-left: 10px;
+        position: relative;
+      }
+
+      ol li strong {
+        color: #2c3e50;
+        font-size: 1.1em;
+      }
+
+      ol li::marker {
+        color: maroon;
+        font-weight: bold;
+      }
+
+      code {
+        background-color: #ecf0f1;
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+      }
+
+      em {
+        font-style: normal;
+        color: #e74c3c;
+      }
+
+      .note {
+        background-color: #f9f9f9;
+        border-left: 4px solid #f39c12;
+        padding: 10px;
+        margin-top: 20px;
+        font-style: italic;
+        color: #555;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Text Section Styling */
+      .hero-text {
+        max-width: 50%;
+      }
+
+      .hero-text .intro {
+        font-size: 1.2em;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Image Section Styling */
+      .image-hero {
+        max-width: 40%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .phone-mockup img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-section {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .hero-text,
+        .image-hero {
+          max-width: 100%;
+        }
+
+        .hero-text {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.webp" alt="IDeveloperHub Logo" />
+        </a>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+        &#9776;
+        <!-- Unicode for the hamburger menu icon -->
+      </div>
+      <ul class="nav-bar" id="navBar">
+        <!-- Main Site Links -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">ID Tools</a></li>
+        <li><a href="latest.html">Latest in Learning & Tech</a></li>
+        <li><a href="IDtipsHub.html">IDtipsHub</a></li>
+        <li><a href="feedback.html">Give Feedback</a></li>
+
+        <!-- About and Support -->
+        <li><a href="about.html">About</a></li>
+        <li><a href="support.html">Support My Work</a></li>
+
+        <!-- Contact and Sharing -->
+        <li class="contact-menu">
+          <a href="javascript:void(0);" onclick="toggleContactInfo()"
+            >Connect with the Designer</a
+          >
+          <div id="contactInfo" class="contact-info">
+            <span class="close-btn" onclick="closeContactInfo()">&#10005;</span>
+            <p>Email: <span>moayyadalazzam@gmail.com</span></p>
+            <p>
+              LinkedIn:
+              <a
+                href="https://www.linkedin.com/in/moayyadalazzam"
+                target="_blank"
+                >Moayyad Alazzam</a
+              >
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <a href="javascript:void(0);" onclick="sharePlatform()"
+            >Share IDeveloperHub</a
+          >
+        </li>
+
+        <!-- Subscription Link -->
+        <li><a href="subscribe.html">Subscribe</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="tool-header">
+        <h1>Toggle Between Light and Dark Themes with One Click</h1>
+    </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+    <!-- Text Section -->
+<div class="hero-text">
+    <p class="intro">
+      I created this handy code snippet for instructional designers who want to give their e-learning courses a modern twist. With just a tap, learners can switch between Light Mode and Dark Mode — whichever fits their vibe or environment. No coding skills needed! While Articulate Storyline doesn’t offer theme toggling out of the box, you can easily drop in this snippet to give learners a customizable experience that keeps them comfortable, day or night.
+    </p>
+  </div>
+  
+      <!-- Image Section -->
+      <div class="image-hero">
+        <div class="phone-mockup">
+          <img src="Toggle Theme _ Review 360 - Google Chrome 12_12_2024 5_52_47 PM.png" alt="Progress Tracker Demo" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Description Section -->
+      <section class="tool-section">
+        <h2>DESCRIPTION</h2>
+
+        <p>
+            I put together this <strong>Toggle Theme</strong> code snippet for instructional designers who want to give their courses a modern, accessible twist. Let’s face it. Most authoring tools like Articulate Storyline and Adobe Captivate don’t have built-in theme toggling. But with this snippet, you can easily let learners switch between Light Mode and Dark Mode with just a tap. 
+
+        </p>
+
+        <p>
+            Why does this matter? Accessibility and comfort. Some learners prefer a bright interface, while others do better with darker tones, especially if they’re learning in low-light environments. This snippet helps reduce eye strain and makes our E-course feel more modern and user-friendly. The best part? It’s super easy to use. Just drop it in and you’re good to go. No coding skills needed, just a better experience for everyone. 
+
+        </p>
+
+        <!-- Description Section -->
+        <h2>SEE IT WORKING IN A COURSE</h2>
+        <p>
+          Want to see hot "Toggle Theme" works in a course? Check out this
+          <a
+            href="https://360.articulate.com/review/content/cd2bed1c-8870-4ed5-879f-16633c41c726/review"
+            target="_blank"
+            style="font-weight: bold; color: maroon; text-decoration: underline"
+          >
+            <strong>LIVE DEMO</strong>
+          </a>
+          I created in an Articulate Storyline course. It gives you a quick feel
+          for how it works and how cool it looks in a real project. Go ahead,
+          take it for a spin!
+        </p>
+        <h2>HOW TO USE</h2>
+   <!-- How to Use Section -->
+<section class="how-to-use-section">
+  
+    <p>
+      Follow these step-by-step instructions to add the <strong>Toggle Theme</strong> code snippet to your project in Articulate Storyline. This will let learners switch between Light Mode and Dark Mode with just a tap. No coding experience required!
+    </p>
+  
+  
+    <ol>
+      <li>
+        <strong>Open Your Project:</strong><br>
+        Launch your project in <strong>Articulate Storyline</strong>.
+      </li>
+  
+      <li>
+        <strong>Go to the Player Settings:</strong><br>
+        In the top-right corner of the Storyline interface, you’ll see a button labeled <strong>“Player”</strong>. Click it to open the Player Settings window.
+      </li>
+  
+      <li>
+        <strong>Add a Custom Tab to the Player:</strong><br>
+        - In the Player Settings window, click the <strong>“Features”</strong> tab.<br>
+        - In the bottom-right section, you’ll see an area labeled <strong>“Player Tabs.”</strong> Click the <strong>“Add”</strong> button (a small plus icon) to create a new custom tab.
+      </li>
+  
+      <li>
+        <strong>Set Up the New Tab:</strong><br>
+        - In the window that pops up, you’ll need to configure your new tab.<br>
+        - In the <strong>Name</strong> field, type <strong>“Toggle Theme”</strong> or <strong>“Light/Dark Mode.”</strong><br>
+        - In the <strong>Action</strong> dropdown menu, select <strong>“Execute JavaScript.”</strong>
+      </li>
+  
+      <li>
+        <strong>Open the JavaScript Editor:</strong><br>
+        - Click the <strong>“Script”</strong> button next to the Action dropdown. This will open a text editor where you can paste your JavaScript code.
+      </li>
+  
+      <li>
+        <strong>Copy and Paste the Code:</strong><br>
+        - Copy the following JavaScript code and paste it into the editor:
+  
+        <pre>
+  if (!document.body.classList.contains("light-mode")) {
+      document.body.classList.add("light-mode");
+      document.body.style.backgroundColor = "#FFFFFF";
+      document.body.style.color = "#333333";
+  
+      let elements = document.querySelectorAll(".slide, button, input, .player");
+      elements.forEach(el => {
+          el.style.backgroundColor = "#F5F5F5";
+          el.style.color = "#333333";
+          el.style.borderColor = "#CCCCCC";
+      });
+  
+      let buttons = document.querySelectorAll("button");
+      buttons.forEach(btn => {
+          btn.style.backgroundColor = "#E0E0E0";
+          btn.style.color = "#333333";
+          btn.style.border = "1px solid #CCCCCC";
+      });
+  
+      let toggleButton = document.querySelector("#toggleThemeButton");
+      if (toggleButton) {
+          toggleButton.innerText = "Switch to Dark Mode";
+      }
+  } else {
+      document.body.classList.remove("light-mode");
+      document.body.style.backgroundColor = "#222222";
+      document.body.style.color = "#FFFFFF";
+  
+      let elements = document.querySelectorAll(".slide, button, input, .player");
+      elements.forEach(el => {
+          el.style.backgroundColor = "#333333";
+          el.style.color = "#FFFFFF";
+          el.style.borderColor = "#555555";
+      });
+  
+      let buttons = document.querySelectorAll("button");
+      buttons.forEach(btn => {
+          btn.style.backgroundColor = "#444444";
+          btn.style.color = "#FFFFFF";
+          btn.style.border = "1px solid #555555";
+      });
+  
+      let toggleButton = document.querySelector("#toggleThemeButton");
+      if (toggleButton) {
+          toggleButton.innerText = "Switch to Light Mode";
+      }
+  }
+        </pre>
+      </li>
+  
+      <li>
+        <strong>Save the Script:</strong><br>
+        - After pasting the code, click <strong>“OK”</strong> to close the JavaScript editor and save your script.
+      </li>
+  
+      <li>
+        <strong>Save Your Player Settings:</strong><br>
+        - Click <strong>“OK”</strong> again in the Player Settings window to save all your changes.
+      </li>
+  
+      <li>
+        <strong>Preview and Publish:</strong><br>
+        - Preview your project to make sure the <strong>“Toggle Theme”</strong> tab works as expected.<br>
+        - When everything looks good, click <strong>“Publish”</strong> to finalize your course.
+      </li>
+    </ol>
+  
+    Now, when learners click the “Toggle Theme” tab, they can flip between Light Mode and Dark Mode right away. It’s a simple way to make things easier on their eyes, boost accessibility, and give your course a cool, modern feel!
+  </section>
+  
+      </section>
+
+      
+
+      <section class="tool-section">
+        <h2>CONSIDER SUPPORTING MY WORK</h2>
+
+        <p>
+          Love <strong>ProgressTracker</strong>? Your support helps me keep
+          creating useful tools for the instructional design community. A little
+          goes a long way, and I truly appreciate it! A shout-out, a coffee, or
+          a small donation keeps the creativity flowing and helps me build more
+          tools to make your e-learning projects shine.
+        </p>
+
+        <p>
+          If <strong>ProgressTracker</strong> has made your workflow smoother or
+          added value to your courses, consider showing your support. It means
+          the world to me and motivates me to keep building and sharing even
+          more helpful resources.
+        </p>
+
+        <div class="share-section">
+          <button
+            class="share-btn"
+            onclick="window.location.href='support.html'"
+          >
+            <i class="fas fa-heart"></i> Support My Work
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background-color: black;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+      "
+    >
+      © <span id="currentYear"></span> IDeveloperHub. Created by
+      <a
+        href="https://www.linkedin.com/in/moayyadalazzam"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Visit my LinkedIn profile"
+        style="color: white; text-decoration: none; font-weight: bold"
+        >Moayyad Alazzam</a
+      >.
+    </footer>
+
+    <script>
+      // Set the current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+    <script
+      src="https://cdn.counter.dev/script.js"
+      data-id="1352eae3-8256-487a-85f6-e08abaac5740"
+      data-utcoffset="-6"
+    ></script>
+    <script>
+      // Select elements
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const navBar = document.getElementById("navBar");
+
+      // Toggle menu visibility
+      hamburgerMenu.addEventListener("click", () => {
+        navBar.classList.toggle("active");
+      });
+
+      // Close menu when clicking outside (optional)
+      window.addEventListener("click", (e) => {
+        if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+          navBar.classList.remove("active");
+        }
+      });
+    </script>
+    <script>
+      function sharePlatform() {
+        if (navigator.share) {
+          // Use the Web Share API if supported
+          navigator
+            .share({
+              title: "IDeveloperHub",
+              text: "Check out IDeveloperHub, a free resource for instructional designers to enhance eLearning!",
+              url: window.location.href,
+            })
+            .then(() => console.log("Platform shared successfully"))
+            .catch((error) => console.error("Error sharing platform:", error));
+        } else {
+          // Fallback for unsupported browsers
+          const shareUrl = window.location.href;
+          navigator.clipboard
+            .writeText(shareUrl)
+            .then(() =>
+              alert("Link copied to clipboard! Share it with others.")
+            )
+            .catch((error) =>
+              alert("Unable to copy the link. Please try again.")
+            );
+        }
+      }
+    </script>
+  </body>
+</script>
+<script>
+  function toggleContactInfo() {
+    const contactInfo = document.getElementById("contactInfo");
+    contactInfo.style.display =
+      contactInfo.style.display === "none" ||
+      contactInfo.style.display === ""
+        ? "block"
+        : "none";
+  }
+
+  function closeContactInfo() {
+    document.getElementById("contactInfo").style.display = "none";
+  }
+
+  // Close the contact info dropdown when clicking outside of it
+  document.addEventListener("click", function (event) {
+    const contactMenu = document.querySelector(".contact-menu");
+    if (!contactMenu.contains(event.target)) {
+      document.getElementById("contactInfo").style.display = "none";
+    }
+  });
+</script>
+</html>
