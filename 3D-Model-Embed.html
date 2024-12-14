@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive 3D Model Embed </title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: serif, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        background-color: maroon;
+        color: white;
+        padding: 1em 0;
+        margin-top: 2em;
+      }
+
+      /* Hero Section Container */
+      .hero-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 40px 20px;
+        background-color: #f4f4f4;
+        border-radius: 10px;
+        max-width: 1200px;
+        margin: 20px auto;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h3 {
+        font-size: 2.5em;
+        font-weight: bold;
+        color: maroon;
+        text-align: left;
+        margin-bottom: 0.5em;
+        border-bottom: 3px solid black;
+        padding-bottom: 0.2em;
+      }
+
+      ol {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      ol li {
+        margin-bottom: 20px;
+        padding-left: 10px;
+        position: relative;
+      }
+
+      ol li strong {
+        color: #2c3e50;
+        font-size: 1.1em;
+      }
+
+      ol li::marker {
+        color: maroon;
+        font-weight: bold;
+      }
+
+      code {
+        background-color: #ecf0f1;
+        padding: 2px 5px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+      }
+
+      em {
+        font-style: normal;
+        color: #e74c3c;
+      }
+
+      .note {
+        background-color: #f9f9f9;
+        border-left: 4px solid #f39c12;
+        padding: 10px;
+        margin-top: 20px;
+        font-style: italic;
+        color: #555;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Text Section Styling */
+      .hero-text {
+        max-width: 50%;
+      }
+
+      .hero-text .intro {
+        font-size: 1.2em;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Image Section Styling */
+      .image-hero {
+        max-width: 40%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .phone-mockup img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero-section {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+
+        .hero-text,
+        .image-hero {
+          max-width: 100%;
+        }
+
+        .hero-text {
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.webp" alt="IDeveloperHub Logo" />
+        </a>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+        &#9776;
+        <!-- Unicode for the hamburger menu icon -->
+      </div>
+      <ul class="nav-bar" id="navBar">
+        <!-- Main Site Links -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tools.html">ID Tools</a></li>
+        <li><a href="latest.html">Latest in Learning & Tech</a></li>
+        <li><a href="IDtipsHub.html">IDtipsHub</a></li>
+        <li><a href="feedback.html">Give Feedback</a></li>
+
+        <!-- About and Support -->
+        <li><a href="about.html">About</a></li>
+        <li><a href="support.html">Support My Work</a></li>
+
+        <!-- Contact and Sharing -->
+        <li class="contact-menu">
+          <a href="javascript:void(0);" onclick="toggleContactInfo()"
+            >Connect with the Designer</a
+          >
+          <div id="contactInfo" class="contact-info">
+            <span class="close-btn" onclick="closeContactInfo()">&#10005;</span>
+            <p>Email: <span>moayyadalazzam@gmail.com</span></p>
+            <p>
+              LinkedIn:
+              <a
+                href="https://www.linkedin.com/in/moayyadalazzam"
+                target="_blank"
+                >Moayyad Alazzam</a
+              >
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <a href="javascript:void(0);" onclick="sharePlatform()"
+            >Share IDeveloperHub</a
+          >
+        </li>
+
+        <!-- Subscription Link -->
+        <li><a href="subscribe.html">Subscribe</a></li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+      <div class="tool-header">
+        <h1>Interactive 3D Model Embed </h1>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <!-- Text Section -->
+   <div class="hero-text"> <p class="intro"> I coded this interactive 3D model embed to help my fellow instructional designers add some extra pop to their e-learning projects. Since Articulate Storyline doesn’t support 3D models natively, this workaround lets us drop a fully interactive 3D object right into our course as a web object. It’s simple to use. Just upload your model and code, and your learners can zoom, spin, and explore the model directly in the slide. No complicated setups or extra tools. Just copy, embed, and watch your content come to life! </p> </div> 
+      <!-- Image Section -->
+      <div class="image-hero">
+        <div class="phone-mockup">
+          <img
+            src="3D Interactive Demo _ Review 360 - Google Chrome 12_14_2024 7_52_58 AM.png"
+            alt="Progress Tracker Demo"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Description Section -->
+      <section class="tool-section">
+        <h2>DESCRIPTION</h2>
+        <p>
+          Adding this interactive 3D model embed to your e-learning project opens up possibilities that go way beyond what Articulate Storyline can do on its own. Since Storyline doesn’t support 3D models natively, this gives learners a hands-on experience they wouldn’t get otherwise.
+        </p>
+        <p>
+          The embed allows learners to explore a 3D object whether it’s a tool, piece of equipment, or product from every angle. They can rotate, zoom in and out, and interact with the 3D model directly. It makes learning more engaging, supports different learning styles, and is easy to embed right into your slide without extra apps or complicated setups. 
+        </p>
+        
+          <!-- Description Section -->
+        <h2>SEE IT WORKING IN A COURSE</h2>
+        <p>
+          Want to see the interactive 3D Model Embed in action? Check out this
+          <a
+            href="https://360.articulate.com/review/content/76ce6ed3-e2fa-46fe-8167-7bb385f98a8e/review"
+            target="_blank"
+            style="font-weight: bold; color: maroon; text-decoration: underline"
+          >
+            <strong>LIVE DEMO</strong>
+          </a>
+          I created in an Articulate Storyline course. It gives you a quick feel
+          for how it works and how sleek it looks in a real project. Go ahead,
+          take it for a spin!
+        </p>
+        <h2>HOW TO USE</h2>
+        <ol>
+          <li>
+            <strong>Download the Zip File:</strong>  
+            Click the download button below to get the <code style="background-color: #f5f5f5; color: #000; padding: 2px 4px; border: 1px solid #ccc; border-radius: 3px;">3D Model Embed</code> zip file. This file contains all the necessary code and assets for embedding the 3D model.
+          </li>
+        
+          <li>
+            <strong>Unzip the File:</strong>  
+            - <strong>On Windows:</strong> Right-click the downloaded <code style="background-color: #f5f5f5; color: #000; padding: 2px 4px; border: 1px solid #ccc; border-radius: 3px;">.zip</code> file and select <em>"Extract All..."</em>.  
+            - <strong>On macOS:</strong> Double-click the <code style="background-color: #f5f5f5; color: #000; padding: 2px 4px; border: 1px solid #ccc; border-radius: 3px;">.zip</code> file to automatically unzip it.  
+            After unzipping, you'll get a folder named <strong>3D-Model-Embed</strong>. This folder contains an HTML file and a sample 3D model file named <code style="background-color: #f5f5f5; color: #000; padding: 2px 4px; border: 1px solid #ccc; border-radius: 3px;">Object1.glb</code>.
+          </li>
+        
+          <li>
+            <strong>Open Your E-Learning Authoring Tool:</strong>  
+            Open your e-learning project in tools like <strong>Articulate Storyline</strong>, <strong>Adobe Captivate</strong>, or any other tool that supports web objects.
+          </li>
+        
+          <li>
+            <strong>Insert a Web Object:</strong>  
+            - In <strong>Articulate Storyline:</strong>  
+              - Go to the <strong>Insert</strong> tab and select <strong>Web Object</strong>.  
+              - In the Web Object dialog, click <strong>Browse</strong>.  
+              - Select the <strong>unzipped 3D Model Embed folder</strong> (make sure to select the whole folder, not individual files).  
+              - Click <strong>OK</strong> to insert the web object into your slide.  
+              
+            - In <strong>Adobe Captivate:</strong>  
+              - Go to the <strong>Media</strong> menu and select <strong>Web Object</strong>.  
+              - Enter the path to the <strong>unzipped 3D Model Embed folder</strong> or browse to it.  
+              - Click <strong>OK</strong> to insert the web object.  
+              
+            This will insert an interactive 3D model into your slide that learners can explore.
+          </li>
+        
+          <li>
+            <strong>Position the 3D Model Embed:</strong>  
+            Move and resize the web object on your slide to fit your design. You can position it within product training modules, sales enablement slides, or any scenario where interactive 3D exploration will benefit learners.
+          </li>
+        
+          <li>
+            <strong>Preview and Test:</strong>  
+            - Preview your course to ensure the 3D Model Embed works as expected.  
+            - Learners will be able to interact with the model – rotate it, zoom in and out, and explore it from every angle. This hands-on interaction can make learning more engaging and cater to different learning styles.
+          </li>
+        </ol>
+        
+        <p>To replace the default 3D model with your own, follow these steps:</p>
+        
+        <ol>
+          <li>
+            <strong>Prepare Your 3D Model File:</strong>  
+            - Ensure your 3D model is in <code style="background-color: #f5f5f5; color: #000; padding: 2px 4px; border: 1px solid #ccc; border-radius: 3px;">.glb</code> or <code style="background-color: #f5f5f5; color: #000; padding: 2px 4px; border: 1px solid #ccc; border-radius: 3px;">.gltf</code> format. These formats are compatible with the <code style="background-color: #f5f5f5; color: #000; padding: 2px 4px; border: 1px solid #ccc; border-radius: 3px;">&lt;model-viewer&gt;</code> component.  
+            - Name your file <code style="background-color: #f5f5f5; color: #000; padding: 2px 4px; border: 1px solid #ccc; border-radius: 3px;">Object1.glb</code>.
+          </li>
+        
+          <li>
+            <strong>Replace the Model File:</strong>  
+            - Locate the existing <code style="background-color: #f5f5f5; color: #000; padding: 2px 4px; border: 1px solid #ccc; border-radius: 3px;">Object1.glb</code> file in the unzipped folder.  
+            - Replace this file with your new model file. Make sure the new file has the same name: <code style="background-color: #f5f5f5; color: #000; padding: 2px 4px; border: 1px solid #ccc; border-radius: 3px;">Object1.glb</code>.  
+            - Alternatively, you can keep your model’s original name and update the HTML code to reflect it.
+          </li>
+        
+          <li>
+            <strong>Edit the HTML Code:</strong>  
+            Open the HTML file in a text editor like VSCode, Notepad++, or even a basic text editor like Notepad.  
+        
+            Look for this line of code:
+        
+            <pre style="background-color: #f5f5f5; color: #000; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        &lt;model-viewer<br>
+          src="Object1.glb"<br>
+          alt="Toyota Hilux Off-Road"<br>
+          auto-rotate<br>
+          camera-controls<br>
+          ar<br>
+          ar-modes="webxr scene-viewer quick-look"<br>
+        &gt;<br>
+        &lt;/model-viewer&gt;
+            </pre>
+        
+            To use your new model, change the <code style="background-color: #f5f5f5; color: #000; padding: 2px 4px; border: 1px solid #ccc; border-radius: 3px;">src</code> attribute to match the name of your file. For example:
+        
+            <pre style="background-color: #f5f5f5; color: #000; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+        &lt;model-viewer<br>
+          src="new-model.glb"<br>
+          alt="Description of Your Model"<br>
+          auto-rotate<br>
+          camera-controls<br>
+          ar<br>
+          ar-modes="webxr scene-viewer quick-look"<br>
+        &gt;<br>
+        &lt;/model-viewer&gt;
+            </pre>
+        
+            - Tip: Update the <code style="background-color: #f5f5f5; color: #000; padding: 2px 4px; border: 1px solid #ccc; border-radius: 3px;">alt</code> attribute to describe your new 3D model. This improves accessibility and helps learners understand the content.
+          </li>
+        </ol>
+        
+          
+      </section>
+
+      <section class="tool-section">
+        <h2>DOWNLOAD THE 3D MODEL EMBED</h2>
+        <p>
+            Click the button below to download the 3D Model source code and
+          start using it in your E-learning courses!
+        </p>
+        <a href="3D-Model-Embed.zip" download>
+          <button class="copy-btn">
+            <i class="fas fa-download"></i> Download 3D Model Embed
+          </button>
+        </a>
+      </section>
+
+      <section class="tool-section">
+        <h2>CONSIDER SUPPORTING MY WORK</h2>
+        <p>
+          If you’ve found the Interactive 3D model embed helpful, consider supporting my work! Your support helps me keep creating tools and resources for the instructional design community. A shout-out, a coffee, or a small donation, every bit helps me continue developing tools that make our e-learning projects better.
+        </p>
+        
+        <p>
+          I truly appreciate any kind of support. It keeps me motivated to build and share even more useful resources.
+        </p>
+        
+
+        <div class="share-section">
+          <button
+            class="share-btn"
+            onclick="window.location.href='support.html'"
+          >
+            <i class="fas fa-heart"></i> Support My Work
+          </button>
+        </div>
+      </section>
+    </main>
+    <script>
+      function sharePlatform() {
+        if (navigator.share) {
+          // Use the Web Share API if supported
+          navigator
+            .share({
+              title: "IDeveloperHub",
+              text: "Check out IDeveloperHub, a free resource for instructional designers to enhance eLearning!",
+              url: window.location.href,
+            })
+            .then(() => console.log("Platform shared successfully"))
+            .catch((error) => console.error("Error sharing platform:", error));
+        } else {
+          // Fallback for unsupported browsers
+          const shareUrl = window.location.href;
+          navigator.clipboard
+            .writeText(shareUrl)
+            .then(() =>
+              alert("Link copied to clipboard! Share it with others.")
+            )
+            .catch((error) =>
+              alert("Unable to copy the link. Please try again.")
+            );
+        }
+      }
+    </script>
+    <!-- Footer -->
+    <footer
+      style="
+        background-color: black;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 0.9rem;
+      "
+    >
+      © <span id="currentYear"></span> IDeveloperHub. Created by
+      <a
+        href="https://www.linkedin.com/in/moayyadalazzam"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Visit my LinkedIn profile"
+        style="color: white; text-decoration: none; font-weight: bold"
+        >Moayyad Alazzam</a
+      >.
+    </footer>
+
+    <script>
+      // Set the current year dynamically
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+    <script
+      src="https://cdn.counter.dev/script.js"
+      data-id="1352eae3-8256-487a-85f6-e08abaac5740"
+      data-utcoffset="-6"
+    ></script>
+    <script>
+      // Select elements
+      const hamburgerMenu = document.getElementById("hamburgerMenu");
+      const navBar = document.getElementById("navBar");
+
+      // Toggle menu visibility
+      hamburgerMenu.addEventListener("click", () => {
+        navBar.classList.toggle("active");
+      });
+
+      // Close menu when clicking outside (optional)
+      window.addEventListener("click", (e) => {
+        if (!navBar.contains(e.target) && e.target !== hamburgerMenu) {
+          navBar.classList.remove("active");
+        }
+      });
+    </script>
+     </script>
+     <script>
+       function toggleContactInfo() {
+         const contactInfo = document.getElementById("contactInfo");
+         contactInfo.style.display =
+           contactInfo.style.display === "none" ||
+           contactInfo.style.display === ""
+             ? "block"
+             : "none";
+       }
+ 
+       function closeContactInfo() {
+         document.getElementById("contactInfo").style.display = "none";
+       }
+ 
+       // Close the contact info dropdown when clicking outside of it
+       document.addEventListener("click", function (event) {
+         const contactMenu = document.querySelector(".contact-menu");
+         if (!contactMenu.contains(event.target)) {
+           document.getElementById("contactInfo").style.display = "none";
+         }
+       });
+     </script>
+  </body>
+</html>
