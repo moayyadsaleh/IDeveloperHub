@@ -227,34 +227,7 @@
       <!-- Description Section -->
       <section class="tool-section">
         <h2>DESCRIPTION</h2>
-        <p>
-          <strong>Progress Tracker</strong> is designed to fit perfectly into any e-learning course. It has transparent background to make it blend perfectly with your design. Once embedded, you can trigger it in multiple ways: with a <strong>Complete Chapter</strong> button, a <strong>Complete Course</strong> button, after a quiz, or even when the timeline ends on a slide. This flexibility means you can update progress whenever learners hit a key milestone. 
-        </p>
-        
-        <p>
-          The progress is automatically saved on your device using <strong>local storage</strong>, so if you’re testing the meter while building your course, don’t get confused if the progress seems to carry over. It’s working as intended! If you want to reset it for testing purposes, clear your browser’s local storage or open the course in an incognito window. 
-        </p>
-        
-        <p>
-          This progress tracker is perfect for self-paced courses because it visually tracks up to <strong>five milestones</strong> which keeps learners motivated. When learners complete all milestones, they’ll be rewarded with celebratory confetti and a cheerful yay-and-clap sound. To use it across different milestones, you can simply copy the same progress page or web object and paste it where needed. Each time you trigger progress, the meter updates dynamically to give learners a clear, engaging sense of accomplishment. 
-        </p>
-        
-
-        <!-- Description Section -->
-        <h2>SEE IT WORKING IN A COURSE</h2>
-        <p>
-          Want to see the progress tracker in action? Check out this
-          <a
-            href="https://360.articulate.com/review/content/8ca05d70-c599-4ef3-99e7-67856ab6e303/review"
-            target="_blank"
-            style="font-weight: bold; color: maroon; text-decoration: underline"
-          >
-            <strong>LIVE DEMO</strong>
-          </a>
-          I created in an Articulate Storyline course. It gives you a quick feel
-          for how it works and how sleek it looks in a real project. Go ahead,
-          take it for a spin!
-        </p>
+        <p> The <strong>Progress Tracker</strong> is designed to perfectly integrate into any e-learning course. It features a solid white background to ensure it blends well with various designs. Once embedded, you can trigger progress updates in multiple ways: by adding a <strong>Finish Chapter</strong> button, a <strong>Complete Course</strong> button, after a quiz, or when the timeline ends on a slide. This flexibility lets you signal progress whenever learners hit a key milestone. </p> <p> To ensure progress doesn’t increment more than once when the same button is clicked, you can add a trigger to disable the button after use.</p>
         <h2>SEE IT WORKING IN A COURSE</h2>
         <p>
           Want to see the Progress Tracker in action? Check out this
@@ -268,99 +241,99 @@
           I created in an Articulate Storyline course. This demo gives you a quick feel for how it works, how progress is tracked automatically, and how sleek it looks in a real project. Go ahead, take it for a spin!
         </p>
         
-        <h2>HOW TO USE</h2>
-        <ol>
-          <li>
-            <strong>Download the Zip File:</strong><br>
-            Click the download button below to get the Progress Tracker zip file. This file contains all the necessary code and assets.
-          </li>
+          <h2>HOW TO USE</h2>
+          <ol>
+            <li>
+              <strong>Download the Zip File:</strong><br>
+              Click the download button below to get the Progress Tracker zip file. This zip contains all the necessary code and assets.
+            </li>
         
-          <li>
-            <strong>Unzip the File:</strong><br>
-            - On Windows: Right-click the downloaded <code>.zip</code> file and select <em>"Extract All..."</em>.<br>
-            - On macOS: Double-click the <code>.zip</code> file to automatically unzip it.<br>
-            After unzipping, you'll get a folder named progress-tracker.
-          </li>
+            <li>
+              <strong>Unzip the File:</strong><br>
+              - <strong>On Windows:</strong> Right-click the downloaded <code>.zip</code> file and select <em>"Extract All..."</em>.<br>
+              - <strong>On macOS:</strong> Double-click the <code>.zip</code> file to automatically unzip it.<br>
+              After unzipping, you'll get a folder named <strong>progress-tracker</strong>.
+            </li>
         
-          <li>
-            <strong>Open Your E-Learning Authoring Tool:</strong><br>
-            Open your e-learning project in tools like Articulate Storyline, Adobe Captivate, or any other tool that supports web objects.
-          </li>
+            <li>
+              <strong>Open Your E-Learning Project:</strong><br>
+              Open your course in <strong>Articulate Storyline</strong> or any other authoring tool that supports embedding web objects.
+            </li>
         
-          <li>
-            <strong>Insert a Web Object:</strong><br>
-            - In Articulate Storyline:<br>
-              - Go to the Insert tab and select Web Object.<br>
-              - In the Web Object dialog, click Browse.<br>
-              - Select the unzipped Progress Tracker folder (select the entire folder, not individual files).<br>
-              - Click OK to insert the web object into your slide.<br>
-            - In Adobe Captivate:<br>
-              - Go to the Media menu and select Web Object.<br>
-              - Enter the path to the unzipped Progress Tracker folder or browse to it.<br>
-              - Click OK to insert the web object.
-          </li>
+            <li>
+              <strong>Insert the Web Object:</strong><br>
+              - <strong>In Articulate Storyline:</strong><br>
+                - Go to the <strong>Insert</strong> tab and select <strong>Web Object</strong>.<br>
+                - In the Web Object dialog, click <strong>Browse</strong>.<br>
+                - Select the <strong>unzipped progress-tracker folder</strong> (the entire folder, not individual files).<br>
+                - Click <strong>OK</strong> to embed the web object into your slide.<br><br>
+              Position the web object where you want the Progress Tracker to appear (e.g., at the end of a module or chapter).
+            </li>
         
-          <li>
-            <strong>Trigger Progress Updates with JavaScript:</strong><br>
-            To update the Progress Tracker when learners complete a chapter, task, or quiz, add a trigger to <strong>Execute JavaScript</strong> with the following code:<br>
-          
-            <p><strong>Copy and Paste This Trigger:</strong></p>
-            <pre style="background-color: #f4f4f4; padding: 10px; border: 1px solid #ccc; border-radius: 5px; overflow-x: auto;">
-              <code style="color: #333; font-family: 'Courier New', Courier, monospace;">document.querySelector('iframe').contentWindow.postMessage('chapterCompleted', '*');</code>
-            </pre>
-          
-            <p><strong>When to Use This Trigger:</strong></p>
-            <ul>
-              <li>When the timeline ends on a slide.</li>
-              <li>When learners click a “Complete” button.</li>
-              <li>After a quiz or interaction is completed.</li>
-            </ul>
-          
-            This ensures the Progress Tracker updates automatically and saves progress whenever a milestone is reached.
-          </li>
-          
+            <li>
+              <strong>Add a Button to Signal Completion:</strong><br>
+              Add a button (e.g., “Finish Chapter” or “Complete Module”) on the same slide where the web object is embedded. This button will trigger the progress update.
+            </li>
         
-          <li>
-            <strong>Position the Tracker:</strong><br>
-            Move and resize the web object on your slide to fit your design. Place it at the end of modules, tasks, or wherever you want learners to see their progress.
-          </li>
+            <li>
+              <strong>Add JavaScript to Trigger Progress Updates:</strong><br>
+              To ensure progress is updated correctly and doesn’t increment multiple times, use the following JavaScript trigger:
         
-          <li>
-            <strong>Progress is Automatically Saved:</strong><br>
-            The Progress Tracker automatically saves progress on the learner’s device using local storage. This means:<br>
-            - Learners can close the course and pick up where they left off if they use the same device and browser.<br>
-            - If you’re testing the tracker while building your course, progress will persist. To reset progress during testing, clear your browser’s local storage or use an incognito window.
-          </li>
+              <p><strong>JavaScript Code:</strong></p>
+              <pre style="background-color: #f4f4f4; padding: 10px; border: 1px solid #ccc; border-radius: 5px; overflow-x: auto;">
+                <code style="color: #333; font-family: 'Courier New', Courier, monospace;">
+        sessionStorage.removeItem("progressUpdated");
+        var webObject = document.querySelector('iframe');
+        if (webObject && !sessionStorage.getItem("progressUpdated")) {
+          webObject.contentWindow.postMessage("chapterCompleted", "*");
+          sessionStorage.setItem("progressUpdated", "true");
+        }
+                </code>
+              </pre>
         
-          <li>
-            <strong>Celebrate Completion:</strong><br>
-            Once all milestones are complete, the tracker rewards learners with:<br>
-            - Confetti animation 🎉<br>
-            - A cheering sound effect<br>
-            - A congratulatory message: “Successfully completed, congrats!”
-          </li>
+              <p><strong>How to Add This Trigger in Storyline:</strong></p>
+              - Select your **"Complete"** button.<br>
+              - Go to the **Triggers** panel and create a new trigger to **Execute JavaScript** when the button is clicked.<br>
+              - Paste the code above into the JavaScript window.<br>
+              - Click **OK** to save the trigger.
+            </li>
         
-          <li>
-            <strong>Track Up to 5 Milestones by Default:</strong><br>
-            The Progress Tracker is set to track 5 milestones by default. If you need to track more, you can modify the code:<br>
-            1. Open the HTML file in a text editor like Notepad or Visual Studio Code.<br>
-            2. Find this line in the script section:<br>
-               ```javascript
-               const totalSections = 5;
-               ```<br>
-            3. Change 5 to the number of milestones you need (e.g., 8).<br>
-            4. Save the file and test your course to ensure the updates work correctly.
-          </li>
+            <li>
+              <strong>Prevent Duplicate Progress Updates:</strong><br>
+              To ensure progress doesn’t increment if the button is clicked again:<br>
+              - Add another trigger to the button:<br>
+                - **Set state of the button to Disabled** when the user clicks the button.<br>
+              This prevents the button from being clicked multiple times.
+            </li>
         
-          <li>
-            <strong>Preview and Test:</strong><br>
-            - Preview your course to ensure the Progress Tracker works as expected.<br>
-            - Verify that progress updates, visuals, confetti, and sound effects trigger correctly.<br>
-            - Remember: Progress is saved locally, so learners will see their progress as long as they use the same device and browser.
-          </li>
-        </ol>
+            <li>
+              <strong>Repeat for Additional Chapters or Modules:</strong><br>
+              - For each new chapter or module, copy the web object embed and add a new button.<br>
+              - Use the same JavaScript and state triggers for each button to manage progress updates.
+            </li>
         
-      </section>
+            <li>
+              <strong>Test Your Course:</strong><br>
+              - Preview your course to ensure the Progress Tracker updates correctly when the button is clicked.<br>
+              - Verify that progress is saved and doesn’t increment more than once per click.<br>
+              - Check that the button becomes disabled after being clicked.
+            </li>
+        
+            <li>
+              <strong>Save Progress Automatically:</strong><br>
+              The Progress Tracker uses <code>sessionStorage</code> to manage progress updates. This ensures progress is only updated once per session, and it resets if the session is closed.
+            </li>
+        
+            <li>
+              <strong>Celebrate Completion:</strong><br>
+              When all milestones are complete, the tracker rewards learners with:<br>
+              - Confetti animation 🎉<br>
+              - A cheering sound effect<br>
+              - A congratulatory message: <em>“Successfully completed, congrats!”</em>
+            </li>
+          </ol>
+        </section>
+        
 
       <section class="tool-section">
         <h2>DOWNLOAD PROGRESS TRACKER SOURCE CODE</h2>
@@ -375,7 +348,6 @@
         </a>
       </section>
 
-      <section class="tool-section">
         <h2>CONSIDER SUPPORTING MY WORK</h2>
 
         <p>
