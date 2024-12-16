@@ -234,7 +234,7 @@
         <p>
           Want to see the Progress Tracker in action? Check out this
           <a
-            href="https://360.articulate.com/review/content/8ca05d70-c599-4ef3-99e7-67856ab6e303/review"
+            href="https://360.articulate.com/review/content/85b8f58a-9a8d-4754-ba23-007c8886f4fc/review"
             target="_blank"
             style="font-weight: bold; color: maroon; text-decoration: underline"
           >
@@ -243,98 +243,135 @@
           I created in an Articulate Storyline course. This demo gives you a quick feel for how it works, how progress is tracked automatically, and how sleek it looks in a real project. Go ahead, take it for a spin!
         </p>
         
-          <h2>HOW TO USE</h2>
-          <ol>
-            <li>
-              <strong>Download the Zip File:</strong><br>
-              Click the download button below to get the Progress Tracker zip file. This zip contains all the necessary code and assets.
-            </li>
-        
-            <li>
-              <strong>Unzip the File:</strong><br>
-              - <strong>On Windows:</strong> Right-click the downloaded <code>.zip</code> file and select <em>"Extract All..."</em>.<br>
-              - <strong>On macOS:</strong> Double-click the <code>.zip</code> file to automatically unzip it.<br>
-              After unzipping, you'll get a folder named <strong>progress-tracker</strong>.
-            </li>
-        
-            <li>
-              <strong>Open Your E-Learning Project:</strong><br>
-              Open your course in <strong>Articulate Storyline</strong> or any other authoring tool that supports embedding web objects.
-            </li>
-        
-            <li>
-              <strong>Insert the Web Object:</strong><br>
-              - <strong>In Articulate Storyline:</strong><br>
-                - Go to the <strong>Insert</strong> tab and select <strong>Web Object</strong>.<br>
-                - In the Web Object dialog, click <strong>Browse</strong>.<br>
-                - Select the <strong>unzipped progress-tracker folder</strong> (the entire folder, not individual files).<br>
-                - Click <strong>OK</strong> to embed the web object into your slide.<br><br>
-              Position the web object where you want the Progress Tracker to appear (e.g., at the end of a module or chapter).
-            </li>
-        
-            <li>
-              <strong>Add a Button to Signal Completion:</strong><br>
-              Add a button (e.g., “Finish Chapter” or “Complete Module”) on the same slide where the web object is embedded. This button will trigger the progress update.
-            </li>
-        
-            <li>
-              <strong>Add JavaScript to Trigger Progress Updates:</strong><br>
-              To ensure progress is updated correctly and doesn’t increment multiple times, use the following JavaScript trigger:
-        
-              <p><strong>JavaScript Code:</strong></p>
-              <pre style="background-color: #f4f4f4; padding: 10px; border: 1px solid #ccc; border-radius: 5px; overflow-x: auto;">
-                <code style="color: #333; font-family: 'Courier New', Courier, monospace;">
-        sessionStorage.removeItem("progressUpdated");
-        var webObject = document.querySelector('iframe');
-        if (webObject && !sessionStorage.getItem("progressUpdated")) {
-          webObject.contentWindow.postMessage("chapterCompleted", "*");
-          sessionStorage.setItem("progressUpdated", "true");
-        }
-                </code>
-              </pre>
-        
-              <p><strong>How to Add This Trigger in Storyline:</strong></p>
-              - Select your **"Complete"** button.<br>
-              - Go to the **Triggers** panel and create a new trigger to **Execute JavaScript** when the button is clicked.<br>
-              - Paste the code above into the JavaScript window.<br>
-              - Click **OK** to save the trigger.
-            </li>
-        
-            <li>
-              <strong>Prevent Duplicate Progress Updates:</strong><br>
-              To ensure progress doesn’t increment if the button is clicked again:<br>
-              - Add another trigger to the button:<br>
-                - **Set state of the button to Disabled** when the user clicks the button.<br>
-              This prevents the button from being clicked multiple times.
-            </li>
-        
-            <li>
-              <strong>Repeat for Additional Chapters or Modules:</strong><br>
-              - For each new chapter or module, copy the web object embed and add a new button.<br>
-              - Use the same JavaScript and state triggers for each button to manage progress updates.
-            </li>
-        
-            <li>
-              <strong>Test Your Course:</strong><br>
-              - Preview your course to ensure the Progress Tracker updates correctly when the button is clicked.<br>
-              - Verify that progress is saved and doesn’t increment more than once per click.<br>
-              - Check that the button becomes disabled after being clicked.
-            </li>
-        
-            <li>
-              <strong>Save Progress Automatically:</strong><br>
-              The Progress Tracker uses <code>sessionStorage</code> to manage progress updates. This ensures progress is only updated once per session, and it resets if the session is closed.
-            </li>
-        
-            <li>
-              <strong>Celebrate Completion:</strong><br>
-              When all milestones are complete, the tracker rewards learners with:<br>
-              - Confetti animation 🎉<br>
-              - A cheering sound effect<br>
-              - A congratulatory message: <em>“Successfully completed, congrats!”</em>
-            </li>
-          </ol>
-        </section>
+        <h2>HOW TO USE</h2>
+<ol>
+  <li>
+    <strong>Download the Zip File:</strong><br>
+    Click the download button below to get the Progress Tracker zip file. This zip contains all the necessary code and assets.
+  </li>
+
+  <li>
+    <strong>Unzip the File:</strong><br>
+    <ul>
+      <li><strong>On Windows:</strong> Right-click the downloaded <code>.zip</code> file and select <em>"Extract All..."</em>.</li>
+      <li><strong>On macOS:</strong> Double-click the <code>.zip</code> file to automatically unzip it.</li>
+    </ul>
+    After unzipping, you'll get a folder named <strong>progress-tracker</strong>.
+  </li>
+
+  <li>
+    <strong>Open Your E-Learning Project:</strong><br>
+    Open your course in <strong>Articulate Storyline</strong> or any other authoring tool that supports embedding web objects.
+  </li>
+
+  <li>
+    <strong>Insert the Web Object:</strong><br>
+    <ul>
+      <li><strong>In Articulate Storyline:</strong></li>
+      <ul>
+        <li>Go to the <strong>Insert</strong> tab and select <strong>Web Object</strong>.</li>
+        <li>In the Web Object dialog, click <strong>Browse</strong>.</li>
+        <li>Select the <strong>unzipped progress-tracker folder</strong> (the entire folder, not individual files).</li>
+        <li>Click <strong>OK</strong> to embed the web object into your slide.</li>
+      </ul>
+    </ul>
+    Position the web object where you want the Progress Tracker to appear (e.g., at the end of a module or chapter).
+  </li>
+
+  <li>
+    <strong>Add a Button to Signal Completion:</strong><br>
+    Add a button (e.g., “Finish Chapter” or “Complete Module”) on the same slide where the web object is embedded. This button will trigger the progress update.
+  </li>
+
+  <li>
+    <strong>Add JavaScript to Trigger Progress Updates:</strong><br>
+    To ensure progress updates correctly and doesn’t increment multiple times, use the following JavaScript:
+
+    <p><strong>JavaScript Code:</strong></p>
+    <pre style="background-color: #f4f4f4; padding: 10px; border: 1px solid #ccc; border-radius: 5px; overflow-x: auto;">
+      <code style="color: #333; font-family: 'Courier New', Courier, monospace;">
+sessionStorage.removeItem("progressUpdated");
+var webObject = document.querySelector('iframe');
+if (webObject && !sessionStorage.getItem("progressUpdated")) {
+  webObject.contentWindow.postMessage("chapterCompleted", "*");
+  sessionStorage.setItem("progressUpdated", "true");
+}
+      </code>
+    </pre>
+
+    <p><strong>How to Add This Trigger in Storyline:</strong></p>
+    <ul>
+      <li>Select your <strong>"Complete"</strong> button.</li>
+      <li>Go to the <strong>Triggers</strong> panel and create a new trigger to <strong>Execute JavaScript</strong> when the button is clicked.</li>
+      <li>Paste the code above into the JavaScript window.</li>
+      <li>Click <strong>OK</strong> to save the trigger.</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Change the Default Number of Sections:</strong><br>
+    By default, the Progress Tracker is set to 5 sections. To change this, modify the following line in your JavaScript:
+
+    <pre style="background-color: #f4f4f4; padding: 10px; border: 1px solid #ccc; border-radius: 5px; overflow-x: auto;">
+      <code style="color: #333; font-family: 'Courier New', Courier, monospace;">
+const totalSections = 3; // Change this number to your desired total
+      </code>
+    </pre>
+
+    Replace <code>3</code> with the number of sections you want to track. For example, to track 5 sections, update it to:
+
+    <pre style="background-color: #f4f4f4; padding: 10px; border: 1px solid #ccc; border-radius: 5px; overflow-x: auto;">
+      <code style="color: #333; font-family: 'Courier New', Courier, monospace;">
+const totalSections = 5;
+      </code>
+    </pre>
+  </li>
+
+  <li>
+    <strong>Prevent Duplicate Progress Updates:</strong><br>
+    To ensure progress doesn’t increment if the button is clicked again:
+    <ul>
+      <li>Add another trigger to the button:</li>
+      <ul>
+        <li><strong>Set state of the button to Disabled</strong> when the user clicks the button.</li>
+      </ul>
+    </ul>
+    This prevents the button from being clicked multiple times.
+  </li>
+
+  <li>
+    <strong>Repeat for Additional Chapters or Modules:</strong><br>
+    <ul>
+      <li>For each new chapter or module, copy the web object embed and add a new button.</li>
+      <li>Use the same JavaScript and state triggers for each button to manage progress updates.</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Test Your Course:</strong><br>
+    <ul>
+      <li>Preview your course to ensure the Progress Tracker updates correctly when the button is clicked.</li>
+      <li>Verify that progress is saved and doesn’t increment more than once per click.</li>
+      <li>Check that the button becomes disabled after being clicked.</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Save Progress Automatically:</strong><br>
+    The Progress Tracker uses <code>sessionStorage</code> to manage progress updates. This ensures progress is only updated once per session and resets if the session is closed.
+  </li>
+
+  <li>
+    <strong>Celebrate Completion:</strong><br>
+    When all milestones are complete, the tracker rewards learners with:
+    <ul>
+      <li>Confetti animation 🎉</li>
+      <li>A cheering sound effect</li>
+      <li>A congratulatory message: <em>“Successfully completed, congrats!”</em></li>
+    </ul>
+  </li>
+</ol>
+</section>
         
 
       <section class="tool-section">
