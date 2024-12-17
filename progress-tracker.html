@@ -269,107 +269,97 @@
         <h2>HOW TO USE</h2>
         <ol>
           <li>
-            <strong>Download the Zip File:</strong>
-            Click the download button below to get the ProgressTracker zip file.
-            This file contains all the necessary code and assets for the
-            tracker.
+            <strong>Copy the Tracker Link:</strong><br>
+            Copy the following link to the Progress Tracker:<br>
+            <a href="https://moayyadsaleh.github.io/Fitbit-progress-tracker1/">https://moayyadsaleh.github.io/Fitbit-progress-tracker1/</a>
           </li>
-
+      
           <li>
-            <strong>Unzip the File:</strong>
-            - <strong>On Windows:</strong> Right-click the downloaded
-            <code>.zip</code> file and select <em>"Extract All..."</em>. -
-            <strong>On macOS:</strong> Double-click the <code>.zip</code> file
-            to automatically unzip it. After unzipping, you'll get a folder
-            named <strong>progress-tracker</strong>.
+            <strong>Open Your E-Learning Authoring Tool:</strong><br>
+            Open your e-learning project in tools like <strong>Articulate Storyline</strong>, <strong>Adobe Captivate</strong>, or any other tool that supports embedding web objects.
           </li>
-
+      
           <li>
-            <strong>Open Your E-Learning Authoring Tool:</strong>
-            Open your e-learning project in tools like
-            <strong>Articulate Storyline</strong>,
-            <strong>Adobe Captivate</strong>, or any other tool that supports
-            web objects.
+            <strong>Insert a Web Object:</strong><br>
+            <ul>
+              <li><strong>In Articulate Storyline:</strong><br>
+                - Go to the <strong>Insert</strong> tab and select <strong>Web Object</strong>.<br>
+                - Paste the Progress Tracker link: <a href="https://moayyadsaleh.github.io/Fitbit-progress-tracker1/">https://moayyadsaleh.github.io/Fitbit-progress-tracker1/</a><br>
+                - Click <strong>OK</strong> to insert the web object into your slide.
+              </li>
+              <li><strong>In Adobe Captivate:</strong><br>
+                - Go to the <strong>Media</strong> menu and select <strong>Web Object</strong>.<br>
+                - Paste the Progress Tracker link.<br>
+                - Click <strong>OK</strong> to insert the web object.
+              </li>
+            </ul>
           </li>
-
+      
           <li>
-            <strong>Insert a Web Object:</strong>
-            - In Articulate Storyline: - Go to the <strong>Insert</strong> tab
-            and select <strong>Web Object</strong>. - In the Web Object dialog,
-            click <strong>Browse</strong>. - Select the
-            <strong>unzipped ProgressTracker folder</strong> (make sure to
-            select the whole folder, not individual files). - Click
-            <strong>OK</strong> to insert the web object into your slide. - In
-            Adobe Captivate: - Go to the <strong>Media</strong> menu and select
-            <strong>Web Object</strong>. - Enter the path to the
-            <strong>unzipped ProgressTracker folder</strong> or browse to it. -
-            Click <strong>OK</strong> to insert the web object.
+            <strong>Position the Tracker:</strong><br>
+            Move and resize the web object on your slide to fit your design. Place it at the end of modules, tasks, lessons, or anywhere you want learners to track their progress.
           </li>
-
+      
           <li>
-            <strong>Position the Tracker:</strong>
-            Move and resize the web object on your slide to fit your design. You
-            can place it at the end of modules, tasks, lessons, or anywhere you
-            want learners to track their progress.
+            <strong>Add a Completion Button:</strong><br>
+            Create a button (name it something like <strong>"Finish"</strong> or <strong>"Complete Section"</strong>) that learners can click to mark the section as complete.
           </li>
+      
           <li>
-            <strong>Progress is Automatically Saved:</strong>
-            Don’t worry about losing data – the tracker automatically saves
-            progress! In a self-paced course where you want learners to take
-            charge of tracking their own progress, just create one progress
-            page, embed the tracker as shown above, and copy that same page
-            wherever you need it in your course. Learners will be able to see
-            and update their progress no matter where they are in the course.
+            <strong>Add a JavaScript Trigger to the Button:</strong><br>
+            Attach the following JavaScript trigger to the button to communicate completion with the tracker:
+            <pre style="background-color: gray;">
+              sessionStorage.removeItem("progressUpdated");
+              var webObject = document.querySelector('iframe');
+              if (webObject && !sessionStorage.getItem("progressUpdated")) {
+                webObject.contentWindow.postMessage("chapterCompleted", "*");
+                sessionStorage.setItem("progressUpdated", "true");
+              }
+                  </pre>
+              
+      
+            <p><strong>Steps to Add the Trigger:</strong></p>
+      
+            <ul>
+              <li><strong>In Articulate Storyline:</strong><br>
+                - Select the button you created (e.g., "Finish").<br>
+                - Go to the <strong>Triggers Panel</strong>.<br>
+                - Add a new trigger:<br>
+                  - <strong>Action:</strong> Execute JavaScript<br>
+                  - <strong>When:</strong> User clicks the button<br>
+                  - <strong>Script:</strong> Copy and paste the JavaScript code above.<br>
+                - Click <strong>OK</strong> to save the trigger.
+              </li>
+              
+              <li><strong>In Adobe Captivate:</strong><br>
+                - Select the button you created (e.g., "Finish").<br>
+                - Open the <strong>Properties Panel</strong>.<br>
+                - In the <strong>Actions</strong> tab, choose <strong>Execute JavaScript</strong> from the dropdown.<br>
+                - Paste the JavaScript code into the script editor.<br>
+                - Click <strong>OK</strong> to save the script.
+              </li>
+            </ul>
           </li>
+      
           <li>
-            <strong>Preview and Test:</strong>
-            - Preview your course to make sure the ProgressTracker works
-            correctly. - Learners will be able to hit
-            <strong>Complete</strong> to log their progress,
-            <strong>Undo</strong> to step back, and <strong>Reset</strong> to
-            start over. - Verify that visual feedback, sound effects, and
-            confetti animations trigger as expected.
+            <strong>Progress is Automatically Saved:</strong><br>
+            The tracker automatically saves progress. In a self-paced course, create one progress page, embed the tracker, and copy that same page wherever needed. Learners will be able to see and update their progress throughout the course.
           </li>
+      
           <li>
-            <strong>Track Up to 5 Items by Default:</strong>
-            The tracker is set to track progress for up to 5 tasks, modules, or
-            milestones by default. If you need to track more than 5 items,
-            follow these steps to update the code: 1. Open the HTML File where
-            your progress tracker is embedded using a text editor (such as
-            Notepad, Visual Studio Code, or any code editor you prefer). 2.
-            Navigate to the Script Section near the bottom of the file, between
-            the `
-            <script>
-              ` and `;
-            </script>
-            ` tags. 3.Locate This Line in the Script: ```javascript const
-            totalSections = 5; ``` 4. Update the Number: Change the number `5`
-            to the number of tasks, modules, or milestones you want to track. -
-            For example, to track 8 items, change it to: ```javascript const
-            totalSections = 8; ``` 5.Save the FileAfter making the change, save
-            the HTML file. 6. Test the Tracker: Open your e-learning course and
-            check that the tracker correctly reflects the new number of items.
-            Ensure that completing tasks updates the progress bar and that the
-            visual feedback, sounds, and confetti animations work as expected.
-            By updating this line, the tracker will now accommodate the new
-            number of tasks, and progress will be saved automatically as
-            learners interact with it.
+            <strong>Preview and Test:</strong><br>
+            - Preview your course to ensure the Progress Tracker works correctly.<br>
+            - Click the button (e.g., "Finish") to trigger the completion.<br>
+            - Verify that learners can mark tasks as <strong>Complete</strong>, use <strong>Undo</strong> to step back, and <strong>Reset</strong> to start over.<br>
+            - Confirm that visual feedback, sound effects, and confetti animations trigger correctly.
           </li>
+      
+          <li>
+            <strong>Track Up to 5 Items by Default.</strong><br>
+           
         </ol>
-      </section>
-
-      <section class="tool-section">
-        <h2>DOWNLOAD PROGRESS TRACKER SOURCE CODE</h2>
-        <p>
-          Click the button below to download the ProgressTracker source code and
-          start using it in your E-learning courses!
-        </p>
-        <a href="progress-tracker.zip" download>
-          <button class="copy-btn">
-            <i class="fas fa-download"></i> Download ProgressTracker Folder
-          </button>
-        </a>
-      </section>
+            
+        </section>
 
       <section class="tool-section">
         <h2>CONSIDER SUPPORTING MY WORK</h2>
