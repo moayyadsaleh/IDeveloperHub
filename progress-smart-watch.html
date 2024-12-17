@@ -305,7 +305,7 @@
       
           <li>
             <strong>Add a JavaScript Trigger to the Button:</strong><br>
-            Attach the following JavaScript trigger to the button to communicate completion with the tracker:
+            Attach the following JavaScript trigger to the button to communicate completion with the tracker. (This Trigger should be added as long as you want to trigger progress):
             <pre style="background-color: gray;">
               sessionStorage.removeItem("progressUpdated");
               var webObject = document.querySelector('iframe');
@@ -351,7 +351,11 @@
             - Verify that learners can mark tasks as <strong>Complete.</strong><br>
             - Confirm that visual feedback, sound effects, and confetti animations trigger correctly.
           </li>
-      
+          <li>
+            <strong>For Testing Purposes</strong><br>
+            I know you’ve tried this before — you closed the course and came back, seeing your progress saved right where you left off, whether in the demo or your course. This feature is designed to save data. To test it in your course or the live demo, copy the link and open it in incognito mode. The same applies to your course: publish it, copy the link, and test it in incognito mode.
+          </li>
+          
           <li>
             <strong>Track Up to 5 Items by Default.</strong><br>
            
