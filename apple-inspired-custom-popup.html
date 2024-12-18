@@ -258,74 +258,118 @@
               Show Code
             </button>
             <div id="codeContainer" style="display: none; background-color: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; border-left: 5px solid #66d9ef; font-family: 'Courier New', monospace; white-space: pre-wrap; line-height: 1.5; font-size: 14px;">
- // Popup Creation Code
-const overlay = document.createElement('div');
-overlay.style.position = 'fixed';
-overlay.style.top = '0';
-overlay.style.left = '0';
-overlay.style.width = '100%';
-overlay.style.height = '100%';
-overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.25)';
-overlay.style.backdropFilter = 'blur(10px)';
-overlay.style.zIndex = '9999';
-overlay.style.display = 'flex';
-overlay.style.justifyContent = 'center';
-overlay.style.alignItems = 'center';
-overlay.style.margin = '0';
-overlay.style.padding = '0';
-
-// Create the popup container with a class to avoid conflicts
-const popup = document.createElement('div');
-popup.classList.add('custom-popup');
-popup.style.backgroundColor = '#f8f8f8';
-popup.style.padding = '28px';
-popup.style.borderRadius = '20px';
-popup.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.15)';
-popup.style.width = '400px';
-popup.style.maxWidth = '90%';
-popup.style.textAlign = 'center';
-popup.style.fontFamily = 'Helvetica, Arial, sans-serif';
-popup.style.position = 'relative';
-
-// Add a heading to the popup
-const heading = document.createElement('h2');
-heading.textContent = 'Welcome!';
-heading.style.color = '#333'; // Explicit dark gray text
-popup.appendChild(heading);
-
-// Add a message to the popup
-const message = document.createElement('p');
-message.textContent = 'Tap the Toggle Theme button in the top-right corner to give it a try!';
-message.style.color = '#333'; // Explicit dark gray text
-popup.appendChild(message);
-
-// Create an "X" button to close the popup
-const closeButton = document.createElement('button');
-closeButton.textContent = '✕';
-closeButton.style.position = 'absolute';
-closeButton.style.top = '10px';
-closeButton.style.right = '10px';
-closeButton.style.background = 'none';
-closeButton.style.border = 'none';
-closeButton.style.fontSize = '20px';
-closeButton.style.cursor = 'pointer';
-closeButton.style.color = '#666';
-
-// Close the popup when the "X" button is clicked
-closeButton.addEventListener('click', () => {
-  overlay.remove();
-});
-
-popup.appendChild(closeButton);
-overlay.appendChild(popup);
-document.body.appendChild(overlay);
-
-// Close the popup when clicking outside of it
-overlay.addEventListener('click', (e) => {
-  if (!popup.contains(e.target)) {
-    overlay.remove();
-  }
-});     
+              // Popup Trigger Function
+              function showPopup() {
+                // Create the overlay
+                const overlay = document.createElement('div');
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.4)';
+                overlay.style.backdropFilter = 'blur(10px)';
+                overlay.style.zIndex = '9999';
+                overlay.style.display = 'flex';
+                overlay.style.justifyContent = 'center';
+                overlay.style.alignItems = 'center';
+                overlay.style.animation = 'fadeIn 0.5s ease-out';
+              
+                // Create the popup container
+                const popup = document.createElement('div');
+                popup.style.background = 'linear-gradient(135deg, #ff6b81, #6b72ff, #1e90ff)';
+                popup.style.color = '#fff';
+                popup.style.padding = '40px';
+                popup.style.borderRadius = '30px';
+                popup.style.boxShadow = '0 15px 40px rgba(0, 0, 0, 0.3)';
+                popup.style.maxWidth = '400px';
+                popup.style.textAlign = 'center';
+                popup.style.fontFamily = 'Arial, sans-serif';
+                popup.style.position = 'relative';
+                popup.style.animation = 'popIn 0.6s ease-out';
+              
+                // Add a glowing border effect
+                popup.style.border = '2px solid rgba(255, 255, 255, 0.2)';
+                popup.style.boxShadow = '0 0 15px rgba(255, 255, 255, 0.3)';
+              
+                // Add heading
+                const heading = document.createElement('h2');
+                heading.textContent = 'Welcome to the Future!'; 
+                heading.style.marginBottom = '15px';
+                heading.style.fontSize = '24px';
+                heading.style.textShadow = '0 0 10px rgba(255, 255, 255, 0.8)';
+                popup.appendChild(heading);
+              
+                // Add message
+                const message = document.createElement('p');
+                message.textContent = "I'm your supercharged popup! I'm here to dazzle, inform, and look insanely cool while doing it. Customize my text and let's make learning fun! "; 
+                message.style.fontSize = '16px';
+                message.style.lineHeight = '1.6';
+                popup.appendChild(message);
+              
+                // Add close button
+                const closeButton = document.createElement('button');
+                closeButton.textContent = '✕';
+                closeButton.style.position = 'absolute';
+                closeButton.style.top = '10px';
+                closeButton.style.right = '10px';
+                closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                closeButton.style.color = '#fff';
+                closeButton.style.border = 'none';
+                closeButton.style.borderRadius = '50%';
+                closeButton.style.width = '32px';
+                closeButton.style.height = '32px';
+                closeButton.style.cursor = 'pointer';
+                closeButton.style.fontSize = '18px';
+                closeButton.style.transition = 'transform 0.2s, background-color 0.3s';
+              
+                // Close button hover effect
+                closeButton.addEventListener('mouseover', () => {
+                  closeButton.style.transform = 'scale(1.2)';
+                  closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+                });
+              
+                closeButton.addEventListener('mouseout', () => {
+                  closeButton.style.transform = 'scale(1)';
+                  closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                });
+              
+                // Close the popup when the close button is clicked
+                closeButton.addEventListener('click', () => {
+                  overlay.remove();
+                });
+              
+                popup.appendChild(closeButton);
+                overlay.appendChild(popup);
+                document.body.appendChild(overlay);
+              
+                // Close the popup when clicking outside of it
+                overlay.addEventListener('click', (e) => {
+                  if (!popup.contains(e.target)) {
+                    overlay.remove();
+                  }
+                });
+              
+                // Add keyframe animations to the document head
+                const style = document.createElement('style');
+                style.textContent = `
+                  @keyframes fadeIn {
+                    from { opacity: 0; }
+                    to { opacity: 1; }
+                  }
+              
+                  @keyframes popIn {
+                    0% { transform: scale(0.7); opacity: 0; }
+                    80% { transform: scale(1.05); opacity: 1; }
+                    100% { transform: scale(1); }
+                  }
+                `;
+                document.head.appendChild(style);
+              }
+              
+              // Trigger the popup
+              showPopup();
+                   
             </div>
           </li>
       
@@ -362,7 +406,7 @@ overlay.addEventListener('click', (e) => {
         </li>
       
         <li>
-          <strong>Modify the Pop-Up Content (Optional):</strong>  
+          <strong>Modify the Pop-Up Content:</strong>  
           Want to customize the heading and message? Here’s how:<br>
           - To change the heading: 
             Look for this line in the code:  
@@ -371,7 +415,7 @@ overlay.addEventListener('click', (e) => {
       
           - To change the message: 
             Look for this line in the code:  
-            <code>message.textContent = 'Experience a clean, sleek design. Minimalism at its finest.';</code>  
+            <code>message.textContent = "I'm your supercharged popup! I'm here to dazzle, inform, and look insanely cool while doing it. Customize my text and let's make learning fun! ";</code>  
             Replace the text inside the double quotes with your custom message.<br><br>
           That’s it! Just be careful not to remove the double quotes or change the structure of the code.
         </li>
